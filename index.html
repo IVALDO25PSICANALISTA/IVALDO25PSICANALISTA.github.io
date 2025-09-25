@@ -1,73 +1,110 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NÚCLEO DA MENTE, CORPO E ALMA</title>
+  <title>Ivaldo Psicanalista</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
+      scroll-behavior: smooth;
       line-height: 1.6;
-      background: #f9f9f9;
-      color: #333;
-      text-align: center;
     }
-    header {
-      background: #444;
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #333;
+      padding: 10px 0;
+      z-index: 1000;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
       color: #fff;
-      padding: 2rem 1rem;
-    }
-    nav a {
-      margin: 0 10px;
       text-decoration: none;
-      color: #fff;
       font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #ffd700;
     }
     section {
-      padding: 2rem;
+      padding: 100px 20px;
+      min-height: 100vh;
+    }
+    #inicio {
+      background: #f4f4f4;
+      text-align: center;
+    }
+    #sobre {
+      background: #e0e0e0;
+    }
+    #terapias {
+      background: #f9f9f9;
+    }
+    #contato {
+      background: #ddd;
+      text-align: center;
     }
     footer {
-      background: #222;
-      color: #fff;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-    .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      margin: 10px;
-      background: #0077cc;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-    .btn:hover {
-      background: #005fa3;
+      text-align: center;
+      padding: 20px;
+      background: #333;
+      color: white;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>NÚCLEO DA MENTE, CORPO E ALMA</h1>
-    <p>Psicanálise, Terapias Integrativas e Autoconhecimento</p>
-    <nav>
-      <a href="#">Início</a>
-      <a href="#">Sobre</a>
-      <a href="#">Terapias</a>
-      <a href="#">Contato</a>
-    </nav>
-  </header>
+  <!-- Menu -->
+  <nav>
+    <ul>
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#terapias">Terapias</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
 
-  <section>
-    <h2>Bem-vindo(a)</h2>
-    <p>Transforme sua vida com psicanálise, aromaterapia, cromoterapia, reiki e reprogramação mental.</p>
-    <a href="https://wa.me/5548999132828" class="btn">Agendar Sessão no WhatsApp</a>
+  <!-- Seções -->
+  <section id="inicio">
+    <h1>Bem-vindo ao consultório</h1>
+    <p>Atendimento em Psicanálise e Terapias Integrativas.</p>
+  </section>
+
+  <section id="sobre">
+    <h2>Sobre Mim</h2>
+    <p>Sou Ivaldo, psicanalista e terapeuta com experiência em apoio emocional, autoconhecimento e cura interior.</p>
+  </section>
+
+  <section id="terapias">
+    <h2>Terapias</h2>
+    <ul>
+      <li>Psicanálise Clínica</li>
+      <li>Terapia Humanista</li>
+      <li>Reiki e Energias Sutis</li>
+      <li>Apoio em Processos de Cura</li>
+    </ul>
+  </section>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <p>Telefone: <strong>(48) 99913-2828</strong></p>
+    <p>Email: <strong>ivaldo25psicanalista@gmail.com</strong></p>
   </section>
 
   <footer>
-    <p>&copy; 2025 - Ivaldo J. Silva | Núcleo da Mente, Corpo e Alma</p>
+    <p>&copy; 2025 Ivaldo Psicanalista - Todos os direitos reservados</p>
   </footer>
 </body>
 </html>
