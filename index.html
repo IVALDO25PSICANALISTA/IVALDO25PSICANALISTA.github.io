@@ -1,190 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>NÚCLEO DA MENTE, CORPO E ALMA</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Núcleo da Mente, Corpo e Alma</title>
   <style>
-    /* Reset e fonte */
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:Arial, sans-serif;background:#fdfdf9;color:#222;line-height:1.6;}
-
-    /* Cabeçalho (logo centralizado acima do menu) */
-    .logo-wrap{
-      width:100%;
-      background: rgba(255,255,245,0.95);
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      padding:14px 10px;
-      position:fixed;
-      top:0; left:0;
-      z-index:1000;
-      box-shadow:0 2px 6px rgba(0,0,0,0.06);
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url("fundo.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+      text-align: center;
     }
-    .logo-wrap img.logo{
-      max-height:78px;
-      width:auto;
-      border-radius:8px;
-      display:block;
+    header {
+      background: rgba(255, 255, 255, 0.8);
+      padding: 20px;
     }
-    nav{width:100%; display:flex; justify-content:center;}
-    nav ul{list-style:none;display:flex;gap:20px;align-items:center;margin:0;padding:0;}
-    nav a{color:#222;text-decoration:none;font-weight:700;padding:6px 10px;border-radius:6px;}
-    nav a:hover{background:rgba(75,122,71,0.06);color:#4b7a47;}
-
-    /* Evitar conteúdo escondido atrás do cabeçalho fixo */
-    .spacer{height:128px;}
-
-    /* Hero com foto de fundo e overlay leve */
-    .hero{
-      background: url("T1-17082025-DSC_1762.jpg") center/cover no-repeat;
-      min-height: calc(100vh - 128px);
-      display:flex;align-items:center;justify-content:center;position:relative;text-align:center;
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #333;
     }
-    .hero::after{
-      content:""; position:absolute; inset:0;
-      background: rgba(255,255,245,0.72);
+    nav a:hover {
+      color: #0077cc;
     }
-    .hero-content{position:relative;z-index:2;max-width:980px;padding:36px 20px;}
-    .hero-line{width:120px;height:2px;background:#2d2d2d;margin:16px auto;}
-    .hero h1{margin:0;font-family:"Georgia",serif;font-size:clamp(1.6rem,2.6vw,2.6rem);color:#222;}
-    .hero p.sub{margin-top:12px;color:#444;font-size:1rem;}
-
-    /* CTAs */
-    .cta-row{margin-top:18px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
-    .btn{display:inline-block;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:700;}
-    .btn-whats{background:#25D366;color:#fff;}
-    .btn-call{background:#2D7DF0;color:#fff;}
-    .btn:hover{opacity:0.95}
-
-    /* Conteúdo principal */
-    main{padding:40px 16px 60px;max-width:1100px;margin:0 auto;}
-    .card{background:#fff;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.06);padding:26px;margin-bottom:22px;}
-    .section-title{display:inline-block;margin:0 0 18px;font-size:1.4rem;color:#2d2d2d;border-bottom:2px solid #4b7a47;padding-bottom:6px;}
-    p{color:#333;text-align:justify;line-height:1.62}
-
-    /* Grid terapias */
-    .therapies-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:14px;}
-    .therapy{border-radius:10px;padding:16px;background:linear-gradient(180deg,#fff,#fbfbfb);box-shadow:0 4px 12px rgba(0,0,0,0.04)}
-    .therapy h4{margin:0 0 8px 0;color:#2d2d2d;font-size:1.05rem}
-    .therapy p{margin:0;color:#444;font-size:0.95rem}
-
-    /* Contato */
-    .contact-center{text-align:center;margin-top:10px}
-    .contact-center p{margin:6px 0}
-
-    /* Rodapé */
-    footer{background:#2d2d2d;color:#fff;padding:20px 10px;text-align:center;margin-top:28px;font-size:0.95rem}
-    footer a{color:#fff;text-decoration:none;font-weight:700}
-
-    /* Responsivo */
-    @media(max-width:720px){
-      .spacer{height:112px}
-      .logo-wrap img.logo{max-height:62px}
-      .hero{min-height: calc(68vh - 112px)}
-      nav ul{gap:10px;flex-wrap:wrap;justify-content:center}
+    img.logo {
+      max-width: 200px;
+    }
+    .content {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 40px;
+      margin: 40px auto;
+      max-width: 800px;
+      border-radius: 12px;
     }
   </style>
 </head>
 <body>
-  <!-- Cabeçalho com logo (usar arquivo exato enviado) -->
-  <div class="logo-wrap" role="banner" aria-label="Cabeçalho">
-    <img src="LOGO PSICANALISE - Copia.jpg" alt="NÚCLEO DA MENTE, CORPO E ALMA - Logo" class="logo">
-    <nav aria-label="Menu principal">
-      <ul>
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#terapias">Terapias</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
+  <header>
+    <img src="LOGO PSICANALISE - Copia.jpg" alt="Logo" class="logo">
+    <h1>Núcleo da Mente, Corpo e Alma</h1>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="terapia1.html">Psicanálise</a>
+      <a href="terapia2.html">Filosofia Clínica</a>
+      <a href="terapia3.html">Reiki</a>
     </nav>
-  </div>
-
-  <div class="spacer" aria-hidden="true"></div>
-
-  <!-- Hero -->
-  <header class="hero" id="inicio" role="region" aria-label="Capa">
-    <div class="hero-content">
-      <div class="hero-line" aria-hidden="true"></div>
-      <h1>“EQUILÍBRIO ENTRE CORPO, MENTE E ALMA.”</h1>
-      <p class="sub">Um espaço acolhedor para o cuidado integral — psicanálise, terapias integrativas e presença clínica.</p>
-
-      <div class="cta-row" role="group" aria-label="Contato rápido">
-        <a class="btn btn-whats" href="https://wa.me/5548999132828" target="_blank" rel="noreferrer">💬 WhatsApp</a>
-        <a class="btn btn-call" href="tel:+5548999132828">📞 Ligar</a>
-      </div>
-      <div class="hero-line" aria-hidden="true"></div>
-    </div>
   </header>
-
-  <!-- Conteúdo -->
-  <main>
-    <!-- Sobre -->
-    <section id="sobre" class="card" aria-labelledby="sobre-title">
-      <h2 id="sobre-title" class="section-title">SOBRE</h2>
-      <p>
-        Sou <strong>Ivaldo J. Silva</strong>, professor de filosofia, filósofo clínico pela instituição <strong>ENLEVO</strong>,
-        e psicanalista estudante de Bacharel pela <strong>IBRAPSI</strong>. Meu trabalho integra filosofia, psicanálise
-        e terapias complementares, com foco no equilíbrio entre <em>mente, corpo e alma</em>.
-      </p>
-    </section>
-
-    <!-- Terapias -->
-    <section id="terapias" class="card" aria-labelledby="terapias-title">
-      <h2 id="terapias-title" class="section-title">TERAPIAS</h2>
-      <p>Oferecemos atendimentos integrados, com destaque para a Psicanálise. Abaixo as práticas disponíveis:</p>
-
-      <div class="therapies-grid" role="list">
-        <article class="therapy" role="listitem">
-          <h4>PSICANÁLISE (FOCO PRINCIPAL)</h4>
-          <p>Investigação profunda do inconsciente visando autoconhecimento, elaboração de conflitos e transformação emocional.</p>
-        </article>
-
-        <article class="therapy" role="listitem">
-          <h4>AROMATERAPIA</h4>
-          <p>Uso de óleos essenciais para apoio emocional: redução do estresse, melhoria do sono e bem-estar.</p>
-        </article>
-
-        <article class="therapy" role="listitem">
-          <h4>CROMOTERAPIA</h4>
-          <p>Aplicação terapêutica das cores para harmonizar estados emocionais e energéticos.</p>
-        </article>
-
-        <article class="therapy" role="listitem">
-          <h4>REIKI</h4>
-          <p>Técnica de imposição de mãos que canaliza energia para relaxamento profundo e equilíbrio do campo energético.</p>
-        </article>
-
-        <article class="therapy" role="listitem">
-          <h4>REPROGRAMAÇÃO MENTAL</h4>
-          <p>Técnicas direcionadas à identificação e transformação de crenças limitantes, promovendo mudanças de hábito e pensamento.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- Contato -->
-    <section id="contato" class="card" aria-labelledby="contato-title">
-      <h2 id="contato-title" class="section-title">CONTATO</h2>
-      <div class="contact-center">
-        <p>Agende sua sessão por telefone ou WhatsApp:</p>
-        <p><strong>📞 (48) 99913-2828</strong></p>
-        <p>
-          <a class="btn btn-call" href="tel:+5548999132828">📞 Ligar agora</a>
-          <a class="btn btn-whats" href="https://wa.me/5548999132828" target="_blank" rel="noreferrer">💬 WhatsApp</a>
-        </p>
-        <p style="margin-top:12px;font-size:0.95rem;color:#555;">Atendimento presencial e online — Rua Saturno, 21 · Lagoa dos Freitas · Balneário Rincão - SC</p>
-      </div>
-    </section>
-  </main>
-
-  <footer role="contentinfo">
-    <p style="margin:6px 0;font-weight:700;">© 2025 NÚCLEO DA MENTE, CORPO E ALMA</p>
-    <p style="margin:4px 0;">Ivaldo J. Silva — Professor de Filosofia · Filósofo Clínico (ENLEVO) · Psicanalista (IBRAPSI)</p>
-    <p style="margin:4px 0;">Contato: <a href="tel:+5548999132828" style="color:#fff;text-decoration:underline">(48) 99913-2828</a></p>
-  </footer>
+  <div class="content">
+    <h2>Bem-vindo!</h2>
+    <p>O Núcleo da Mente, Corpo e Alma oferece um espaço dedicado ao cuidado integral do ser humano, unindo ciência, filosofia e espiritualidade.</p>
+    <p>Explore nossas terapias e descubra como podemos ajudar no seu processo de equilíbrio e transformação.</p>
+  </div>
 </body>
 </html>
