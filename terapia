@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Psicanálise</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('Imagem do WhatsApp de 2025-09-19 à(s) 23.43.35_197e245a.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            padding: 40px;
+            text-align: center;
+        }
+        header img {
+            max-width: 180px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: rgba(0,0,0,0.6);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+        a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="LOGO PSICANALISE - Copia.jpg" alt="Logo">
+        <h1>Psicanálise</h1>
+    </header>
+    <p>
+        A Psicanálise é uma abordagem terapêutica que busca compreender os conteúdos inconscientes
+        que influenciam nossas emoções, comportamentos e relacionamentos.  
+        Por meio da fala e da escuta qualificada, é possível acessar aspectos profundos da mente
+        e promover transformações internas significativas.
+    </p>
+    <a href="index.html">⬅ Voltar à Página Inicial</a>
+</body>
+</html>
