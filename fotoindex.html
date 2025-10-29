@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Galeria de Fotos — Núcleo da Mente, Corpo e Alma</title>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:#0a0f1a;color:#e6f0ff}
+a{color:#8ab4ff;text-decoration:none} a:hover{text-decoration:underline}
+.header{background:#0d1b2a;box-shadow:0 6px 16px rgba(0,0,0,.45)}
+.container{max-width:1000px;margin:0 auto;padding:16px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{max-height:56px;height:auto;pointer-events:none}
+.title{margin:0;font-size:1.2rem;color:#8ab4ff}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));margin-top:20px}
+.grid img{width:100%;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,.4);transition:transform .3s}
+.grid img:hover{transform:scale(1.05)}
+footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px;margin-top:24px}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <div class="brand">
+      <img src="../logo.jpg" alt="Logo">
+      <div><h1 class="title">Galeria de Fotos</h1><div>Voltar: <a href="../">Início</a></div></div>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <p>Alguns registros do espaço terapêutico e dos símbolos que representam o trabalho com mente, corpo e alma.</p>
+
+  <div class="grid">
+    <img src="foto1.jpg" alt="Foto 1">
+    <img src="foto2.jpg" alt="Foto 2">
+    <img src="foto3.jpg" alt="Foto 3">
+    <img src="foto4.jpg" alt="Foto 4">
+  </div>
+
+  <p style="margin-top:20px">👉 Para adicionar mais imagens, basta enviar novos arquivos para esta pasta <code>/foto/</code>
+  e editar o nome dentro do código (por exemplo, <code>foto5.jpg</code>).</p>
+</main>
+
+<footer>© 2025 Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva</footer>
+</body>
+</html>
