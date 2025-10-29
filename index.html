@@ -2,86 +2,111 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva</title>
   <meta name="description" content="Filosofia Clínica, Psicanálise e Espiritualidade integradas por Ivaldo José da Silva.">
   <style>
+    /* Base segura: nada fica por cima sem querer */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin:0; padding:0; }
     body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Arial, sans-serif;
       background: linear-gradient(180deg, #0a0f1a, #1a2133);
       color: #e6f0ff;
-      text-align: center;
-      padding-bottom: 50px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
-    header {
-      background: #0d1b2a;
-      padding: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-    }
-    header img {
-      max-height: 90px;
-      height: auto;
-    }
-    h1 {
-      color: #8ab4ff;
-      margin: 10px 0 0 0;
-    }
-    p {
-      color: #b0c4de;
-    }
-    main {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    section {
-      margin-top: 40px;
-      background: #111827;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-    }
-    footer {
-      background: #0d1b2a;
-      padding: 15px;
-      font-size: 0.9em;
-      color: #94a3b8;
-      position: relative;
-    }
-    a { color: #8ab4ff; text-decoration: none; }
+    a { color:#8ab4ff; text-decoration: none; }
     a:hover { text-decoration: underline; }
+
+    header {
+      position: relative; z-index: 1;
+      background:#0d1b2a; box-shadow:0 4px 12px rgba(0,0,0,.4);
+    }
+    .container { max-width: 1100px; margin:0 auto; padding:16px; }
+
+    /* Logo SEM cobrir a página */
+    .brand { display:flex; align-items:center; gap:16px; }
+    .brand img {
+      max-height:80px; height:auto; width:auto; display:block;
+      pointer-events:none; /* garante que a logo não capture cliques */
+    }
+    .brand h1 { margin:0; font-size:1.4rem; color:#8ab4ff; }
+    .brand p { margin:2px 0 0 0; color:#b0c4de; font-size:.95rem; }
+
+    /* Menu clicável garantido */
+    nav { margin-top:12px; }
+    .nav {
+      display:flex; flex-wrap:wrap; gap:10px;
+      padding:10px 0;
+    }
+    .nav a {
+      background:#111827; border:1px solid #22324a; border-radius:10px;
+      padding:8px 12px; font-size:.95rem;
+    }
+
+    main { position:relative; z-index:1; flex:1; }
+    .card {
+      background:#111827; border-radius:16px; padding:24px;
+      box-shadow:0 6px 18px rgba(0,0,0,.35);
+    }
+    h2 { color:#c3d3ff; margin-top:0; }
+
+    footer {
+      position:relative; z-index:1;
+      background:#0d1b2a; color:#94a3b8; text-align:center; padding:16px;
+    }
+
+    /* Caso algum elemento esteja cobrindo tudo por engano */
+    /* Se você tiver algum overlay acidental, ele NÃO existirá aqui.
+       Ainda assim, reforçamos que as áreas úteis fiquem acima: */
+    header, nav, main, footer { z-index: 1; }
   </style>
 </head>
 <body>
   <header>
-    <!-- Se a sua imagem estiver na raiz, mantenha assim -->
-    <img src="logo.jpg" alt="Logo do Núcleo da Mente Corpo e Alma">
-    <h1>Núcleo da Mente, Corpo e Alma</h1>
-    <p>Filosofia Clínica • Psicanálise • Espiritualidade</p>
+    <div class="container">
+      <div class="brand">
+        <!-- A logo precisa existir no repo como 'logo.jpg' -->
+        <img src="logo.jpg" alt="Logo do Núcleo da Mente, Corpo e Alma">
+        <div>
+          <h1>Núcleo da Mente, Corpo e Alma</h1>
+          <p>Filosofia Clínica • Psicanálise • Espiritualidade</p>
+        </div>
+      </div>
+
+      <nav>
+        <div class="nav">
+          <a href="terapia1.html">Terapia 1</a>
+          <a href="terapia2.html">Terapia 2</a>
+          <a href="terapia3.html">Terapia 3</a>
+          <a href="reiki/">Reiki</a>
+          <a href="foto/">Fotos</a>
+          <a href="mailto:ivaldo25psicanalista@gmail.com">E-mail</a>
+          <a href="https://wa.me/5548999132828" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section>
-      <h2>Bem-vindo!</h2>
-      <p>Este é o espaço dedicado à integração entre mente, corpo e alma.<br>
-         Um lugar onde a filosofia, a psicanálise e a espiritualidade se encontram em harmonia.</p>
-    </section>
+    <div class="container">
+      <div class="card">
+        <h2>Bem-vindo!</h2>
+        <p>Este é o espaço dedicado à integração entre mente, corpo e alma. Um encontro entre a
+           Filosofia Clínica, a Psicanálise e a Espiritualidade para o cuidado integral.</p>
+      </div>
 
-    <section>
-      <h2>Serviços</h2>
-      <p>• Atendimento Psicanalítico<br>
-         • Terapia Filosófica<br>
-         • Reiki e Energização<br>
-         • Aconselhamento Espiritual</p>
-    </section>
-
-    <section>
-      <h2>Contato</h2>
-      <p>📍 Rua Saturno, 21 — Lagoa dos Freitas, Baln. Rincão-SC<br>
-         📱 WhatsApp: <a href="https://wa.me/5548999132828" target="_blank">(48) 99913-2828</a><br>
-         ✉️ E-mail: <a href="mailto:ivaldo25psicanalista@gmail.com">ivaldo25psicanalista@gmail.com</a></p>
-    </section>
+      <div class="card" style="margin-top:24px;">
+        <h2>Contato</h2>
+        <p>
+          📍 Rua Saturno, 21 — Lagoa dos Freitas, Baln. Rincão-SC<br>
+          ✉️ <a href="mailto:ivaldo25psicanalista@gmail.com">ivaldo25psicanalista@gmail.com</a><br>
+          📱 <a href="https://wa.me/5548999132828" target="_blank" rel="noopener">(48) 99913-2828</a>
+        </p>
+      </div>
+    </div>
   </main>
 
   <footer>
