@@ -1,50 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Ivaldo - Psicanalista</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: url('Imagem do WhatsApp de 2025-09-19 à(s) 23.43.35_197e245a.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #fff;
-            text-align: center;
-        }
-        header {
-            padding: 20px;
-        }
-        header img {
-            max-width: 220px;
-        }
-        nav {
-            margin-top: 20px;
-        }
-        nav a {
-            display: inline-block;
-            margin: 15px;
-            padding: 12px 25px;
-            background: rgba(0, 0, 0, 0.6);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-        }
-        nav a:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-    </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Filosofia Clínica — Núcleo da Mente, Corpo e Alma</title>
+<style>
+*,*::before,*::after{box-sizing:border-box} html,body{margin:0;padding:0}
+body{font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:#0a0f1a;color:#e6f0ff}
+a{color:#8ab4ff;text-decoration:none} a:hover{text-decoration:underline}
+.header{background:#0d1b2a;box-shadow:0 6px 16px rgba(0,0,0,.45)}
+.container{max-width:1000px;margin:0 auto;padding:16px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{max-height:56px;height:auto;pointer-events:none}
+.title{margin:0;font-size:1.2rem;color:#8ab4ff}
+.card{background:#111827;border-radius:16px;padding:24px;box-shadow:0 8px 22px rgba(0,0,0,.35);margin:20px 0}
+footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px;margin-top:24px}
+</style>
 </head>
 <body>
-    <header>
-        <img src="LOGO PSICANALISE - Copia.jpg" alt="Logo Psicanálise">
-        <h1>Bem-vindo ao Espaço Terapêutico</h1>
-    </header>
-    <nav>
-        <a href="terapia1.html">Psicanálise</a>
-        <a href="terapia2.html">Filosofia Clínica</a>
-        <a href="terapia3.html">Reiki</a>
-    </nav>
+<header class="header">
+  <div class="container">
+    <div class="brand">
+      <img src="logo.jpg" alt="Logo do Núcleo">
+      <div><h1 class="title">Filosofia Clínica</h1><div>Voltar: <a href="./">Início</a></div></div>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="card">
+    <h2>O que é</h2>
+    <p>Investigação existencial do modo de ser, valores, projetos e decisões. Prática potente para clareza de escolhas,
+       ética no cotidiano e fortalecimento de sentido.</p>
+    <ul>
+      <li>Mapeamento de referências pessoais e categorias de base.</li>
+      <li>Construção de projetos viáveis e sustentáveis.</li>
+      <li>Atendimento individual, sigiloso e acolhedor.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Agendamentos</h2>
+    <p>✉️ <a href="mailto:ivaldo25psicanalista@gmail.com">ivaldo25psicanalista@gmail.com</a><br>
+       📱 <a href="https://wa.me/5548999132828" target="_blank" rel="noopener">(48) 99913-2828</a></p>
+  </section>
+</main>
+
+<footer>© 2025 Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva</footer>
 </body>
 </html>
