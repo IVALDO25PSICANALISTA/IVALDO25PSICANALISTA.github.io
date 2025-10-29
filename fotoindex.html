@@ -8,13 +8,22 @@
 body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:#0a0f1a;color:#e6f0ff}
 a{color:#8ab4ff;text-decoration:none} a:hover{text-decoration:underline}
 .header{background:#0d1b2a;box-shadow:0 6px 16px rgba(0,0,0,.45)}
-.container{max-width:1000px;margin:0 auto;padding:16px}
+.container{max-width:1100px;margin:0 auto;padding:16px}
 .brand{display:flex;align-items:center;gap:12px}
 .brand img{max-height:56px;height:auto;pointer-events:none}
 .title{margin:0;font-size:1.2rem;color:#8ab4ff}
+
+/* grid */
 .grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));margin-top:20px}
-.grid img{width:100%;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,.4);transition:transform .3s}
-.grid img:hover{transform:scale(1.05)}
+.card{background:#111827;border-radius:14px;padding:10px;box-shadow:0 6px 16px rgba(0,0,0,.4)}
+.thumb{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px;cursor:pointer;display:block}
+
+/* lightbox */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;padding:16px;z-index:50}
+.lightbox.open{display:flex}
+.lightbox img{max-width:95vw;max-height:90vh;border-radius:10px}
+.lightbox .close{position:absolute;top:16px;right:16px;background:#111827;border:1px solid #22324a;color:#e6f0ff;border-radius:999px;padding:6px 10px;cursor:pointer}
+.caption{margin-top:10px;color:#cbd5e1;text-align:center}
 footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px;margin-top:24px}
 </style>
 </head>
@@ -29,19 +38,46 @@ footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px;margin-to
 </header>
 
 <main class="container">
-  <p>Alguns registros do espaço terapêutico e dos símbolos que representam o trabalho com mente, corpo e alma.</p>
+  <p>Alguns registros do espaço terapêutico e símbolos do trabalho com mente, corpo e alma.</p>
 
-  <div class="grid">
-    <img src="foto1.jpg" alt="Foto 1">
-    <img src="foto2.jpg" alt="Foto 2">
-    <img src="foto3.jpg" alt="Foto 3">
-    <img src="foto4.jpg" alt="Foto 4">
+  <!-- SUBA SUAS IMAGENS NA PASTA /foto E AJUSTE OS NOMES ABAIXO -->
+  <div class="grid" id="galeria">
+    <!-- Exemplo: troque "foto1.jpg" pelo nome real do arquivo. Duplique li para mais imagens. -->
+    <div class="card"><img class="thumb" src="foto1.jpg" alt="Sala de atendimento" data-caption="Sala de atendimento"></div>
+    <div class="card"><img class="thumb" src="foto2.jpg" alt="Espaço Reiki" data-caption="Espaço Reiki"></div>
+    <div class="card"><img class="thumb" src="foto3.jpg" alt="Ambiente terapêutico" data-caption="Ambiente terapêutico"></div>
+    <div class="card"><img class="thumb" src="foto4.jpg" alt="Símbolos" data-caption="Símbolos"></div>
   </div>
 
-  <p style="margin-top:20px">👉 Para adicionar mais imagens, basta enviar novos arquivos para esta pasta <code>/foto/</code>
-  e editar o nome dentro do código (por exemplo, <code>foto5.jpg</code>).</p>
+  <p style="margin-top:12px;opacity:.8">Dica: use nomes simples (ex.: <code>foto5.jpg</code>, <code>reiki.jpg</code>). Sem acentos nem espaços.</p>
 </main>
 
+<!-- LIGHTBOX -->
+<div class="lightbox" id="box">
+  <button class="close" id="fechar" aria-label="Fechar">Fechar ✕</button>
+  <div>
+    <img id="img-ampliada" alt="">
+    <div class="caption" id="legenda"></div>
+  </div>
+</div>
+
 <footer>© 2025 Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva</footer>
+
+<script>
+const box = document.getElementById('box');
+const imgAmpliada = document.getElementById('img-ampliada');
+const legenda = document.getElementById('legenda');
+document.querySelectorAll('.thumb').forEach(el=>{
+  el.addEventListener('click', ()=>{
+    imgAmpliada.src = el.src;
+    imgAmpliada.alt = el.alt || '';
+    legenda.textContent = el.dataset.caption || el.alt || '';
+    box.classList.add('open');
+  });
+});
+document.getElementById('fechar').addEventListener('click', ()=> box.classList.remove('open'));
+box.addEventListener('click', (e)=> { if(e.target===box) box.classList.remove('open'); });
+document.addEventListener('keydown', (e)=> { if(e.key==='Escape') box.classList.remove('open'); });
+</script>
 </body>
 </html>
