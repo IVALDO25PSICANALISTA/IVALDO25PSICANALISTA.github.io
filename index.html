@@ -2,133 +2,211 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva</title>
   <meta name="description" content="Filosofia Clínica, Psicanálise e Espiritualidade integradas por Ivaldo José da Silva.">
-<style>
-    /* Reset e base segura */
-    *,*::before,*::after{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;
-      color:#e6f0ff; background:linear-gradient(180deg,#0a0f1a,#1a2133);
-      min-height:100vh; display:flex; flex-direction:column;
-    }
-    a{color:#8ab4ff;text-decoration:none} a:hover{text-decoration:underline}
-
-    /* Header fixo */
-    .header{
-      position:sticky; top:0; z-index:10;
-      background:#0d1b2a; box-shadow:0 6px 16px rgba(0,0,0,.45);
-      backdrop-filter:saturate(120%) blur(4px);
-    }
-    .container{max-width:1100px;margin:0 auto;padding:12px 16px}
-    .brand{display:flex;align-items:center;gap:14px}
-    .brand img{max-height:64px;height:auto;width:auto;display:block;pointer-events:none}
-    .title{margin:0;font-size:1.25rem;color:#8ab4ff}
-    .subtitle{margin:2px 0 0 0;color:#b0c4de;font-size:.95rem}
-
-    /* Menu */
-    nav{margin-top:10px}
-    .nav{display:flex;flex-wrap:wrap;gap:10px}
-    .nav a{
-      background:#111827;border:1px solid #22324a;border-radius:10px;
-      padding:8px 12px;font-size:.95rem;line-height:1;
+  
+  <style>
+    /* ======== Estilo Base ======== */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #3b2f2f;
+      background: linear-gradient(180deg, #f9e0d4, #f5d2c4);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
     }
 
-    /* Área principal */
-    main{flex:1}
-    .grid{display:grid;gap:20px;grid-template-columns:1fr; padding:24px 16px}
-    @media(min-width:900px){.grid{grid-template-columns:1.2fr .8fr}}
-    .card{
-      background:#111827;border-radius:16px;padding:24px;
-      box-shadow:0 8px 22px rgba(0,0,0,.35)
+    header {
+      text-align: center;
+      margin-bottom: 40px;
     }
-    h2{color:#c3d3ff;margin:0 0 10px}
 
-    /* Lista limpa */
-    .list{margin:0;padding-left:18px}
-    .list li{margin:6px 0}
+    header img {
+      width: 140px;
+      border-radius: 50%;
+      border: 2px solid #a8746a;
+      box-shadow: 0 0 12px #b9806eaa;
+    }
 
-    /* Rodapé */
-    footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px}
+    h1 {
+      color: #8c3c2e;
+      font-size: 1.9rem;
+      margin-top: 10px;
+    }
+
+    h2 {
+      font-weight: 400;
+      color: #784c40;
+      margin-bottom: 30px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    nav a {
+      background: #f0c4b5;
+      border: 1px solid #d6a896;
+      color: #4a2f2f;
+      border-radius: 999px;
+      padding: 8px 16px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      background: #e9b09d;
+      transform: translateY(-2px);
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      max-width: 950px;
+      width: 100%;
+    }
+
+    section {
+      background: rgba(255, 255, 255, 0.7);
+      padding: 24px;
+      border-radius: 16px;
+      border: 1px solid #e2b8a9;
+      box-shadow: 0 0 14px rgba(0,0,0,.1);
+    }
+
+    section h3 {
+      color: #8c3c2e;
+      margin-bottom: 15px;
+    }
+
+    section p {
+      line-height: 1.7;
+      color: #4a2f2f;
+      font-size: 1rem;
+    }
+
+    a.link {
+      display: inline-block;
+      margin-top: 10px;
+      color: #a0553f;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a.link:hover {
+      text-decoration: underline;
+    }
+
+    /* ======== Botões Flutuantes ======== */
+    .fab-wrap {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 50;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .fab {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #f2b9a1;
+      color: #4a2f2f;
+      border: 1px solid #d89e8c;
+      border-radius: 999px;
+      padding: 10px 14px;
+      text-decoration: none;
+      font-size: .95rem;
+      box-shadow: 0 6px 16px rgba(0,0,0,.25);
+      transition: transform .15s ease, background .15s ease;
+    }
+
+    .fab:hover {
+      transform: translateY(-2px);
+      background: #ec9f87;
+    }
+
+    .fab .ico {
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      filter: invert(12%) sepia(18%) saturate(150%) hue-rotate(10deg) brightness(90%);
+    }
+
+    @media (max-width: 720px) {
+      main { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .fab span { display: none; }
+    }
+
+    footer {
+      margin-top: 40px;
+      color: #73463c;
+      font-size: .9rem;
+      text-align: center;
+    }
   </style>
 </head>
+
 <body>
-  <!-- TOPO -->
-  <header class="header" role="banner">
-    <div class="container">
-      <div class="brand">
-        <img src="logo.jpg" alt="Logo do Núcleo da Mente, Corpo e Alma">
-        <div>
-          <h1 class="title">Núcleo da Mente, Corpo e Alma</h1>
-          <p class="subtitle">Filosofia Clínica • Psicanálise • Espiritualidade</p>
-        </div>
-      </div>
-      <nav aria-label="principal">
-        <div class="nav">
-          <a href="terapia1.html">Psicanálise</a>
-          <a href="terapia2.html">Filosofia Clínica</a>
-          <a href="terapia3.html">Reiki</a>
-          <a href="foto/">Fotos</a>
-          <a href="wingchun.html">Wing Chun</a>
-          <a href="mailto:ivaldo25psicanalista@gmail.com">E-mail</a>
-          <a href="https://wa.me/5548999132828" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </nav>
-    </div>
+  <header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Tree_of_life.svg/256px-Tree_of_life.svg.png" alt="Símbolo da Consciência Integrada">
+    <h1>Núcleo da Mente, Corpo e Alma</h1>
+    <h2>Filosofia Clínica • Psicanálise • Espiritualidade</h2>
   </header>
 
-  <!-- CONTEÚDO -->
+  <nav>
+    <a href="#psicanalise">Psicanálise</a>
+    <a href="#filosofia">Filosofia Clínica</a>
+    <a href="#reiki">Reiki</a>
+    <a href="#wingchun">Wing Chun</a>
+    <a href="#fotos">Fotos</a>
+  </nav>
+
   <main>
-    <div class="container grid">
-      <section class="card">
-        <h2>Bem-vindo</h2>
-        <p>Atendimento integrativo que une pensamento, afeto e espírito — um cuidado profundo com a
-           singularidade de cada pessoa.</p>
-        <ul class="list">
-          <li><strong>Psicanálise:</strong> escuta clínica, elaboração de conflitos, reconstrução de sentido.</li>
-          <li><strong>Filosofia Clínica:</strong> investigação do modo de ser, projeto de vida e ética no cotidiano.</li>
-          <li><strong>Reiki:</strong> harmonização energética para ansiedade, estresse e reequilíbrio vital.</li>
-        </ul>
-      </section>
-<section class="card">
-  
-  <h2>Wing Chun</h2>
-  <p>
-    <!-- WING CHUN -->
-<section class="card">
-  <img src="foto/wingchun.jpg" alt="Wing Chun - Núcleo da Mente Corpo e Alma" style="width:100%;border-radius:12px;margin-bottom:14px;">
-  <h2>Wing Chun</h2>
-  <p>
-    Prática marcial chinesa que integra corpo e mente por meio da atenção plena,
-    respiração e economia de movimento. Desenvolve presença, estrutura e serenidade em ação.
-  </p>
-  <p><a href="wingchun.html">Saiba mais sobre Wing Chun →</a></p>
-</section>
-<!-- FIM WING CHUN -->
+    <section id="bemvindo">
+      <h3>Bem-vindo</h3>
+      <p>Atendimento integrativo que une pensamento, afeto e espírito — um cuidado profundo com a singularidade de cada pessoa.</p>
+      <p><strong>Psicanálise:</strong> escuta clínica, elaboração de conflitos e reconstrução de sentido.</p>
+      <p><strong>Filosofia Clínica:</strong> investigação do modo de ser, projeto de vida e ética no cotidiano.</p>
+      <p><strong>Reiki:</strong> harmonização energética para ansiedade, estresse e reequilíbrio vital.</p>
+    </section>
 
-    Prática marcial chinesa que integra corpo e mente por meio da atenção plena,
-    respiração e economia de movimento. Desenvolve presença, estrutura e serenidade em ação.
-  </p>
-  <p><a href="wingchun.html">Saiba mais sobre Wing Chun →</a></p>
-</section>
-
-      <aside class="card">
-        <h2>Contato</h2>
-        <p>
-          📍 Rua Saturno, 21 — Lagoa dos Freitas, Baln. Rincão-SC<br>
-          ✉️ <a href="mailto:ivaldo25psicanalista@gmail.com">ivaldo25psicanalista@gmail.com</a><br>
-          📱 <a href="https://wa.me/5548999132828" target="_blank" rel="noopener">(48) 99913-2828</a>
-        </p>
-        <p>Atendimentos presenciais e on-line.</p>
-      </aside>
-    </div>
+    <section id="wingchun">
+      <h3>Wing Chun</h3>
+      <p>Prática marcial chinesa que integra corpo e mente por meio da atenção plena, respiração e economia de movimento. Desenvolve presença, estrutura e serenidade em ação.</p>
+      <a href="#" class="link">Saiba mais sobre Wing Chun →</a>
+    </section>
   </main>
 
-  <!-- RODAPÉ -->
+  <div class="fab-wrap">
+    <a class="fab" href="mailto:ivaldojsilva@gmail.com">
+      <img class="ico" src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="">
+      <span>E-mail</span>
+    </a>
+    <a class="fab" href="https://wa.me/5548999132828" target="_blank">
+      <img class="ico" src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="">
+      <span>WhatsApp</span>
+    </a>
+  </div>
+
   <footer>
-    © 2025 Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva
+    © 2025 Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva  
+    <br>Rua Saturno, 21 · Lagoa dos Freitas · Balneário Rincão - SC
   </footer>
 </body>
 </html>
