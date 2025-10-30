@@ -65,19 +65,34 @@ footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px;margin-to
 <footer>© 2025 Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva</footer>
 
 <script>
-/* === JS do lightbox === */
-const box=document.getElementById('box');
-const big=document.getElementById('img-ampliada');
-const cap=document.getElementById('legenda');
-document.querySelectorAll('.thumb').forEach(img=>{
-  img.addEventListener('click',()=>{
-    big.src=img.src; big.alt=img.alt||''; cap.textContent=img.dataset.caption||img.alt||'';
+const box = document.getElementById('box');
+const big = document.getElementById('img-ampliada');
+const cap = document.getElementById('legenda');
+
+document.querySelectorAll('.thumb').forEach(img => {
+  img.addEventListener('click', e => {
+    e.stopPropagation(); // impede que o clique feche o lightbox
+    big.src = img.src;
+    big.alt = img.alt || '';
+    cap.textContent = img.dataset.caption || img.alt || '';
     box.classList.add('open');
   });
 });
-document.getElementById('fechar').addEventListener('click',()=>box.classList.remove('open'));
-box.addEventListener('click',e=>{ if(e.target===box) box.classList.remove('open'); });
-document.addEventListener('keydown',e=>{ if(e.key==='Escape') box.classList.remove('open'); });
+
+document.getElementById('fechar').addEventListener('click', e => {
+  e.stopPropagation();
+  box.classList.remove('open');
+});
+
+box.addEventListener('click', e => {
+  // só fecha se clicar fora da imagem
+  if (e.target === box) box.classList.remove('open');
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') box.classList.remove('open');
+});
 </script>
+
 </body>
 </html>
