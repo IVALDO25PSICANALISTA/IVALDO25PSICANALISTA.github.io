@@ -1,13 +1,83 @@
 <!doctype html>
 <html lang="pt-BR">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Galeria de Fotos — Teste</title>
-<body style="margin:0;font-family:system-ui,Arial;background:#0a0f1a;color:#e6f0ff">
-  <div style="padding:16px">
-    <h1>Galeria funcionando ✅</h1>
-    <p>Se você está vendo esta página, o caminho <code>/foto/</code> está correto.</p>
-    <p><a href="../">Voltar ao início</a></p>
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Galeria de Fotos — Núcleo da Mente, Corpo e Alma</title>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:#0a0f1a;color:#e6f0ff}
+a{color:#8ab4ff;text-decoration:none} a:hover{text-decoration:underline}
+.header{background:#0d1b2a;box-shadow:0 6px 16px rgba(0,0,0,.45)}
+.container{max-width:1100px;margin:0 auto;padding:16px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{max-height:56px;height:auto;pointer-events:none}
+.title{margin:0;font-size:1.2rem;color:#8ab4ff}
+
+/* grade de fotos */
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));margin-top:20px}
+.card{background:#111827;border-radius:14px;padding:10px;box-shadow:0 6px 16px rgba(0,0,0,.4)}
+.thumb{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px;cursor:pointer;display:block;transition:transform .3s}
+.thumb:hover{transform:scale(1.05)}
+
+/* lightbox */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;padding:16px;z-index:50}
+.lightbox.open{display:flex}
+.lightbox img{max-width:95vw;max-height:90vh;border-radius:10px}
+.lightbox .close{position:absolute;top:16px;right:16px;background:#111827;border:1px solid #22324a;color:#e6f0ff;border-radius:999px;padding:6px 10px;cursor:pointer}
+.caption{margin-top:10px;color:#cbd5e1;text-align:center}
+footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px;margin-top:24px}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <div class="brand">
+      <img src="../logo.jpg" alt="Logo do Núcleo">
+      <div><h1 class="title">Galeria de Fotos</h1><div>Voltar: <a href="../">Início</a></div></div>
+    </div>
   </div>
+</header>
+
+<main class="container">
+  <p>Alguns registros do espaço terapêutico e símbolos do trabalho com mente, corpo e alma.</p>
+
+  <!-- Suba suas fotos na pasta /foto e troque os nomes abaixo -->
+  <div class="grid">
+    <div class="card"><img class="thumb" src="foto1.jpg" alt="Sala de atendimento" data-caption="Sala de atendimento"></div>
+    <div class="card"><img class="thumb" src="foto2.jpg" alt="Espaço Reiki" data-caption="Espaço Reiki"></div>
+    <div class="card"><img class="thumb" src="foto3.jpg" alt="Ambiente terapêutico" data-caption="Ambiente terapêutico"></div>
+    <div class="card"><img class="thumb" src="foto4.jpg" alt="Símbolos espirituais" data-caption="Símbolos espirituais"></div>
+  </div>
+
+  <p style="margin-top:12px;opacity:.8">Dica: use nomes simples como <code>foto1.jpg</code>, <code>foto2.jpg</code>, <code>reiki.jpg</code>.  
+  Evite espaços e acentos.</p>
+</main>
+
+<!-- Lightbox -->
+<div class="lightbox" id="box">
+  <button class="close" id="fechar" aria-label="Fechar">✕</button>
+  <div>
+    <img id="img-ampliada" alt="">
+    <div class="caption" id="legenda"></div>
+  </div>
+</div>
+
+<footer>© 2025 Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva</footer>
+
+<script>
+const box=document.getElementById('box');
+const img=document.getElementById('img-ampliada');
+const caption=document.getElementById('legenda');
+document.querySelectorAll('.thumb').forEach(el=>{
+  el.addEventListener('click',()=>{
+    img.src=el.src;
+    caption.textContent=el.dataset.caption||el.alt||'';
+    box.classList.add('open');
+  });
+});
+document.getElementById('fechar').addEventListener('click',()=>box.classList.remove('open'));
+box.addEventListener('click',e=>{if(e.target===box)box.classList.remove('open')});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')box.classList.remove('open')});
+</script>
 </body>
 </html>
