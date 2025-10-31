@@ -6,67 +6,73 @@
   <title>Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva</title>
   <meta name="description" content="Filosofia Clínica, Psicanálise e Espiritualidade integradas por Ivaldo José da Silva.">
   <style>
+    /* ===== Base e tema A (pergaminho iluminado) ===== */
     *,*::before,*::after{box-sizing:border-box}
     html,body{margin:0;padding:0}
     body{
       font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;
-      color:#21372a;
-      background:linear-gradient(180deg,#e6f7ea,#d8f0dc,#cde8d2);
+      color:#2f2a19; /* texto principal */
+      background:linear-gradient(180deg,#FAF6E9,#F5EED2,#EFE6C6); /* pergaminho */
       min-height:100vh; display:flex; flex-direction:column;
     }
-    a{color:#705e17;text-decoration:none} a:hover{text-decoration:underline}
+    a{color:#7A6414;text-decoration:none}
+    a:hover{text-decoration:underline}
 
-    /* Cabeçalho */
+    /* ===== Cabeçalho com duas logos (esq pequena, dir grande) ===== */
     .header{
       position:sticky; top:0; z-index:10;
-      background:linear-gradient(90deg,#f6f3df,#e9e1ba);
-      box-shadow:0 4px 20px rgba(0,0,0,.15);
+      background:linear-gradient(90deg,#FFF8D8,#F2E6A8);
+      box-shadow:0 4px 20px rgba(0,0,0,.12);
     }
     .container{max-width:1100px;margin:0 auto;padding:12px 16px}
     .brand{
       display:flex;align-items:center;justify-content:space-between;
       gap:14px;flex-wrap:wrap;
     }
-    .logo-esq,.logo-dir{
-      max-height:70px;height:auto;width:auto;display:block;pointer-events:none;
-      transition:transform .3s ease;
-    }
-    .logo-esq:hover,.logo-dir:hover{transform:scale(1.05)}
-    .title{margin:0;font-size:1.3rem;color:#5e4c0b;text-align:center;width:100%}
-    .subtitle{margin:2px 0 0 0;color:#7b6d25;font-size:.95rem;text-align:center;width:100%}
+    /* Tamanhos das logos */
+    .logo-small{max-height:58px;height:auto;width:auto;display:block;pointer-events:none;transition:transform .25s}
+    .logo-large{max-height:92px;height:auto;width:auto;display:block;pointer-events:none;transition:transform .25s}
+    .logo-small:hover,.logo-large:hover{transform:scale(1.04)}
 
-    /* Menu */
+    /* Títulos centrais */
+    .title-wrap{text-align:center;flex:1 1 300px}
+    .title{margin:0;font-size:1.35rem;color:#5e4c0b}
+    .subtitle{margin:4px 0 0 0;color:#7b6d25;font-size:.97rem}
+
+    /* ===== Menu ===== */
     nav{margin-top:10px;text-align:center}
     .nav{display:inline-flex;flex-wrap:wrap;gap:10px;justify-content:center}
     .nav a{
-      background:#f8f5dc;border:1px solid #c8b356;border-radius:10px;
-      padding:8px 12px;font-size:.95rem;line-height:1;
-      color:#5c4d11;
-      transition:background .3s ease,color .3s ease;
+      background:#FFF4C6;border:1px solid #C8B356;border-radius:10px;
+      padding:8px 12px;font-size:.95rem;line-height:1;color:#5C4D11;
+      transition:background .25s,color .25s,transform .15s;
     }
-    .nav a:hover{background:#f1e7b8;color:#3c3109}
+    .nav a:hover{background:#F0E39A;color:#3C3109;transform:translateY(-1px)}
 
-    /* Área principal */
+    /* ===== Conteúdo ===== */
     main{flex:1}
     .grid{display:grid;gap:20px;grid-template-columns:1fr; padding:24px 16px}
     @media(min-width:900px){.grid{grid-template-columns:1.2fr .8fr}}
     .card{
-      background:#faf9f2;border:1px solid #e0d091;border-radius:16px;
-      padding:24px; box-shadow:0 8px 22px rgba(0,0,0,.1)
+      background:#FFFCF1;border:1px solid #E6D68F;border-radius:16px;
+      padding:24px; box-shadow:0 8px 22px rgba(0,0,0,.08)
     }
-    h2{color:#705e17;margin:0 0 10px}
+    h2{color:#705E17;margin:0 0 10px}
 
-    /* Lista */
+    /* Listas */
     .list{margin:0;padding-left:18px}
     .list li{margin:6px 0}
 
-    /* Rodapé */
+    /* ===== Rodapé ===== */
     footer{
-      background:#f6f3df;
-      color:#675915;
-      text-align:center;
-      padding:16px;
-      border-top:1px solid #d8c377;
+      background:#FFF8D8;color:#6B5D14;text-align:center;
+      padding:16px;border-top:1px solid #D8C377
+    }
+
+    /* ===== Responsividade ===== */
+    @media (max-width:640px){
+      .logo-small{max-height:52px}
+      .logo-large{max-height:68px} /* menor no celular para não ocupar muito */
     }
   </style>
 </head>
@@ -75,17 +81,17 @@
   <header class="header" role="banner">
     <div class="container">
       <div class="brand">
-        <!-- Logo esquerda -->
-        <img src="logo.jpg" alt="Logo do Núcleo - esquerda" class="logo-esq">
-        
+        <!-- Logo esquerda (pequena) -->
+        <img src="logo.jpg" alt="Logo do Núcleo — pequena" class="logo-small">
+
         <!-- Títulos centrais -->
-        <div>
+        <div class="title-wrap">
           <h1 class="title">Núcleo da Mente, Corpo e Alma</h1>
           <p class="subtitle">Filosofia Clínica • Psicanálise • Espiritualidade</p>
         </div>
 
-        <!-- Logo direita -->
-        <img src="logo.jpg" alt="Logo do Núcleo - direita" class="logo-dir">
+        <!-- Logo direita (grande) -->
+        <img src="logo.jpg" alt="Logo do Núcleo — grande" class="logo-large">
       </div>
 
       <nav aria-label="principal">
@@ -108,7 +114,8 @@
     <div class="container grid">
       <section class="card">
         <h2>Bem-vindo</h2>
-        <p>Atendimento integrativo que une pensamento, afeto e espírito — um cuidado profundo com a singularidade de cada pessoa.</p>
+        <p>Atendimento integrativo que une pensamento, afeto e espírito — um cuidado profundo com a
+           singularidade de cada pessoa.</p>
         <ul class="list">
           <li><strong>Psicanálise:</strong> escuta clínica, elaboração de conflitos, reconstrução de sentido.</li>
           <li><strong>Filosofia Clínica:</strong> investigação do modo de ser, projeto de vida e ética no cotidiano.</li>
