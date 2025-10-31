@@ -14,166 +14,146 @@
       --azul: #1f4fa8;
       --azul-claro: #6aa4ff;
       --prata: #cfd8e3;
-      --prata-2: #e6ebf3;
       --texto: #0b1220;
-      --vidro: rgba(255, 255, 255, 0.28);      /* camada translúcida */
+      --vidro: rgba(255, 255, 255, 0.25);
       --borda-vidro: rgba(255, 255, 255, 0.45);
       --sombra-vidro: rgba(15, 31, 58, 0.25);
-      --grad-1: #0f1f3a;
-      --grad-2: #1f4fa8;
-      --grad-3: #6aa4ff;
     }
-    *{ box-sizing: border-box }
-    html{ scroll-behavior: smooth }
+    *{ box-sizing: border-box; margin:0; padding:0 }
+    html{ scroll-behavior:smooth }
     body{
-      margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", sans-serif;
-      color: var(--texto); line-height:1.6;
-      /* Fundo com leve textura + gradiente; a transparência acontece nas seções (glass) e num véu sutil global */
-      background:
-        radial-gradient(1200px 1200px at 10% -10%, rgba(255,255,255,.08), transparent 60%),
-        radial-gradient(900px 900px at 110% 10%, rgba(255,255,255,.08), transparent 60%),
-        linear-gradient(135deg, var(--grad-1), var(--grad-2) 45%, var(--grad-3));
+      font-family:'Inter',sans-serif;
+      color:var(--texto);
+      background: linear-gradient(135deg, var(--azul-escuro), var(--azul));
       min-height:100vh;
-      position:relative;
-      overflow-x: hidden;
+      overflow-x:hidden;
     }
-    /* Véu translúcido geral para "amansar" o fundo sem perder o gradiente */
     body::before{
-      content:""; position:fixed; inset:0; pointer-events:none;
-      background: rgba(255,255,255,0.06);
-      backdrop-filter: blur(2px);
+      content:""; position:fixed; inset:0;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(3px);
+      z-index:-1;
     }
 
     /* NAV */
-    .nav{
-      position:sticky; top:0; z-index:50;
-      display:flex; align-items:center; justify-content:space-between;
-      padding: .6rem 1rem;
-      margin: 0 auto;
-      max-width:1200px;
-    }
     .nav-wrap{
-      position:sticky; top:0; z-index:60;
-      background: rgba(255,255,255,0.18);      /* transparência no topo também */
-      backdrop-filter: saturate(140%) blur(10px);
-      border-bottom: 1px solid rgba(255,255,255,0.35);
-      box-shadow: 0 8px 18px -12px rgba(15, 31, 58, 0.35);
+      position:sticky; top:0; z-index:10;
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(8px);
+      border-bottom:1px solid rgba(255,255,255,0.25);
+      box-shadow:0 4px 10px rgba(0,0,0,0.25);
+    }
+    .nav{
+      max-width:1200px; margin:0 auto;
+      display:flex; justify-content:space-between; align-items:center;
+      padding:0.6rem 1rem;
     }
     .brand{
-      display:flex; align-items:center; gap:.6rem; text-decoration:none; color:#fff;
-      font-weight:800; letter-spacing:.2px;
-      text-shadow: 0 1px 2px rgba(0,0,0,.25);
+      display:flex; align-items:center; gap:.6rem;
+      color:#fff; text-decoration:none; font-weight:800;
     }
     .brand img{
-      width:38px; height:38px; object-fit:contain; border-radius:10px;
-      background: rgba(255,255,255,0.35); padding:4px;
-      backdrop-filter: blur(3px);
-      border:1px solid rgba(255,255,255,0.55);
-      box-shadow: 0 6px 14px -6px rgba(15,31,58,.5);
+      width:40px; height:40px; object-fit:contain;
     }
     .menu{ display:flex; gap:1rem; }
     .menu a{
-      text-decoration:none; color:#fff; font-weight:600; padding:.4rem .7rem; border-radius:12px;
-      border: 1px solid rgba(255,255,255,0.25);
-      background: rgba(255,255,255,0.10);
-      backdrop-filter: blur(6px);
-      transition: transform .15s ease, background .2s ease, border-color .2s ease;
-      text-shadow: 0 1px 2px rgba(0,0,0,.25);
+      color:#fff; text-decoration:none; font-weight:600;
+      background: rgba(255,255,255,0.15);
+      padding:.4rem .8rem; border-radius:12px;
+      border:1px solid rgba(255,255,255,0.25);
+      transition:.2s;
     }
-    .menu a:hover{ background: rgba(255,255,255,0.18); border-color: rgba(255,255,255,0.45); transform: translateY(-1px); }
+    .menu a:hover{
+      background: rgba(255,255,255,0.25);
+    }
 
     /* HERO */
     .hero{
-      max-width:1100px; margin: clamp(24px, 3vw, 48px) auto 24px; padding: 24px;
-      display:grid; grid-template-columns: 1fr; gap: 20px; place-items:center; text-align:center;
+      text-align:center; color:#fff; padding:2rem 1rem;
     }
     .logo-lg{
-      width:min(220px, 60vw); height:auto; object-fit:contain;
-      background: rgba(255,255,255,0.35); padding:10px; border-radius:22px;
-      border: 1px solid rgba(255,255,255,0.6);
-      backdrop-filter: blur(6px);
-      box-shadow: 0 18px 30px -12px rgba(15,31,58,.45);
+      width:min(250px, 70vw);
+      height:auto;
+      margin-bottom:1rem;
+      object-fit:contain;
     }
     .hero h1{
-      margin:.4rem 0 0; font-size: clamp(1.6rem, 3vw, 2.2rem); color:#fff; font-weight:800;
-      text-shadow: 0 2px 10px rgba(0,0,0,.35);
+      font-size:clamp(1.6rem,3vw,2.2rem);
+      font-weight:800;
     }
     .hero p{
-      font-size: clamp(1rem, 1.7vw, 1.15rem); color: #eef3ff; max-width: 820px; margin: 8px auto 0;
-      text-shadow: 0 1px 2px rgba(0,0,0,.35);
+      font-size:clamp(1rem,1.5vw,1.2rem);
+      max-width:800px; margin:0.5rem auto 0;
+      color:#eef3ff;
     }
 
-    /* GRID SEÇÕES */
-    .container{ max-width:1100px; margin: 0 auto 80px; padding: 0 18px; }
-    .grid{
-      display:grid; gap:18px;
-      grid-template-columns: repeat(12, 1fr);
-    }
-
-    /* Cartões com GLASSMORPHISM */
+    /* SEÇÕES */
+    .container{ max-width:1100px; margin:0 auto; padding:1rem; }
+    .grid{ display:grid; gap:1rem; grid-template-columns:repeat(12,1fr); }
     .glass{
       grid-column: span 12;
       background: var(--vidro);
-      border: 1px solid var(--borda-vidro);
-      border-radius: 20px;
-      padding: clamp(16px, 2vw, 22px);
-      backdrop-filter: saturate(160%) blur(14px);
-      box-shadow:
-        0 12px 26px -12px var(--sombra-vidro),
-        inset 0 1px 0 rgba(255,255,255,0.35);
+      border:1px solid var(--borda-vidro);
+      border-radius:20px;
+      padding:1.2rem;
+      backdrop-filter:blur(10px);
+      box-shadow:0 10px 20px rgba(0,0,0,0.25);
+      color:#0f1f3a;
     }
-    .glass h2{
-      margin:0 0 6px; font-size: clamp(1.2rem, 2.2vw, 1.5rem); color:#0e1a30; letter-spacing:.2px
+    .glass h2{ margin-bottom:.5rem; }
+    .glass p{ margin-bottom:.5rem; }
+
+    @media(min-width:720px){
+      .col-6{ grid-column:span 6; }
+      .col-4{ grid-column:span 4; }
+      .col-8{ grid-column:span 8; }
     }
-    .glass p{ margin:.4rem 0 0; color:#13213b }
+
     .pill{
-      display:inline-block; font-size:.85rem; font-weight:700; letter-spacing:.3px;
-      color: #0e2a66; background: rgba(106,164,255,.35);
-      border:1px solid rgba(255,255,255,0.6);
-      padding:.35rem .6rem; border-radius:999px; margin-bottom:.6rem;
-      backdrop-filter: blur(6px);
+      display:inline-block;
+      background:rgba(255,255,255,0.4);
+      color:#0b1220;
+      font-weight:700;
+      font-size:.85rem;
+      border-radius:999px;
+      padding:.3rem .6rem;
+      margin-bottom:.6rem;
     }
 
-    /* Layout responsivo das colunas */
-    @media (min-width: 720px){
-      .col-6{ grid-column: span 6; }
-      .col-4{ grid-column: span 4; }
-      .col-8{ grid-column: span 8; }
-    }
-
-    /* BOTÕES */
     .btn{
-      display:inline-block; text-decoration:none; font-weight:800;
-      background: linear-gradient(135deg, #ffffff88, #ffffff55);
-      color:#0b1630; border:1px solid rgba(255,255,255,0.6); padding:.7rem 1rem; border-radius:14px;
-      backdrop-filter: blur(10px); transition: transform .15s ease, box-shadow .2s ease;
-      box-shadow: 0 10px 18px -10px rgba(14,26,48,.5), inset 0 1px 0 rgba(255,255,255,.6);
+      display:inline-block;
+      text-decoration:none;
+      background:rgba(255,255,255,0.3);
+      color:#0f1f3a;
+      font-weight:700;
+      padding:.6rem 1rem;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,0.5);
+      transition:.2s;
     }
-    .btn:hover{ transform: translateY(-1px); box-shadow: 0 14px 22px -10px rgba(14,26,48,.55) }
+    .btn:hover{
+      background:rgba(255,255,255,0.5);
+    }
 
-    /* RODAPÉ */
     footer{
-      margin-top: 60px; padding: 26px 18px; text-align:center; color:#e9f0ff;
-      background: rgba(255,255,255,0.10); border-top: 1px solid rgba(255,255,255,0.35);
-      backdrop-filter: blur(8px);
+      text-align:center;
+      color:#f0f6ff;
+      padding:1.5rem 1rem;
+      background:rgba(255,255,255,0.1);
+      border-top:1px solid rgba(255,255,255,0.25);
+      backdrop-filter:blur(8px);
+      margin-top:3rem;
     }
-    .contatos{ color:#f1f5ff }
-    .contatos a{ color:#ffffff; text-decoration:none; font-weight:700 }
-    .contatos a:hover{ text-decoration:underline }
-
-    /* Acessibilidade básica de foco */
-    a:focus-visible, button:focus-visible{
-      outline: 3px solid #e6f0ff; outline-offset: 2px; border-radius: 10px;
-    }
+    .contatos a{ color:#fff; text-decoration:none; }
+    .contatos a:hover{ text-decoration:underline; }
   </style>
 </head>
 <body>
-  <!-- NAVBAR com logo pequena à esquerda -->
+
   <div class="nav-wrap">
-    <nav class="nav" role="navigation" aria-label="Principal">
-      <a class="brand" href="#topo" aria-label="Início">
-        <!-- TROQUE AQUI a logo pequena -->
-        <img src="/assets/logo-small.png" alt="Logo pequena - Núcleo Mente Corpo e Alma">
+    <nav class="nav">
+      <a class="brand" href="#topo">
+        <img src="logo-small.png" alt="Logo pequena">
         <span>Núcleo da Mente, Corpo e Alma</span>
       </a>
       <div class="menu">
@@ -185,22 +165,20 @@
     </nav>
   </div>
 
-  <!-- HERO com logo grande central -->
-  <header id="topo" class="hero" role="banner">
-    <!-- TROQUE AQUI a logo grande -->
-    <img class="logo-lg" src="/assets/logo-large.png" alt="Logo grande - Núcleo Mente Corpo e Alma">
+  <header id="topo" class="hero">
+    <img class="logo-lg" src="logo-large.png" alt="Logo grande">
     <h1>Equilíbrio entre Razão e Espiritualidade</h1>
     <p>Psicanálise, Filosofia Clínica e Terapias Integrativas em sinergia para acolher, compreender e transformar — com ética, técnica e espiritualidade.</p>
   </header>
 
-  <main class="container" role="main">
-    <section id="sobre" class="grid" aria-labelledby="sobre-titulo">
+  <main class="container">
+    <section id="sobre" class="grid">
       <article class="glass col-8">
         <span class="pill">Sobre o Núcleo</span>
-        <h2 id="sobre-titulo">Cuidar da mente, do corpo e da alma</h2>
-        <p>Atendimento clínico e mentoria terapêutica com foco em <strong>Psicanálise</strong>, <strong>Filosofia Clínica</strong> e integração de práticas como <em>Reiki</em>, meditações guiadas e rituais simbólicos. Um espaço para escuta profunda, elaboração e construção de sentido.</p>
+        <h2>Cuidar da mente, do corpo e da alma</h2>
+        <p>Atendimento clínico e mentoria terapêutica com foco em <strong>Psicanálise</strong>, <strong>Filosofia Clínica</strong> e integração de práticas como <em>Reiki</em>, meditações guiadas e rituais simbólicos. Um espaço para escuta profunda e construção de sentido.</p>
       </article>
-      <aside class="glass col-4" aria-label="Destaque">
+      <aside class="glass col-4">
         <span class="pill">Atuação</span>
         <h2>Presencial & Online</h2>
         <p>Atendimentos individuais, casais, grupos e empresas. Planos personalizados e acompanhamento contínuo.</p>
@@ -208,16 +186,16 @@
       </aside>
     </section>
 
-    <section id="servicos" class="grid" aria-labelledby="servicos-titulo">
+    <section id="servicos" class="grid">
       <article class="glass col-4">
         <span class="pill">Clínica</span>
-        <h2 id="servicos-titulo">Psicanálise</h2>
-        <p>Processos de autoconhecimento, elaboração de sintomas, lutos e conflitos, com ética e técnica.</p>
+        <h2>Psicanálise</h2>
+        <p>Processos de autoconhecimento, elaboração de sintomas e conflitos, com ética e técnica.</p>
       </article>
       <article class="glass col-4">
         <span class="pill">Filosofia</span>
         <h2>Filosofia Clínica</h2>
-        <p>Investigação do modo de ser, mapa de estrutura do pensamento e estratégias de convivência.</p>
+        <p>Investigação do modo de ser, mapa de estrutura do pensamento e convivência existencial.</p>
       </article>
       <article class="glass col-4">
         <span class="pill">Integração</span>
@@ -226,10 +204,10 @@
       </article>
     </section>
 
-    <section id="abordagem" class="grid" aria-labelledby="abordagem-titulo">
+    <section id="abordagem" class="grid">
       <article class="glass col-6">
         <span class="pill">Método</span>
-        <h2 id="abordagem-titulo">Tríade: Real, Simbólico e Imaginário</h2>
+        <h2>Tríade: Real, Simbólico e Imaginário</h2>
         <p>Integramos escuta psicanalítica, reflexão filosófica e práticas simbólicas para sustentar processos de cura e sentido existencial.</p>
       </article>
       <article class="glass col-6">
@@ -239,19 +217,33 @@
       </article>
     </section>
 
-    <section id="contato" class="grid" aria-labelledby="contato-titulo">
+    <section id="contato" class="grid">
       <article class="glass col-8">
         <span class="pill">Contato</span>
-        <h2 id="contato-titulo">Fale comigo</h2>
+        <h2>Fale comigo</h2>
         <p class="contatos">
-          WhatsApp: <a href="https://wa.me/5548999132828" target="_blank" rel="noopener">+55 48 99913-2828</a><br>
+          WhatsApp: <a href="https://wa.me/5548999132828" target="_blank">+55 48 99913-2828</a><br>
           Endereço: Rua Saturno, 21 – Lagoa dos Freitas, Balneário Rincão – SC<br>
           E-mail: <a href="mailto:atendimento@nucleomentecorpoealma.com">atendimento@nucleomentecorpoealma.com</a>
         </p>
         <p><a class="btn" href="mailto:atendimento@nucleomentecorpoealma.com">Quero agendar</a></p>
       </article>
-      <aside class="glass col-4" aria-label="Redes">
+      <aside class="glass col-4">
         <span class="pill">Redes</span>
         <h2>Conecte-se</h2>
-        <p><a class="btn" href="#" aria-label="Instagram">Instagram</a></p>
-        <p><a cl
+        <p><a class="btn" href="#">Instagram</a></p>
+        <p><a class="btn" href="#">LinkedIn</a></p>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="ano"></span> Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva. Azul & Prata.
+  </footer>
+
+  <script>
+    document.getElementById('ano').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
