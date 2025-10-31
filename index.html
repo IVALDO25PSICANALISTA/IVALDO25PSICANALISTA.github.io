@@ -10,150 +10,88 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --azul-escuro: #0f1f3a;
-      --azul: #1f4fa8;
-      --azul-claro: #6aa4ff;
-      --prata: #cfd8e3;
-      --texto: #0b1220;
-      --vidro: rgba(255, 255, 255, 0.25);
-      --borda-vidro: rgba(255, 255, 255, 0.45);
-      --sombra-vidro: rgba(15, 31, 58, 0.25);
+      --azul-escuro:#0f1f3a; --azul:#1f4fa8; --azul-claro:#6aa4ff;
+      --texto:#0b1220; --vidro:rgba(255,255,255,.25);
+      --borda-vidro:rgba(255,255,255,.45);
     }
-    *{ box-sizing: border-box; margin:0; padding:0 }
-    html{ scroll-behavior:smooth }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
     body{
-      font-family:'Inter',sans-serif;
-      color:var(--texto);
+      font-family:Inter,system-ui,Arial,sans-serif;color:var(--texto);
       background: linear-gradient(135deg, var(--azul-escuro), var(--azul));
-      min-height:100vh;
-      overflow-x:hidden;
+      min-height:100vh; overflow-x:hidden;
     }
     body::before{
-      content:""; position:fixed; inset:0;
-      background: rgba(255,255,255,0.08);
-      backdrop-filter: blur(3px);
-      z-index:-1;
+      content:""; position:fixed; inset:0; z-index:-1;
+      background: rgba(255,255,255,.08); backdrop-filter: blur(3px);
     }
 
-    /* NAV */
+    /* NAV translúcida */
     .nav-wrap{
       position:sticky; top:0; z-index:10;
-      background: rgba(255,255,255,0.12);
-      backdrop-filter: blur(8px);
-      border-bottom:1px solid rgba(255,255,255,0.25);
-      box-shadow:0 4px 10px rgba(0,0,0,0.25);
+      background: rgba(255,255,255,.12); backdrop-filter: blur(8px);
+      border-bottom:1px solid rgba(255,255,255,.25);
+      box-shadow:0 4px 10px rgba(0,0,0,.25);
     }
     .nav{
-      max-width:1200px; margin:0 auto;
-      display:flex; justify-content:space-between; align-items:center;
-      padding:0.6rem 1rem;
+      max-width:1200px; margin:0 auto; padding:.6rem 1rem;
+      display:flex; align-items:center; justify-content:space-between;
     }
-    .brand{
-      display:flex; align-items:center; gap:.6rem;
-      color:#fff; text-decoration:none; font-weight:800;
-    }
-    .brand img{
-      width:40px; height:40px; object-fit:contain;
-    }
-    .menu{ display:flex; gap:1rem; }
+    .brand{display:flex; align-items:center; gap:.6rem; color:#fff; text-decoration:none; font-weight:800}
+    .brand img{width:40px;height:40px;object-fit:contain}
+    .menu{display:flex;gap:1rem}
     .menu a{
       color:#fff; text-decoration:none; font-weight:600;
-      background: rgba(255,255,255,0.15);
-      padding:.4rem .8rem; border-radius:12px;
-      border:1px solid rgba(255,255,255,0.25);
-      transition:.2s;
+      background: rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.25);
+      padding:.4rem .8rem; border-radius:12px; transition:.2s;
     }
-    .menu a:hover{
-      background: rgba(255,255,255,0.25);
-    }
+    .menu a:hover{background:rgba(255,255,255,.25)}
 
     /* HERO */
-    .hero{
-      text-align:center; color:#fff; padding:2rem 1rem;
-    }
-    .logo-lg{
-      width:min(250px, 70vw);
-      height:auto;
-      margin-bottom:1rem;
-      object-fit:contain;
-    }
-    .hero h1{
-      font-size:clamp(1.6rem,3vw,2.2rem);
-      font-weight:800;
-    }
-    .hero p{
-      font-size:clamp(1rem,1.5vw,1.2rem);
-      max-width:800px; margin:0.5rem auto 0;
-      color:#eef3ff;
-    }
+    .hero{ text-align:center; color:#fff; padding:2rem 1rem }
+    .logo-lg{ width:min(250px,70vw); height:auto; object-fit:contain; margin-bottom:1rem }
+    .hero h1{ font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800 }
+    .hero p{ font-size:clamp(1rem,1.5vw,1.2rem); max-width:800px; margin:.5rem auto 0; color:#eef3ff }
 
-    /* SEÇÕES */
-    .container{ max-width:1100px; margin:0 auto; padding:1rem; }
-    .grid{ display:grid; gap:1rem; grid-template-columns:repeat(12,1fr); }
+    /* Conteúdo */
+    .container{ max-width:1100px; margin:0 auto; padding:1rem }
+    .grid{ display:grid; gap:1rem; grid-template-columns:repeat(12,1fr) }
     .glass{
-      grid-column: span 12;
-      background: var(--vidro);
-      border:1px solid var(--borda-vidro);
-      border-radius:20px;
-      padding:1.2rem;
-      backdrop-filter:blur(10px);
-      box-shadow:0 10px 20px rgba(0,0,0,0.25);
-      color:#0f1f3a;
+      grid-column:span 12; background:var(--vidro); backdrop-filter:blur(10px);
+      border:1px solid var(--borda-vidro); border-radius:20px; padding:1.2rem;
+      box-shadow:0 10px 20px rgba(0,0,0,.25); color:#0f1f3a;
     }
-    .glass h2{ margin-bottom:.5rem; }
-    .glass p{ margin-bottom:.5rem; }
-
-    @media(min-width:720px){
-      .col-6{ grid-column:span 6; }
-      .col-4{ grid-column:span 4; }
-      .col-8{ grid-column:span 8; }
-    }
-
-    .pill{
-      display:inline-block;
-      background:rgba(255,255,255,0.4);
-      color:#0b1220;
-      font-weight:700;
-      font-size:.85rem;
-      border-radius:999px;
-      padding:.3rem .6rem;
-      margin-bottom:.6rem;
-    }
-
-    .btn{
-      display:inline-block;
-      text-decoration:none;
-      background:rgba(255,255,255,0.3);
-      color:#0f1f3a;
-      font-weight:700;
-      padding:.6rem 1rem;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,0.5);
-      transition:.2s;
-    }
-    .btn:hover{
-      background:rgba(255,255,255,0.5);
-    }
+    .glass h2{ margin-bottom:.5rem }
+    .glass p{ margin-bottom:.5rem }
+    @media(min-width:720px){ .col-6{grid-column:span 6} .col-4{grid-column:span 4} .col-8{grid-column:span 8} }
+    .pill{ display:inline-block; background:rgba(255,255,255,.4); color:#0b1220; font-weight:700; font-size:.85rem; border-radius:999px; padding:.3rem .6rem; margin-bottom:.6rem }
+    .btn{ display:inline-block; text-decoration:none; background:rgba(255,255,255,.3); color:#0f1f3a; font-weight:700; padding:.6rem 1rem; border-radius:12px; border:1px solid rgba(255,255,255,.5); transition:.2s }
+    .btn:hover{ background:rgba(255,255,255,.5) }
 
     footer{
-      text-align:center;
-      color:#f0f6ff;
-      padding:1.5rem 1rem;
-      background:rgba(255,255,255,0.1);
-      border-top:1px solid rgba(255,255,255,0.25);
-      backdrop-filter:blur(8px);
-      margin-top:3rem;
+      text-align:center; color:#f0f6ff; padding:1.5rem 1rem;
+      background:rgba(255,255,255,.1); border-top:1px solid rgba(255,255,255,.25);
+      backdrop-filter:blur(8px); margin-top:3rem
     }
-    .contatos a{ color:#fff; text-decoration:none; }
-    .contatos a:hover{ text-decoration:underline; }
+
+    /* BLOCO DE ALERTA quando a imagem não carrega */
+    .img-fallback{
+      display:none; /* aparece só se der erro */
+      background:#fff; border:2px dashed #c00; color:#c00;
+      padding:.8rem; border-radius:12px; margin:.5rem auto; max-width:420px;
+      font-weight:700;
+    }
+    .fallback-small{max-width:220px}
   </style>
 </head>
 <body>
 
+  <!-- TOPO -->
   <div class="nav-wrap">
     <nav class="nav">
       <a class="brand" href="#topo">
-        <img src="logo-small.png" alt="Logo pequena">
+        <!-- Logo pequena -->
+        <img id="logoSmall" src="logo-small.png" alt="Logo pequena">
         <span>Núcleo da Mente, Corpo e Alma</span>
       </a>
       <div class="menu">
@@ -165,12 +103,19 @@
     </nav>
   </div>
 
+  <!-- HERO -->
   <header id="topo" class="hero">
-    <img class="logo-lg" src="logo-large.png" alt="Logo grande">
+    <!-- Logo grande -->
+    <img id="logoLarge" class="logo-lg" src="logo-large.png" alt="Logo grande">
+    <div id="fbLarge" class="img-fallback">⚠️ Não encontrei <strong>logo-large.png</strong>. Deixe o arquivo <strong>logo-large.png</strong> na MESMA pasta do index.html.</div>
+
     <h1>Equilíbrio entre Razão e Espiritualidade</h1>
     <p>Psicanálise, Filosofia Clínica e Terapias Integrativas em sinergia para acolher, compreender e transformar — com ética, técnica e espiritualidade.</p>
+
+    <div id="fbSmall" class="img-fallback fallback-small">⚠️ Não encontrei <strong>logo-small.png</strong>. Deixe o arquivo <strong>logo-small.png</strong> na MESMA pasta do index.html.</div>
   </header>
 
+  <!-- CONTEÚDO -->
   <main class="container">
     <section id="sobre" class="grid">
       <article class="glass col-8">
@@ -221,8 +166,8 @@
       <article class="glass col-8">
         <span class="pill">Contato</span>
         <h2>Fale comigo</h2>
-        <p class="contatos">
-          WhatsApp: <a href="https://wa.me/5548999132828" target="_blank">+55 48 99913-2828</a><br>
+        <p class="contatos" style="color:#fff">
+          WhatsApp: <a href="https://wa.me/5548999132828" target="_blank" rel="noopener">+55 48 99913-2828</a><br>
           Endereço: Rua Saturno, 21 – Lagoa dos Freitas, Balneário Rincão – SC<br>
           E-mail: <a href="mailto:atendimento@nucleomentecorpoealma.com">atendimento@nucleomentecorpoealma.com</a>
         </p>
@@ -231,8 +176,8 @@
       <aside class="glass col-4">
         <span class="pill">Redes</span>
         <h2>Conecte-se</h2>
-        <p><a class="btn" href="#">Instagram</a></p>
-        <p><a class="btn" href="#">LinkedIn</a></p>
+        <p><a class="btn" href="#" aria-label="Instagram">Instagram</a></p>
+        <p><a class="btn" href="#" aria-label="LinkedIn">LinkedIn</a></p>
       </aside>
     </section>
   </main>
@@ -242,8 +187,19 @@
   </footer>
 
   <script>
+    // Ano automático
     document.getElementById('ano').textContent = new Date().getFullYear();
-  </script>
 
+    // Se as imagens falharem, exibe os avisos
+    function showIfBroken(imgId, fbId){
+      const img = document.getElementById(imgId);
+      const fb = document.getElementById(fbId);
+      img.addEventListener('error', () => { fb.style.display = 'block'; });
+      // Se a imagem já veio quebrada no carregamento inicial:
+      if (!img.complete || img.naturalWidth === 0){ fb.style.display = 'block'; }
+    }
+    showIfBroken('logoLarge', 'fbLarge');
+    showIfBroken('logoSmall', 'fbSmall');
+  </script>
 </body>
 </html>
