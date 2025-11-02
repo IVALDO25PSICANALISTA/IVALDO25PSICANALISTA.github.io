@@ -1,175 +1,133 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Wing Chun — Núcleo da Mente, Corpo e Alma</title>
-  <meta name="description" content="Wing Chun integrado ao cuidado terapêutico: presença, estrutura e serenidade em ação.">
-  <style>
-    /* ===== Tema claro pergaminho iluminado (mesmo visual do index) ===== */
-    *,*::before,*::after{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;
-      color:#2f2a19;
-      background:linear-gradient(180deg,#FAF6E9,#F5EED2,#EFE6C6);
-      min-height:100vh; display:flex; flex-direction:column;
-    }
-    a{color:#7A6414;text-decoration:none} a:hover{text-decoration:underline}
-
-    /* Cabeçalho */
-    .header{position:sticky; top:0; z-index:10; background:linear-gradient(90deg,#FFF8D8,#F2E6A8); box-shadow:0 4px 20px rgba(0,0,0,.12)}
-    .container{max-width:1100px;margin:0 auto;padding:12px 16px}
-    .brand{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
-    .logo-small{max-height:58px;height:auto;transition:transform .25s;filter:sepia(55%) saturate(180%) brightness(1.05) hue-rotate(10deg)}
-    .logo-small:hover{transform:scale(1.04)}
-    .title-wrap{text-align:center;flex:1 1 300px}
-    .title{margin:0;font-size:1.35rem;color:#5e4c0b}
-    .subtitle{margin:4px 0 0 0;color:#7b6d25;font-size:.97rem}
-
-    nav{margin-top:10px;text-align:center}
-    .nav{display:inline-flex;flex-wrap:wrap;gap:10px;justify-content:center}
-    .nav a{
-      background:#FFF4C6;border:1px solid #C8B356;border-radius:10px;
-      padding:8px 12px;font-size:.95rem;line-height:1;color:#5C4D11;
-      transition:background .25s,color .25s,transform .15s;
-    }
-    .nav a:hover{background:#F0E39A;color:#3C3109;transform:translateY(-1px)}
-
-    /* Hero */
-    .hero{
-      position:relative; overflow:hidden; border-radius:16px;
-      background:linear-gradient(180deg,rgba(255,248,216,.85),rgba(239,230,198,.85));
-      min-height:220px; display:flex; align-items:center; justify-content:center;
-      margin:16px auto 0; 
-    }
-    .hero::before{
-      content:""; position:absolute; inset:0; opacity:.06;
-      background:url('logo.jpg') no-repeat center/260px;
-      filter:contrast(120%) saturate(120%);
-      pointer-events:none;
-    }
-    .hero h1{position:relative; margin:0; color:#5e4c0b; font-size:1.6rem}
-    .hero p{position:relative; margin:6px 0 0; color:#7b6d25}
-
-    /* Cards / grid */
-    main{flex:1}
-    .grid{display:grid;gap:20px;grid-template-columns:1fr; padding:24px 16px}
-    @media(min-width:980px){.grid{grid-template-columns:1fr 1fr}}
-    .card{
-      background:#FFFCF1;border:1px solid #E6D68F;border-radius:16px;
-      padding:22px; box-shadow:0 8px 22px rgba(0,0,0,.08)
-    }
-    h2{color:#705E17;margin:0 0 10px}
-
-    .list{margin:0;padding-left:18px}
-    .list li{margin:6px 0}
-
-    /* Bloco de chamada (CTA) */
-    .cta{
-      display:flex; flex-direction:column; gap:12px; align-items:flex-start;
-      background:#FFF8D8; border:1px solid #D8C377; border-radius:14px; padding:18px;
-    }
-    .cta a.btn{
-      display:inline-block; background:#FFF4C6; border:1px solid #C8B356; border-radius:10px;
-      padding:10px 14px; color:#5C4D11; text-decoration:none;
-      transition:transform .15s, background .25s, color .25s;
-    }
-    .cta a.btn:hover{transform:translateY(-1px); background:#F0E39A; color:#3C3109}
-
-    /* Rodapé */
-    footer{background:#FFF8D8;color:#6B5D14;text-align:center;padding:16px;border-top:1px solid #D8C377}
-
-    /* Responsivo */
-    @media (max-width:640px){
-      .logo-small{max-height:50px}
-      .hero::before{background-size:200px}
-    }
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wing Chun — Núcleo da Mente, Corpo e Alma</title>
+<meta name="description" content="Wing Chun integrado ao cuidado terapêutico.">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:#e6f0ff;background:linear-gradient(180deg,#0a0f1a,#1a2133);min-height:100vh;display:flex;flex-direction:column;opacity:0;transform:translateY(6px)}
+html.pronto body{opacity:1;transform:none;transition:opacity .35s ease, transform .35s ease}
+html.saindo body{opacity:0;transition:opacity .22s ease}
+@media(prefers-reduced-motion:reduce){html.pronto body,html.saindo body{transition:none!important}body{transform:none!important}}
+a{color:#8ab4ff;text-decoration:none}a:hover{text-decoration:underline}
+.header{position:sticky;top:0;z-index:10;background:#0d1b2a;box-shadow:0 6px 16px rgba(0,0,0,.45)}
+.container{max-width:1100px;margin:0 auto;padding:12px 16px}
+.brand{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.brand img{max-height:60px}.title{margin:0;font-size:1.25rem;color:#8ab4ff}.subtitle{margin:4px 0 0 0;color:#b0c4de}
+nav{margin-top:10px;text-align:center}.nav{display:inline-flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.nav a{background:#111827;border:1px solid #22324a;border-radius:10px;padding:8px 12px;font-size:.95rem;line-height:1;color:#cfe0ff;transition:background .25s,color .25s,transform .15s}
+.nav a:hover{background:#1b283d;color:#fff;transform:translateY(-1px)}
+.hero{position:relative;overflow:hidden;border-radius:16px;background:linear-gradient(180deg,rgba(13,27,42,.85),rgba(17,24,39,.85));min-height:220px;display:flex;align-items:center;justify-content:center;margin:16px auto 0}
+.hero::before{content:"";position:absolute;inset:0;opacity:.08;background:url('logo.jpg') no-repeat center/260px;filter:contrast(120%) saturate(120%);pointer-events:none}
+.hero h1{position:relative;margin:0;color:#cfe0ff;font-size:1.6rem}.hero p{position:relative;margin:6px 0 0;color:#9fb0d0}
+main{flex:1}
+.grid{display:grid;gap:20px;grid-template-columns:1fr;padding:24px 16px}
+@media(min-width:980px){.grid{grid-template-columns:1fr 1fr}}
+.card{background:#111827;border:1px solid #22324a;border-radius:16px;padding:22px;box-shadow:0 8px 22px rgba(0,0,0,.35)}
+h2{color:#c3d3ff;margin:0 0 10px}.list{margin:0;padding-left:18px}.list li{margin:6px 0}
+.cta{display:flex;flex-direction:column;gap:12px;align-items:flex-start;background:#0d1b2a;border:1px solid #22324a;border-radius:14px;padding:18px}
+.cta a.btn{display:inline-block;background:#111827;border:1px solid #22324a;border-radius:10px;padding:10px 14px;color:#cfe0ff;text-decoration:none;transition:transform .15s, background .25s, color .25s}
+.cta a.btn:hover{transform:translateY(-1px);background:#1b283d;color:#fff}
+footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px;margin-top:auto}
+</style>
 </head>
 <body>
-  <!-- TOPO -->
-  <header class="header">
-    <div class="container">
-      <div class="brand">
-        <img src="logo.jpg" alt="Logo do Núcleo" class="logo-small">
-        <div class="title-wrap">
-          <h1 class="title">Núcleo da Mente, Corpo e Alma</h1>
-          <p class="subtitle">Filosofia Clínica • Psicanálise • Espiritualidade</p>
-        </div>
-        <div style="width:58px"></div> <!-- espaçador simétrico -->
+<header class="header">
+  <div class="container">
+    <div class="brand">
+      <img src="logo.jpg" alt="Logo do Núcleo">
+      <div class="title-wrap">
+        <h1 class="title">Núcleo da Mente, Corpo e Alma</h1>
+        <p class="subtitle">Wing Chun • Presença e Estrutura</p>
       </div>
-      <nav aria-label="principal">
-        <div class="nav">
-          <a href="./">← Início</a>
-          <a href="terapia1.html">Psicanálise</a>
-          <a href="terapia2.html">Filosofia Clínica</a>
-          <a href="terapia3.html">Reiki</a>
-          <a href="foto/">Fotos</a>
-          <a href="sobre.html">Sobre o Núcleo</a>
-        </div>
-      </nav>
+      <div style="width:60px"></div>
     </div>
-  </header>
-
-  <!-- HERO -->
-  <div class="container hero">
-    <div style="text-align:center;padding:24px 12px">
-      <h1>Wing Chun</h1>
-      <p>Presença, estrutura e serenidade em ação — prática marcial integrada ao cuidado terapêutico.</p>
-    </div>
+    <nav aria-label="principal">
+      <div class="nav">
+        <a href="./">← Início</a>
+        <a href="terapia1.html">Psicanálise</a>
+        <a href="terapia2.html">Filosofia Clínica</a>
+        <a href="terapia3.html">Reiki</a>
+        <a href="reflexoes.html">Reflexões</a>
+        <a href="sobre.html">Sobre o Núcleo</a>
+        <a href="foto/">Fotos</a>
+      </div>
+    </nav>
   </div>
+</header>
 
-  <!-- CONTEÚDO -->
-  <main>
-    <div class="container grid">
-      <section class="card">
-        <h2>O que é o Wing Chun</h2>
-        <p>Wing Chun é uma arte marcial chinesa que trabalha economia de movimento, atenção plena e alinhamento da estrutura corporal. 
-           A prática favorece autoconsciência, calma ativa e respostas funcionais ao estresse do cotidiano.</p>
-        <ul class="list">
-          <li>Postura e eixo corporal estável</li>
-          <li>Respiração e foco atencional</li>
-          <li>Coordenação e fluidez</li>
-          <li>Autodefesa ética: evitar, acalmar, proteger</li>
-        </ul>
-      </section>
+<div class="container hero">
+  <div style="text-align:center;padding:24px 12px">
+    <h1>Wing Chun</h1>
+    <p>Presença, estrutura e serenidade em ação — prática marcial integrada ao cuidado terapêutico.</p>
+  </div>
+</div>
 
-      <section class="card">
-        <h2>Benefícios integrativos</h2>
-        <ul class="list">
-          <li><strong>Mente:</strong> presença, clareza e redução de ansiedade.</li>
-          <li><strong>Corpo:</strong> equilíbrio postural, mobilidade e economia de esforço.</li>
-          <li><strong>Relações:</strong> ética em movimento: firmeza com respeito.</li>
-          <li><strong>Vida prática:</strong> serenidade para decidir e agir sob pressão.</li>
-        </ul>
-      </section>
-
-      <section class="card">
-        <h2>Como são os encontros</h2>
-        <ul class="list">
-          <li>Aquecimento consciente e alinhamento de base</li>
-          <li>Sequências técnicas (SiU Lim Tao e aplicações)</li>
-          <li>Exercícios em pares (sensibilidade, tempo, distância)</li>
-          <li>Fechamento com respiração e integração</li>
-        </ul>
-      </section>
-
-      <section class="card">
-        <h2>Agenda & Agendamentos</h2>
-        <div class="cta">
-          <p>Atendimentos em pequenos grupos e individuais. Presencial e on-line (adaptações técnicas).</p>
-          <p><strong>Local:</strong> Rua Saturno, 21 — Lagoa dos Freitas, Baln. Rincão-SC</p>
-          <div>
-            <a class="btn" href="https://wa.me/5548999132828" target="_blank" rel="noopener">Falar por WhatsApp</a>
-            &nbsp;|&nbsp;
-            <a class="btn" href="mailto:ivaldo25psicanalista@gmail.com">Enviar e-mail</a>
-          </div>
+<main>
+  <div class="container grid">
+    <section class="card">
+      <h2>O que é o Wing Chun</h2>
+      <p>Wing Chun trabalha economia de movimento, atenção plena e alinhamento da estrutura corporal. Favorece autoconsciência, calma ativa e respostas funcionais ao estresse.</p>
+      <ul class="list">
+        <li>Postura e eixo corporal estável</li>
+        <li>Respiração e foco atencional</li>
+        <li>Coordenação e fluidez</li>
+        <li>Autodefesa ética: evitar, acalmar, proteger</li>
+      </ul>
+    </section>
+    <section class="card">
+      <h2>Benefícios integrativos</h2>
+      <ul class="list">
+        <li><strong>Mente:</strong> presença, clareza e redução de ansiedade.</li>
+        <li><strong>Corpo:</strong> equilíbrio postural e economia de esforço.</li>
+        <li><strong>Relações:</strong> firmeza com respeito.</li>
+        <li><strong>Vida prática:</strong> serenidade para decidir e agir.</li>
+      </ul>
+    </section>
+    <section class="card">
+      <h2>Como são os encontros</h2>
+      <ul class="list">
+        <li>Aquecimento consciente e alinhamento de base</li>
+        <li>Sequências técnicas (Siu Lim Tao e aplicações)</li>
+        <li>Exercícios em pares (sensibilidade, tempo, distância)</li>
+        <li>Fechamento com respiração e integração</li>
+      </ul>
+    </section>
+    <section class="card">
+      <h2>Agenda & Agendamentos</h2>
+      <div class="cta">
+        <p>Atendimentos em pequenos grupos e individuais. Presencial e on-line (adaptações técnicas).</p>
+        <p><strong>Local:</strong> Rua Saturno, 21 — Lagoa dos Freitas, Baln. Rincão-SC</p>
+        <div>
+          <a class="btn" href="https://wa.me/5548999132828" target="_blank" rel="noopener">WhatsApp</a>
+          &nbsp;|&nbsp;
+          <a class="btn" href="mailto:ivaldo25psicanalista@gmail.com">E-mail</a>
         </div>
-      </section>
-    </div>
-  </main>
+      </div>
+    </section>
+  </div>
+</main>
 
-  <!-- RODAPÉ -->
-  <footer>© 2025 Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva</footer>
+<footer>© 2025 Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva</footer>
+
+<a href="https://wa.me/5548999132828" target="_blank" rel="noopener" 
+   style="position:fixed;bottom:18px;right:18px;background:#25D366;color:white;border-radius:50%;width:58px;height:58px;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(0,0,0,0.4);z-index:99;text-decoration:none;font-size:28px;">💬</a>
+
+<script>
+window.addEventListener('DOMContentLoaded',()=>{document.documentElement.classList.add('pronto')});
+document.addEventListener('click',(e)=>{
+  const a=e.target.closest('a'); if(!a) return;
+  const url=new URL(a.href,location.href);
+  const externo=url.origin!==location.origin, novoTab=a.target==='_blank';
+  const especial=a.hasAttribute('download')||(url.protocol!=='http:'&&url.protocol!=='https:');
+  const ancora=url.pathname===location.pathname && url.hash;
+  if(externo||novoTab||especial||ancora) return;
+  e.preventDefault(); document.documentElement.classList.add('saindo');
+  setTimeout(()=>{location.href=a.href},180);
+});
+window.addEventListener('pageshow',(e)=>{if(e.persisted){document.documentElement.classList.remove('saindo');document.documentElement.classList.add('pronto')}})
+</script>
 </body>
 </html>
