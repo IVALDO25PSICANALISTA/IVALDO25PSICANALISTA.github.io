@@ -1,183 +1,205 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Reflexões e Textos — Núcleo da Mente, Corpo e Alma</title>
-  <meta name="description" content="Textos e reflexões de Ivaldo J. Silva sobre Filosofia Clínica, Psicanálise, Reiki e integração mente–corpo–alma.">
-  <style>
-    /* ===== Tema claro pergaminho iluminado ===== */
-    *,*::before,*::after{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;
-      color:#2f2a19;
-      background:linear-gradient(180deg,#FAF6E9,#F5EED2,#EFE6C6);
-      min-height:100vh; display:flex; flex-direction:column;
-    }
-    a{color:#7A6414;text-decoration:none} a:hover{text-decoration:underline}
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reflexões — Núcleo da Mente, Corpo e Alma</title>
+<meta name="description" content="Pensamentos e reflexões filosófico-terapêuticas de Ivaldo José da Silva.">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;
+  color:#e6f0ff;
+  background:linear-gradient(180deg,#0a0f1a,#1a2133);
+  min-height:100vh;display:flex;flex-direction:column;
+}
+a{color:#8ab4ff;text-decoration:none}
+a:hover{text-decoration:underline}
 
-    /* Cabeçalho */
-    .header{position:sticky; top:0; z-index:10; background:linear-gradient(90deg,#FFF8D8,#F2E6A8); box-shadow:0 4px 20px rgba(0,0,0,.12)}
-    .container{max-width:1100px;margin:0 auto;padding:12px 16px}
-    .brand{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
-    .logo{max-height:60px;height:auto;transition:transform .25s;filter:sepia(55%) saturate(180%) brightness(1.05) hue-rotate(10deg)}
-    .logo:hover{transform:scale(1.04)}
-    .title-wrap{text-align:center;flex:1 1 300px}
-    .title{margin:0;font-size:1.35rem;color:#5e4c0b}
-    .subtitle{margin:4px 0 0 0;color:#7b6d25;font-size:.97rem}
+/* Cabeçalho */
+.header{position:sticky;top:0;z-index:10;background:#0d1b2a;box-shadow:0 6px 16px rgba(0,0,0,.45)}
+.container{max-width:1100px;margin:0 auto;padding:12px 16px}
+.brand{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.brand img{max-height:60px;height:auto}
+.title{margin:0;font-size:1.25rem;color:#8ab4ff}
+.subtitle{margin:4px 0 0;color:#b0c4de}
 
-    /* Menu */
-    nav{margin-top:10px;text-align:center}
-    .nav{display:inline-flex;flex-wrap:wrap;gap:10px;justify-content:center}
-    .nav a{
-      background:#FFF4C6;border:1px solid #C8B356;border-radius:10px;
-      padding:8px 12px;font-size:.95rem;line-height:1;color:#5C4D11;
-      transition:background .25s,color .25s,transform .15s;
-    }
-    .nav a:hover{background:#F0E39A;color:#3C3109;transform:translateY(-1px)}
+/* Navegação */
+nav{margin-top:10px;text-align:center}
+.nav{display:inline-flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.nav a{
+  background:#111827;border:1px solid #22324a;border-radius:10px;
+  padding:8px 12px;font-size:.95rem;color:#cfe0ff;
+  transition:background .25s,color .25s,transform .15s;
+}
+.nav a:hover{background:#1b283d;color:#fff;transform:translateY(-1px)}
 
-    /* Hero */
-    .hero{
-      position:relative; overflow:hidden; border-radius:16px;
-      background:linear-gradient(180deg,rgba(255,248,216,.85),rgba(239,230,198,.85));
-      min-height:200px; display:flex; align-items:center; justify-content:center;
-      margin:16px auto 0;
-    }
-    .hero::before{
-      content:""; position:absolute; inset:0; opacity:.06;
-      background:url('logo.jpg') no-repeat center/240px;
-      filter:contrast(120%) saturate(120%);
-      pointer-events:none;
-    }
-    .hero h1{position:relative; margin:0; color:#5e4c0b; font-size:1.6rem}
-    .hero p{position:relative; margin:6px 0 0; color:#7b6d25}
+/* Conteúdo */
+main{flex:1;padding:24px 16px}
+h1{text-align:center;color:#c3d3ff;margin:6px 0 18px;text-shadow:0 2px 6px rgba(0,0,0,.5)}
+.intro{max-width:900px;margin:0 auto 18px;color:#cbd5e1;text-align:center}
 
-    /* Lista de posts */
-    main{flex:1}
-    .posts{display:grid;gap:18px;grid-template-columns:1fr; padding:24px 16px}
-    @media(min-width:900px){.posts{grid-template-columns:1fr 1fr}}
-    .post{
-      background:#FFFCF1;border:1px solid #E6D68F;border-radius:16px;
-      padding:18px 18px 16px; box-shadow:0 8px 22px rgba(0,0,0,.08)
-    }
-    .post h2{margin:0 0 8px;color:#705E17;font-size:1.15rem}
-    .meta{font-size:.9rem;color:#6f6333;margin-bottom:10px}
-    .post p{margin:0 0 10px}
-    .tags{font-size:.85rem;color:#7b6d25}
-    .tags span{background:#FFF4C6;border:1px solid #C8B356;border-radius:999px;padding:2px 8px;margin-right:6px}
+/* Grid e cartões */
+.grid{
+  display:grid;
+  gap:18px;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  max-width:1100px;margin:0 auto 26px;
+}
+.card{
+  background:#111827;border:1px solid #22324a;border-radius:14px;padding:18px;
+  box-shadow:0 6px 18px rgba(0,0,0,.4);
+}
+.card p.quote{
+  font-size:1.05rem;color:#e7edf8;text-align:center;line-height:1.5;margin:0 0 10px;
+}
 
-    .post .readmore{
-      display:inline-block; margin-top:10px;
-      background:#FFF4C6;border:1px solid #C8B356;border-radius:10px;
-      padding:8px 12px;color:#5C4D11;text-decoration:none;
-      transition:transform .15s, background .25s, color .25s;
-    }
-    .post .readmore:hover{transform:translateY(-1px); background:#F0E39A; color:#3C3109}
+/* Bloco expansível */
+.toggle{
+  display:flex;justify-content:center;margin-top:8px;
+}
+.btn{
+  background:#0d1b2a;border:1px solid #22324a;color:#cfe0ff;
+  padding:8px 12px;border-radius:10px;cursor:pointer;
+  transition:background .25s,color .25s,transform .12s;
+}
+.btn:hover{background:#1b283d;color:#fff;transform:translateY(-1px)}
+.btn[aria-expanded="true"]{background:#1b283d;color:#fff}
 
-    /* CTA */
-    .cta{
-      max-width:1100px; margin:8px auto 28px; padding:0 16px;
-    }
-    .cta .box{
-      background:#FFF8D8;border:1px solid #D8C377;border-radius:14px;
-      padding:16px; display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between;
-    }
-    .cta a.btn{
-      display:inline-block; background:#FFF4C6; border:1px solid #C8B356; border-radius:10px;
-      padding:10px 14px; color:#5C4D11; text-decoration:none;
-      transition:transform .15s, background .25s, color .25s;
-    }
-    .cta a.btn:hover{transform:translateY(-1px); background:#F0E39A; color:#3C3109}
+.expand{
+  overflow:hidden;
+  max-height:0;
+  opacity:.0;
+  transition:max-height .35s ease, opacity .35s ease;
+}
+.expand.open{
+  opacity:1;
+  /* valor alto para comportar textos maiores */
+  max-height:600px;
+}
+.expand p{
+  color:#cbd5e1;line-height:1.65;font-size:1rem;margin:10px 0 0;
+}
 
-    /* Rodapé */
-    footer{background:#FFF8D8;color:#6B5D14;text-align:center;padding:16px;border-top:1px solid #D8C377}
-
-    /* Responsivo */
-    @media (max-width:640px){
-      .logo{max-height:50px}
-      .hero::before{background-size:180px}
-    }
-  </style>
+/* Rodapé e WhatsApp */
+footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px;margin-top:auto}
+.whats{
+  position:fixed;bottom:18px;right:18px;background:#25D366;color:#fff;
+  border-radius:50%;width:58px;height:58px;display:flex;
+  align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(0,0,0,.4);
+  z-index:99;text-decoration:none;font-size:28px;
+}
+</style>
 </head>
+
 <body>
-  <!-- TOPO -->
-  <header class="header">
-    <div class="container">
-      <div class="brand">
-        <img src="logo.jpg" alt="Logo do Núcleo" class="logo">
-        <div class="title-wrap">
-          <h1 class="title">Reflexões e Textos</h1>
-          <p class="subtitle">Filosofia Clínica • Psicanálise • Espiritualidade</p>
-        </div>
-        <div style="width:60px"></div>
+<header class="header">
+  <div class="container">
+    <div class="brand">
+      <img src="logo.jpg" alt="Logo do Núcleo">
+      <div>
+        <h1 class="title">Núcleo da Mente, Corpo e Alma</h1>
+        <p class="subtitle">Reflexões Filosófico-Terapêuticas</p>
       </div>
-      <nav aria-label="principal">
-        <div class="nav">
-          <a href="./">← Início</a>
-          <a href="terapia1.html">Psicanálise</a>
-          <a href="terapia2.html">Filosofia Clínica</a>
-          <a href="terapia3.html">Reiki</a>
-          <a href="wingchun.html">Wing Chun</a>
-          <a href="foto/">Fotos</a>
-          <a href="sobre.html">Sobre o Núcleo</a>
-        </div>
-      </nav>
     </div>
-  </header>
-
-  <!-- HERO -->
-  <div class="container hero">
-    <div style="text-align:center;padding:24px 12px">
-      <h1>Escrever para cuidar</h1>
-      <p>Textos curtos para acompanhar processos de sentido, presença e serenidade no cotidiano.</p>
-    </div>
+    <nav aria-label="principal">
+      <div class="nav">
+        <a href="./">← Início</a>
+        <a href="terapia1.html">Psicanálise</a>
+        <a href="terapia2.html">Filosofia Clínica</a>
+        <a href="terapia3.html">Reiki</a>
+        <a href="wingchun.html">Wing Chun</a>
+        <a href="sobre.html">Sobre o Núcleo</a>
+      </div>
+    </nav>
   </div>
+</header>
 
-  <!-- LISTA DE POSTS -->
-  <main>
-    <div class="posts container">
-      <!-- Post 1 -->
-      <article class="post">
-        <h2>Quando a mente silencia, o corpo escuta</h2>
-        <div class="meta">Reflexão • 3 min</div>
-        <p>Entre pensar e sentir, existe um intervalo de respiração. Nele, o corpo encontra o tempo de compreender, e a mente aprende a descansar.</p>
-        <div class="tags"><span>psicanálise</span><span>presença</span></div>
-        <a class="readmore" href="textos/mente-silencia-corpo-escuta.html">Ler texto completo →</a>
-      </article>
+<main>
+  <h1>Reflexões</h1>
+  <p class="intro">Frases curtas que se desdobram em textos de presença, consciência e cuidado. Clique em “Ler texto completo”.</p>
 
-      <!-- Post 2 -->
-      <article class="post">
-        <h2>Notas sobre serenidade ativa</h2>
-        <div class="meta">Filosofia Clínica • 4 min</div>
-        <p>Ser sereno não é não agir. É agir sem se perder. A serenidade ativa reorganiza prioridades e devolve a medida justa do possível.</p>
-        <div class="tags"><span>filosofia clínica</span><span>ética do cotidiano</span></div>
-        <a class="readmore" href="textos/serenidade-ativa.html">Ler texto completo →</a>
-      </article>
-
-      <!-- Post 3 -->
-      <article class="post">
-        <h2>Reiki: descanso da mente, equilíbrio vital</h2>
-        <div class="meta">Reiki • 2 min</div>
-        <p>O gesto silencioso de cuidado harmoniza respiração, ritmo e afeto. Uma pausa para o organismo recordar seu caminho de equilíbrio.</p>
-        <div class="tags"><span>reiki</span><span>harmonização</span></div>
-        <a class="readmore" href="textos/reiki-descanso-da-mente.html">Ler texto completo →</a>
-      </article>
-    </div>
-
-    <!-- CTA -->
-    <div class="cta">
-      <div class="box">
-        <div><strong>Quer receber os novos textos?</strong> Fale comigo e envio os próximos por WhatsApp ou e-mail.</div>
-        <div>
-          <a class="btn" href="https://wa.me/5548999132828" target="_blank" rel="noopener">WhatsApp</a>
-          &nbsp;|&nbsp;
-          <a class="btn" href="mailto:ivaldo25psicanalista@gmail.com">E-mail</a>
-        </div>
+  <div class="grid">
+    <!-- 1 -->
+    <article class="card">
+      <p class="quote">“O silêncio não é vazio — ele é o espaço onde a alma aprende a ouvir.”</p>
+      <div class="toggle"><button class="btn" aria-expanded="false" aria-controls="txt1">Ler texto completo</button></div>
+      <div id="txt1" class="expand" role="region" aria-labelledby="txt1">
+        <p>Silenciar é abrir o corpo para uma escuta que não é apenas sonora. É perceber o peso do ar, o ritmo do coração e a memória dos gestos. No silêncio, os pensamentos desaceleram até se transformarem em paisagem. E quando o ruído interno se aquieta, a alma fala simples — e a simplicidade cura.</p>
       </div>
-    </div>
-  </main>
+    </article>
 
-  <!-- RODAPÉ -->
-  <footer>© 2025 Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva</footer>
+    <!-- 2 -->
+    <article class="card">
+      <p class="quote">“Curar-se é lembrar-se de quem você é, antes que o mundo dissesse quem deveria ser.”</p>
+      <div class="toggle"><button class="btn" aria-expanded="false" aria-controls="txt2">Ler texto completo</button></div>
+      <div id="txt2" class="expand" role="region" aria-labelledby="txt2">
+        <p>A cura não é um ponto final, mas um retorno. Voltamos ao chão da nossa história, recolhemos fragmentos e reconhecemos afetos esquecidos. Lembrar-se de si é reapropriar-se do próprio nome: habitar a vida com o peso exato do que sentimos, sem pedir desculpas por existir.</p>
+      </div>
+    </article>
+
+    <!-- 3 -->
+    <article class="card">
+      <p class="quote">“Entre o pensar e o sentir, existe um ponto de encontro: o ser.”</p>
+      <div class="toggle"><button class="btn" aria-expanded="false" aria-controls="txt3">Ler texto completo</button></div>
+      <div id="txt3" class="expand" role="region" aria-labelledby="txt3">
+        <p>Quando o pensamento corre sozinho, ele se torna cálculo. Quando o sentimento transborda sem forma, vira maré. O encontro acontece quando respiramos e damos corpo ao instante. A vida pede presença: um passo por vez, um gesto inteiro por vez, um olhar que não foge de si.</p>
+      </div>
+    </article>
+
+    <!-- 4 -->
+    <article class="card">
+      <p class="quote">“A filosofia começa quando a vida convida o homem a se olhar por dentro.”</p>
+      <div class="toggle"><button class="btn" aria-expanded="false" aria-controls="txt4">Ler texto completo</button></div>
+      <div id="txt4" class="expand" role="region" aria-labelledby="txt4">
+        <p>Perguntar é aceitar não saber. O espelho filosófico não busca respostas rápidas — ele sustenta o intervalo necessário para que o sentido apareça. O mais íntimo se revela quando ousamos sustentar a pergunta com ternura e coragem, sem nos apressar em calá-la.</p>
+      </div>
+    </article>
+
+    <!-- 5 -->
+    <article class="card">
+      <p class="quote">“A alma não grita — ela sussurra, e só quem silencia o ego consegue escutá-la.”</p>
+      <div class="toggle"><button class="btn" aria-expanded="false" aria-controls="txt5">Ler texto completo</button></div>
+      <div id="txt5" class="expand" role="region" aria-labelledby="txt5">
+        <p>O ego fala alto, exige, compara. A alma fala baixo, oferece direção. Quando aprendemos a diferenciar as vozes, escolhemos caminhos menos ruidosos e mais verdadeiros. O sussurro da alma não promete facilidades; ele convida ao essencial.</p>
+      </div>
+    </article>
+
+    <!-- 6 -->
+    <article class="card">
+      <p class="quote">“Na terapia, o verbo se torna espelho e a escuta, caminho.”</p>
+      <div class="toggle"><button class="btn" aria-expanded="false" aria-controls="txt6">Ler texto completo</button></div>
+      <div id="txt6" class="expand" role="region" aria-labelledby="txt6">
+        <p>Falar é arriscar-se a existir diante do outro. Há uma coragem mansa em nomear dores e desejos. Quando alguém nos escuta com presença, a linguagem encontra contorno — e o que parecia confuso ganha forma de vida possível.</p>
+      </div>
+    </article>
+
+    <!-- 7 -->
+    <article class="card">
+      <p class="quote">“A verdadeira força nasce quando o corpo descansa e o espírito desperta.”</p>
+      <div class="toggle"><button class="btn" aria-expanded="false" aria-controls="txt7">Ler texto completo</button></div>
+      <div id="txt7" class="expand" role="region" aria-labelledby="txt7">
+        <p>Há uma força que não é violência: é presença. Quando o corpo encontra seu eixo e o espírito encontra sentido, a vida deixa de ser combate para tornar-se caminho. Força é delicadeza que sabe o momento de agir e o momento de apenas estar.</p>
+      </div>
+    </article>
+  </div>
+</main>
+
+<footer>© 2025 Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva</footer>
+<a class="whats" href="https://wa.me/5548999132828" target="_blank" rel="noopener">💬</a>
+
+<script>
+/* Toggle “Ler texto completo” */
+document.querySelectorAll('.card .btn').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const id = btn.getAttribute('aria-controls');
+    const box = document.getElementById(id);
+    const open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    box.classList.toggle('open', !open);
+    btn.textContent = !open ? 'Recolher' : 'Ler texto completo';
+  });
+});
+</script>
 </body>
 </html>
