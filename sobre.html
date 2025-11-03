@@ -1,180 +1,188 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Sobre o Núcleo — Núcleo da Mente, Corpo e Alma</title>
-  <meta name="description" content="Quem somos, missão, visão e abordagem integrativa do Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva.">
-  <style>
-    /* ===== Tema claro pergaminho iluminado ===== */
-    *,*::before,*::after{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;
-      color:#2f2a19;
-      background:linear-gradient(180deg,#FAF6E9,#F5EED2,#EFE6C6);
-      min-height:100vh; display:flex; flex-direction:column;
-    }
-    a{color:#7A6414;text-decoration:none} a:hover{text-decoration:underline}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sobre o Núcleo — Ivaldo J. Silva</title>
+<meta name="description" content="Sobre o Núcleo da Mente, Corpo e Alma: missão, visão, valores e a trajetória de Ivaldo José da Silva.">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;
+  color:#e6f0ff;
+  background:linear-gradient(180deg,#0a0f1a,#1a2133);
+  min-height:100vh;display:flex;flex-direction:column;
+}
+a{color:#8ab4ff;text-decoration:none}
+a:hover{text-decoration:underline}
 
-    /* Cabeçalho */
-    .header{position:sticky; top:0; z-index:10; background:linear-gradient(90deg,#FFF8D8,#F2E6A8); box-shadow:0 4px 20px rgba(0,0,0,.12)}
-    .container{max-width:1100px;margin:0 auto;padding:12px 16px}
-    .brand{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
-    .logo{max-height:60px;height:auto;transition:transform .25s;filter:sepia(55%) saturate(180%) brightness(1.05) hue-rotate(10deg)}
-    .logo:hover{transform:scale(1.04)}
-    .title-wrap{text-align:center;flex:1 1 300px}
-    .title{margin:0;font-size:1.35rem;color:#5e4c0b}
-    .subtitle{margin:4px 0 0 0;color:#7b6d25;font-size:.97rem}
+/* Header */
+.header{position:sticky;top:0;z-index:10;background:#0d1b2a;box-shadow:0 6px 16px rgba(0,0,0,.45)}
+.container{max-width:1100px;margin:0 auto;padding:12px 16px}
+.brand{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.brand img{max-height:60px;height:auto}
+.title{margin:0;font-size:1.25rem;color:#8ab4ff}
+.subtitle{margin:4px 0 0;color:#b0c4de}
 
-    /* Menu */
-    nav{margin-top:10px;text-align:center}
-    .nav{display:inline-flex;flex-wrap:wrap;gap:10px;justify-content:center}
-    .nav a{
-      background:#FFF4C6;border:1px solid #C8B356;border-radius:10px;
-      padding:8px 12px;font-size:.95rem;line-height:1;color:#5C4D11;
-      transition:background .25s,color .25s,transform .15s;
-    }
-    .nav a:hover{background:#F0E39A;color:#3C3109;transform:translateY(-1px)}
+/* Nav */
+nav{margin-top:10px;text-align:center}
+.nav{display:inline-flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.nav a{
+  background:#111827;border:1px solid #22324a;border-radius:10px;
+  padding:8px 12px;font-size:.95rem;color:#cfe0ff;
+  transition:background .25s,color .25s,transform .15s;
+}
+.nav a:hover{background:#1b283d;color:#fff;transform:translateY(-1px)}
 
-    /* Hero (capa com marca d’água) */
-    .hero{
-      position:relative; overflow:hidden; border-radius:16px;
-      background:linear-gradient(180deg,rgba(255,248,216,.85),rgba(239,230,198,.85));
-      min-height:220px; display:flex; align-items:center; justify-content:center;
-      margin:16px auto 0;
-    }
-    .hero::before{
-      content:""; position:absolute; inset:0; opacity:.06;
-      background:url('logo.jpg') no-repeat center/260px;
-      filter:contrast(120%) saturate(120%);
-      pointer-events:none;
-    }
-    .hero h1{position:relative; margin:0; color:#5e4c0b; font-size:1.6rem}
-    .hero p{position:relative; margin:6px 0 0; color:#7b6d25}
+/* Hero (fundo suave com a sua foto ou logo) */
+.hero{
+  position:relative;overflow:hidden;border-radius:16px;
+  background:
+    linear-gradient(180deg,rgba(13,27,42,.85),rgba(17,24,39,.9)),
+    url('foto/wdem.jpg') center/cover no-repeat; /* usa wdem.jpg como textura leve */
+  min-height:260px;display:flex;align-items:center;justify-content:center;
+  margin:16px auto;width:100%;
+}
+.hero .wrap{text-align:center;padding:22px}
+.hero h1{margin:0;color:#e6f0ff;font-size:1.9rem;text-shadow:0 2px 6px rgba(0,0,0,.6)}
+.hero p{margin-top:8px;color:#cbd5e1}
 
-    /* Conteúdo */
-    main{flex:1}
-    .grid{display:grid;gap:20px;grid-template-columns:1fr; padding:24px 16px}
-    @media(min-width:980px){.grid{grid-template-columns:1fr 1fr}}
-    .card{
-      background:#FFFCF1;border:1px solid #E6D68F;border-radius:16px;
-      padding:22px; box-shadow:0 8px 22px rgba(0,0,0,.08)
-    }
-    h2{color:#705E17;margin:0 0 10px}
-    .list{margin:0;padding-left:18px}
-    .list li{margin:6px 0}
+/* Conteúdo */
+main{flex:1}
+.section{padding:22px;background:#111827;border:1px solid #22324a;border-radius:16px;box-shadow:0 8px 22px rgba(0,0,0,.35)}
+.grid{display:grid;gap:20px;grid-template-columns:1fr;padding:24px 16px}
+@media(min-width:980px){.grid{grid-template-columns:1.1fr .9fr}}
 
-    /* Destaque/quote */
-    .quote{
-      background:#FFF8D8;border:1px solid #D8C377;border-radius:14px;
-      padding:16px; font-style:italic; color:#5e4c0b
-    }
+h2{color:#c3d3ff;margin:0 0 10px}
+p{color:#cbd5e1;line-height:1.7}
+ul{margin:0;padding-left:18px}
+li{margin:6px 0}
 
-    /* CTA */
-    .cta{
-      display:flex; flex-direction:column; gap:12px; align-items:flex-start;
-      background:#FFF8D8; border:1px solid #D8C377; border-radius:14px; padding:18px;
-    }
-    .cta a.btn{
-      display:inline-block; background:#FFF4C6; border:1px solid #C8B356; border-radius:10px;
-      padding:10px 14px; color:#5C4D11; text-decoration:none;
-      transition:transform .15s, background .25s, color .25s;
-    }
-    .cta a.btn:hover{transform:translateY(-1px); background:#F0E39A; color:#3C3109}
+/* Perfil (mostra se foto existir) */
+.perfil{
+  background:#0f1626;border:1px solid #22324a;border-radius:16px;padding:18px;text-align:center
+}
+.perfil img{
+  width:180px;height:180px;object-fit:cover;border-radius:50%;
+  box-shadow:0 6px 16px rgba(0,0,0,.45);display:block;margin:0 auto 10px
+}
+.perfil .nome{font-weight:600;color:#e6f0ff}
+.perfil .cargo{color:#9fb4d9;font-size:.95rem;margin-top:4px}
+.badges{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:10px}
+.badges span{
+  background:#0d1b2a;border:1px solid #22324a;border-radius:999px;
+  padding:4px 10px;color:#cfe0ff;font-size:.85rem
+}
 
-    /* Rodapé */
-    footer{background:#FFF8D8;color:#6B5D14;text-align:center;padding:16px;border-top:1px solid #D8C377}
+/* CTA */
+.cta{
+  margin-top:12px;text-align:center
+}
+.btn{
+  display:inline-block;background:#0d1b2a;border:1px solid #22324a;border-radius:10px;
+  color:#cfe0ff;padding:10px 18px;text-decoration:none;
+  transition:background .25s,color .25s,transform .15s
+}
+.btn:hover{background:#1b283d;color:#fff;transform:translateY(-1px)}
 
-    /* Responsivo */
-    @media (max-width:640px){
-      .logo{max-height:50px}
-      .hero::before{background-size:200px}
-    }
-  </style>
+/* Rodapé */
+footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px;margin-top:auto}
+</style>
 </head>
+
 <body>
-  <!-- TOPO -->
-  <header class="header">
-    <div class="container">
-      <div class="brand">
-        <img src="logo.jpg" alt="Logo do Núcleo" class="logo">
-        <div class="title-wrap">
-          <h1 class="title">Sobre o Núcleo</h1>
-          <p class="subtitle">Quem somos • Missão • Abordagem</p>
-        </div>
-        <div style="width:60px"></div>
+<header class="header">
+  <div class="container">
+    <div class="brand">
+      <img src="logo.jpg" alt="Logo do Núcleo">
+      <div>
+        <h1 class="title">Núcleo da Mente, Corpo e Alma</h1>
+        <p class="subtitle">Sobre o Núcleo</p>
       </div>
-      <nav aria-label="principal">
-        <div class="nav">
-          <a href="./">← Início</a>
-          <a href="terapia1.html">Psicanálise</a>
-          <a href="terapia2.html">Filosofia Clínica</a>
-          <a href="terapia3.html">Reiki</a>
-          <a href="foto/">Fotos</a>
-          <a href="wingchun.html">Wing Chun</a>
-        </div>
-      </nav>
     </div>
-  </header>
-
-  <!-- HERO -->
-  <div class="container hero">
-    <div style="text-align:center;padding:24px 12px">
-      <h1>Núcleo da Mente, Corpo e Alma</h1>
-      <p>Integração entre reflexão filosófica, clínica psicanalítica e práticas de harmonização — cuidado humano integral.</p>
-    </div>
+    <nav aria-label="principal">
+      <div class="nav">
+        <a href="./">← Início</a>
+        <a href="terapia1.html">Psicanálise</a>
+        <a href="terapia2.html">Filosofia Clínica</a>
+        <a href="terapia3.html">Reiki</a>
+        <a href="wingchun.html">Wing Chun</a>
+        <a href="reflexoes.html">Reflexões</a>
+        <a href="terapias.html">Terapias Integradas</a>
+      </div>
+    </nav>
   </div>
+</header>
 
-  <!-- CONTEÚDO -->
-  <main>
-    <div class="container grid">
-      <section class="card">
-        <h2>Quem somos</h2>
-        <p>O Núcleo nasce do encontro entre pensamento, afeto e espiritualidade. Acolhemos a singularidade de cada pessoa
-           e acompanhamos processos de sentido, mudança e fortalecimento do viver.</p>
-        <div class="quote">“Cuidar é clarificar, acolher e reorganizar: mente lúcida, corpo presente, alma em paz.”</div>
-      </section>
+<div class="container hero">
+  <div class="wrap">
+    <h1>Sobre o Núcleo</h1>
+    <p>Um espaço de escuta, presença e cuidado, onde corpo, mente e alma caminham na mesma direção.</p>
+  </div>
+</div>
 
-      <section class="card">
-        <h2>Missão, Visão e Valores</h2>
-        <ul class="list">
-          <li><strong>Missão:</strong> promover bem-estar integral pela escuta, reflexão e práticas vivas que alinham mente, corpo e alma.</li>
-          <li><strong>Visão:</strong> ser referência em cuidado humano com ética, presença e coerência.</li>
-          <li><strong>Valores:</strong> singularidade, respeito, sigilo, responsabilidade, serenidade e constância.</li>
+<main>
+  <div class="container grid">
+    <!-- Texto principal -->
+    <section class="section">
+      <h2>Missão e Visão</h2>
+      <p>O <strong>Núcleo da Mente, Corpo e Alma</strong> nasce do compromisso com a inteireza do ser humano. 
+      Acolhemos a singularidade de cada pessoa e integramos ciência, filosofia e espiritualidade para promover 
+      cura, sentido e presença. Nossa visão é simples e profunda: fortalecer o eixo interior para que a vida 
+      possa florescer no gesto cotidiano — com consciência, serenidade e coragem.</p>
+
+      <h2>Valores</h2>
+      <ul>
+        <li><strong>Presença:</strong> estar inteiro no encontro terapêutico.</li>
+        <li><strong>Ética:</strong> respeito ao ritmo, à história e às escolhas de cada pessoa.</li>
+        <li><strong>Integração:</strong> diálogo entre palavra, pensamento, energia e corpo.</li>
+        <li><strong>Espiritualidade:</strong> abertura ao sagrado da vida, sem dogmas.</li>
+      </ul>
+
+      <h2>Abordagem Integrativa</h2>
+      <p>Trabalhamos com quatro caminhos que se complementam: 
+      <em>Psicanálise</em> (a palavra que elabora), <em>Filosofia Clínica</em> (o pensamento que compreende),
+      <em>Reiki</em> (a energia que harmoniza) e <em>Wing Chun</em> (o corpo que desperta). 
+      Quando essas linguagens se encontram, surgem novas possibilidades de cura e de sentido.</p>
+
+      <div class="cta">
+        <a class="btn" href="terapias.html">Conheça as terapias integradas →</a>
+      </div>
+    </section>
+
+    <!-- Perfil / Formação -->
+    <aside class="perfil">
+      <!-- Se você subir foto/perfil.jpg, ela aparece aqui -->
+      <img src="foto/perfil.jpg" alt="Foto de perfil de Ivaldo J. Silva"
+           onerror="this.style.display='none'">
+      <div class="nome">Ivaldo José da Silva</div>
+      <div class="cargo">Psicanalista • Filósofo Clínico • Terapeuta • Wing Chun</div>
+      <div class="badges">
+        <span>Atendimento Presencial e On-line</span>
+        <span>Confidencialidade</span>
+        <span>Ética e Cuidado</span>
+      </div>
+
+      <div style="margin-top:14px;text-align:left;color:#cbd5e1">
+        <h2 style="color:#c3d3ff;margin:8px 0 6px;font-size:1.1rem">Formação (resumo)</h2>
+        <ul>
+          <li>Psicanálise clínica e supervisão contínua.</li>
+          <li>Filosofia Clínica — investigação do modo de ser.</li>
+          <li>Reiki — harmonização energética.</li>
+          <li>Prática marcial — Wing Chun (meditação em movimento).</li>
         </ul>
-      </section>
+      </div>
 
-      <section class="card">
-        <h2>Abordagem integrativa</h2>
-        <ul class="list">
-          <li><strong>Psicanálise:</strong> elaboração de conflitos, história pessoal e responsabilização.</li>
-          <li><strong>Filosofia Clínica:</strong> investigação existencial, categorias de base e projeto de vida.</li>
-          <li><strong>Reiki:</strong> harmonização energética, descanso da mente e equilíbrio vital.</li>
-          <li><strong>Wing Chun:</strong> presença, estrutura e economia de movimento no cotidiano.</li>
-        </ul>
-      </section>
+      <div class="cta" style="margin-top:14px">
+        <a class="btn" href="mailto:ivaldo25psicanalista@gmail.com">Fale por e-mail</a>
+        <a class="btn" href="https://wa.me/5548999132828" target="_blank" rel="noopener">Fale no WhatsApp</a>
+      </div>
+    </aside>
+  </div>
+</main>
 
-      <section class="card">
-        <h2>Como trabalhamos</h2>
-        <ul class="list">
-          <li>Atendimento individual e pequenos grupos, presencial e on-line.</li>
-          <li>Plano de cuidado personalizado, respeitando limites e objetivos.</li>
-          <li>Ética profissional, sigilo e linguagem acessível.</li>
-        </ul>
-        <div class="cta" style="margin-top:8px">
-          <p><strong>Fale conosco:</strong></p>
-          <div>
-            <a class="btn" href="https://wa.me/5548999132828" target="_blank" rel="noopener">WhatsApp</a>
-            &nbsp;|&nbsp;
-            <a class="btn" href="mailto:ivaldo25psicanalista@gmail.com">E-mail</a>
-          </div>
-          <p style="margin:0"><strong>Local:</strong> Rua Saturno, 21 — Lagoa dos Freitas, Baln. Rincão-SC</p>
-        </div>
-      </section>
-    </div>
-  </main>
-
-  <!-- RODAPÉ -->
-  <footer>© 2025 Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva</footer>
+<footer>© 2025 Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva</footer>
 </body>
 </html>
+
