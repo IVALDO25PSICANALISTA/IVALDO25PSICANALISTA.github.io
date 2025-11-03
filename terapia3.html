@@ -10,12 +10,10 @@
 html,body{margin:0;padding:0}
 body{
   font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;
-  color:#e6f0ff;
-  background:linear-gradient(180deg,#0a0f1a,#1a2133);
+  color:#e6f0ff;background:linear-gradient(180deg,#0a0f1a,#1a2133);
   min-height:100vh;display:flex;flex-direction:column;
 }
-a{color:#8ab4ff;text-decoration:none}
-a:hover{text-decoration:underline}
+a{color:#8ab4ff;text-decoration:none} a:hover{text-decoration:underline}
 
 /* Header */
 .header{position:sticky;top:0;z-index:10;background:#0d1b2a;box-shadow:0 6px 16px rgba(0,0,0,.45)}
@@ -35,9 +33,29 @@ nav{margin-top:10px;text-align:center}
 }
 .nav a:hover{background:#1b283d;color:#fff;transform:translateY(-1px)}
 
-/* Conteúdo */
+/* HERO com imagem + aura */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    linear-gradient(180deg,rgba(10,15,26,.80),rgba(17,24,39,.88)),
+    url('../foto/foto1.jpg') center/cover no-repeat;
+  height:250px;display:flex;align-items:center;justify-content:center;
+  color:#e6f0ff;text-align:center;text-shadow:0 2px 6px rgba(0,0,0,.5);
+}
+.hero::before{
+  /* AURA dourado-azulada suave */
+  content:"";position:absolute;inset:-12%;
+  background:
+    radial-gradient(55% 55% at 30% 30%, rgba(255,215,130,.12), transparent 60%),
+    radial-gradient(45% 45% at 75% 70%, rgba(90,140,220,.14), transparent 60%),
+    radial-gradient(40% 40% at 50% 95%, rgba(200,170,90,.10), transparent 60%);
+  filter: blur(22px); opacity:.85; pointer-events:none; z-index:0;
+  animation: auraFloat 14s ease-in-out infinite alternate;
+}
+@keyframes auraFloat{from{transform:translateY(0)}to{transform:translateY(-10px)}}
+
+/* Seções */
 main{flex:1;padding:28px 16px}
-h1{text-align:center;color:#c3d3ff;margin-bottom:20px;text-shadow:0 2px 6px rgba(0,0,0,.5)}
 .section{
   max-width:900px;margin:0 auto;background:#111827;border:1px solid #22324a;border-radius:14px;
   padding:24px;box-shadow:0 6px 18px rgba(0,0,0,.4)
@@ -47,33 +65,17 @@ h1{text-align:center;color:#c3d3ff;margin-bottom:20px;text-shadow:0 2px 6px rgba
 .section ul{margin:0;padding-left:20px;color:#cbd5e1}
 .section li{margin:6px 0}
 
-/* Imagem de fundo */
-.hero{
-  position:relative;
-  background:linear-gradient(180deg,rgba(10,15,26,0.8),rgba(17,24,39,0.85)),
-             url('../foto/foto1.jpg') center/cover no-repeat;
-  height:250px;display:flex;align-items:center;justify-content:center;
-  color:#e6f0ff;text-align:center;text-shadow:0 2px 6px rgba(0,0,0,.5)
-}
-
-/* Botão flutuante Agendar Sessão */
+/* Botões fixos */
 .agendar-btn{
-  position:fixed;
-  bottom:90px;
-  right:18px;
-  background:#8ab4ff;
-  color:#0a0f1a;
-  border-radius:50%;
-  width:58px;height:58px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:28px;text-decoration:none;
-  box-shadow:0 3px 10px rgba(0,0,0,.4);
-  transition:transform .2s,box-shadow .2s;
-  z-index:99;
+  position:fixed;bottom:90px;right:18px;background:#8ab4ff;color:#0a0f1a;border-radius:50%;
+  width:58px;height:58px;display:flex;align-items:center;justify-content:center;font-size:28px;
+  text-decoration:none;box-shadow:0 3px 10px rgba(0,0,0,.4);transition:transform .2s,box-shadow .2s;z-index:99;
 }
-.agendar-btn:hover{
-  transform:scale(1.08);
-  box-shadow:0 4px 14px rgba(0,0,0,.6);
+.agendar-btn:hover{transform:scale(1.08);box-shadow:0 4px 14px rgba(0,0,0,.6)}
+.whats{
+  position:fixed;bottom:18px;right:18px;background:#25D366;color:#fff;border-radius:50%;
+  width:58px;height:58px;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 3px 10px rgba(0,0,0,.4);z-index:99;text-decoration:none;font-size:28px;
 }
 
 /* Rodapé */
@@ -140,8 +142,9 @@ footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px;margin-to
   </section>
 </main>
 
-<!-- BOTÃO FIXO DE AGENDAMENTO -->
+<!-- Botões Fixos -->
 <a href="../agendar.html" class="agendar-btn" title="Agendar sessão">📅</a>
+<a class="whats" href="https://wa.me/5548999132828" target="_blank" rel="noopener">💬</a>
 
 <footer>© 2025 Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva</footer>
 </body>
