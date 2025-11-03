@@ -1,72 +1,62 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Reiki — Núcleo da Mente, Corpo e Alma</title>
-<meta name="description" content="Harmonização energética e equilíbrio vital.">
+<meta name="description" content="Reiki — Terapia de harmonização energética oferecida por Ivaldo José da Silva.">
 <style>
-/* mesmo CSS base das demais páginas, tema escuro + transição */
 *,*::before,*::after{box-sizing:border-box}
 html,body{margin:0;padding:0}
-body{font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:#e6f0ff;background:linear-gradient(180deg,#0a0f1a,#1a2133);min-height:100vh;display:flex;flex-direction:column;opacity:0;transform:translateY(6px)}
-html.pronto body{opacity:1;transform:none;transition:opacity .35s ease, transform .35s ease}
-html.saindo body{opacity:0;transition:opacity .22s ease}
-@media(prefers-reduced-motion:reduce){html.pronto body,html.saindo body{transition:none!important}body{transform:none!important}}
-a{color:#8ab4ff;text-decoration:none}a:hover{text-decoration:underline}
+body{
+  font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;
+  color:#e6f0ff;
+  background:linear-gradient(180deg,#0a0f1a,#1a2133);
+  min-height:100vh;display:flex;flex-direction:column;
+}
+a{color:#8ab4ff;text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* Header */
 .header{position:sticky;top:0;z-index:10;background:#0d1b2a;box-shadow:0 6px 16px rgba(0,0,0,.45)}
 .container{max-width:1100px;margin:0 auto;padding:12px 16px}
-.brand{display:flex;align-items:center;gap:14px}.brand img{max-height:60px}
-.title{margin:0;font-size:1.25rem;color:#8ab4ff}.subtitle{margin:4px 0 0 0;color:#b0c4de}
-nav{margin-top:10px}.nav{display:flex;flex-wrap:wrap;gap:10px}
-.nav a{background:#111827;border:1px solid #22324a;border-radius:10px;padding:8px 12px;font-size:.95rem;line-height:1;transition:background .25s,color .25s}
-.nav a:hover{background:#1b283d;color:#fff}
-main{flex:1}.wrap{max-width:900px;margin:0 auto;padding:24px 16px}
-.card{background:#111827;border:1px solid #22324a;border-radius:16px;padding:22px;box-shadow:0 8px 22px rgba(0,0,0,.35)}
-h1,h2{color:#c3d3ff;margin:0 0 10px}p{line-height:1.6}
-footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px;margin-top:auto}
-</style>
-</head>
-<body>
-<header class="header">
-  <div class="container">
-    <div class="brand">
-      <img src="logo.jpg" alt="Logo">
-      <div><h1 class="title">Reiki</h1><p class="subtitle">Descanso da mente, equilíbrio vital</p></div>
-    </div>
-    <nav aria-label="principal">
-      <div class="nav">
-        <a href="./">← Início</a>
-        <a href="terapia1.html">Psicanálise</a>
-        <a href="terapia2.html">Filosofia Clínica</a>
-        <a href="wingchun.html">Wing Chun</a>
-        <a href="reflexoes.html">Reflexões</a>
-        <a href="sobre.html">Sobre o Núcleo</a>
-        <a href="foto/">Fotos</a>
-      </div>
-    </nav>
-  </div>
-</header>
+.brand{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.brand img{max-height:60px;height:auto}
+.title{margin:0;font-size:1.25rem;color:#8ab4ff}
+.subtitle{margin:4px 0 0;color:#b0c4de}
 
-<main>
-  <div class="wrap">
-    <div class="card">
-      <h2>O cuidado com Reiki</h2>
-      <p>Harmonização energética para aliviar ansiedade, estresse e fadiga, facilitando o retorno do organismo ao seu ritmo de equilíbrio.</p>
-      <p><a href="https://wa.me/5548999132828" target="_blank" rel="noopener">Agendar pelo WhatsApp</a></p>
-    </div>
-  </div>
-</main>
+/* Nav */
+nav{margin-top:10px;text-align:center}
+.nav{display:inline-flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.nav a{
+  background:#111827;border:1px solid #22324a;border-radius:10px;
+  padding:8px 12px;font-size:.95rem;color:#cfe0ff;
+  transition:background .25s,color .25s,transform .15s;
+}
+.nav a:hover{background:#1b283d;color:#fff;transform:translateY(-1px)}
 
-<footer>© 2025 Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva</footer>
-<script>
-window.addEventListener('DOMContentLoaded',()=>{document.documentElement.classList.add('pronto')});
-document.addEventListener('click',(e)=>{const a=e.target.closest('a');if(!a)return;const u=new URL(a.href,location.href);const ex=u.origin!==location.origin||a.target==='_blank'||a.hasAttribute('download')||(u.protocol!=='http:'&&u.protocol!=='https:')||(u.pathname===location.pathname&&u.hash);if(ex)return;e.preventDefault();document.documentElement.classList.add('saindo');setTimeout(()=>location.href=a.href,180);});
-window.addEventListener('pageshow',(e)=>{if(e.persisted){document.documentElement.classList.remove('saindo');document.documentElement.classList.add('pronto')}})
-</script>
-  <!-- BOTÃO FIXO: AGENDAR SESSÃO -->
-<a href="../agendar.html" class="agendar-btn" title="Agendar sessão">📅</a>
+/* Conteúdo */
+main{flex:1;padding:28px 16px}
+h1{text-align:center;color:#c3d3ff;margin-bottom:20px;text-shadow:0 2px 6px rgba(0,0,0,.5)}
+.section{
+  max-width:900px;margin:0 auto;background:#111827;border:1px solid #22324a;border-radius:14px;
+  padding:24px;box-shadow:0 6px 18px rgba(0,0,0,.4)
+}
+.section h2{color:#8ab4ff;margin-top:0}
+.section p{color:#cbd5e1;line-height:1.7;margin:14px 0}
+.section ul{margin:0;padding-left:20px;color:#cbd5e1}
+.section li{margin:6px 0}
 
-<style>
+/* Imagem de fundo */
+.hero{
+  position:relative;
+  background:linear-gradient(180deg,rgba(10,15,26,0.8),rgba(17,24,39,0.85)),
+             url('../foto/foto1.jpg') center/cover no-repeat;
+  height:250px;display:flex;align-items:center;justify-content:center;
+  color:#e6f0ff;text-align:center;text-shadow:0 2px 6px rgba(0,0,0,.5)
+}
+
+/* Botão flutuante Agendar Sessão */
 .agendar-btn{
   position:fixed;
   bottom:90px;
@@ -85,8 +75,74 @@ window.addEventListener('pageshow',(e)=>{if(e.persisted){document.documentElemen
   transform:scale(1.08);
   box-shadow:0 4px 14px rgba(0,0,0,.6);
 }
-</style>
-<!-- FIM DO BOTÃO FIXO -->
 
+/* Rodapé */
+footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px;margin-top:auto}
+</style>
+</head>
+
+<body>
+<header class="header">
+  <div class="container">
+    <div class="brand">
+      <img src="../logo.jpg" alt="Logo do Núcleo">
+      <div>
+        <h1 class="title">Núcleo da Mente, Corpo e Alma</h1>
+        <p class="subtitle">Terapia de Reiki</p>
+      </div>
+    </div>
+    <nav aria-label="principal">
+      <div class="nav">
+        <a href="../">← Início</a>
+        <a href="../terapia1.html">Psicanálise</a>
+        <a href="../terapia2.html">Filosofia Clínica</a>
+        <a href="../wingchun.html">Wing Chun</a>
+        <a href="../reflexoes.html">Reflexões</a>
+        <a href="../sobre.html">Sobre</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <h1>Reiki — Energia, Harmonia e Cura Interior</h1>
+</div>
+
+<main>
+  <section class="section">
+    <h2>O que é o Reiki</h2>
+    <p>O Reiki é uma prática terapêutica baseada na canalização consciente da energia vital universal.
+    Sua função é restabelecer o fluxo energético do corpo, promovendo equilíbrio, serenidade e
+    regeneração física, mental e espiritual.</p>
+
+    <h2>Como o Reiki atua</h2>
+    <ul>
+      <li>Reduz o estresse e a ansiedade, promovendo relaxamento profundo.</li>
+      <li>Fortalece o sistema imunológico e melhora a disposição.</li>
+      <li>Harmoniza emoções e equilibra os centros energéticos (chakras).</li>
+      <li>Favorece estados meditativos e amplia a percepção de si mesmo.</li>
+    </ul>
+
+    <h2>O processo terapêutico</h2>
+    <p>Durante a sessão, o terapeuta atua como um canal da energia vital, aplicando-a por meio das mãos
+    sobre pontos específicos do corpo. O processo é silencioso, respeitoso e profundamente restaurador.</p>
+
+    <p>O Reiki pode ser aplicado de forma presencial ou à distância, mantendo sua eficácia energética.
+    É uma prática complementar e integrativa, alinhada à proposta do Núcleo de unir ciência, filosofia e espiritualidade.</p>
+
+    <p style="text-align:center;margin-top:20px;">
+      🌿 <strong>Reencontre o fluxo natural da vida.</strong><br>
+      <a href="../agendar.html" style="display:inline-block;background:#8ab4ff;color:#0a0f1a;
+      padding:10px 20px;border-radius:10px;text-decoration:none;font-weight:bold;margin-top:10px;">
+      Agendar Sessão de Reiki →
+      </a>
+    </p>
+  </section>
+</main>
+
+<!-- BOTÃO FIXO DE AGENDAMENTO -->
+<a href="../agendar.html" class="agendar-btn" title="Agendar sessão">📅</a>
+
+<footer>© 2025 Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva</footer>
 </body>
 </html>
