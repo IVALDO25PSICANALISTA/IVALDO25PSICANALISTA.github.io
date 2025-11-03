@@ -11,14 +11,14 @@ html,body{margin:0;padding:0}
 body{
   font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;
   color:#e6f0ff;
-  background:linear-gradient(180deg,#0a0f1a,#1a2133);
+  background:linear-gradient(180deg,#0b101d,#1a2438);
   min-height:100vh;display:flex;flex-direction:column;
 }
 a{color:#8ab4ff;text-decoration:none}
 a:hover{text-decoration:underline}
 
 /* Cabeçalho */
-.header{position:sticky;top:0;z-index:10;background:#0d1b2a;box-shadow:0 6px 16px rgba(0,0,0,.45)}
+.header{position:sticky;top:0;z-index:10;background:rgba(13,27,42,0.95);box-shadow:0 6px 16px rgba(0,0,0,.45)}
 .container{max-width:1100px;margin:0 auto;padding:12px 16px}
 .brand{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .brand img{max-height:60px;height:auto}
@@ -36,7 +36,13 @@ nav{margin-top:10px;text-align:center}
 .nav a:hover{background:#1b283d;color:#fff;transform:translateY(-1px)}
 
 /* Conteúdo */
-main{flex:1;padding:24px 16px}
+main{flex:1;padding:24px 16px;position:relative;overflow:hidden}
+main::before{
+  content:"";
+  position:absolute;inset:0;
+  background:url('foto/wdem.jpg') center/cover no-repeat;
+  opacity:0.15;z-index:-1;
+}
 h1{text-align:center;color:#c3d3ff;margin:6px 0 18px;text-shadow:0 2px 6px rgba(0,0,0,.5)}
 .intro{max-width:900px;margin:0 auto 28px;color:#cbd5e1;text-align:center;line-height:1.6}
 
@@ -48,13 +54,35 @@ h1{text-align:center;color:#c3d3ff;margin:6px 0 18px;text-shadow:0 2px 6px rgba(
   max-width:1100px;margin:0 auto;
 }
 .card{
-  background:#111827;border:1px solid #22324a;border-radius:14px;padding:20px;
+  background:rgba(17,24,39,0.9);border:1px solid #22324a;border-radius:14px;padding:20px;
   box-shadow:0 6px 18px rgba(0,0,0,.4);
   transition:transform .3s,box-shadow .3s;
+  text-align:center;
 }
 .card:hover{transform:translateY(-4px);box-shadow:0 10px 25px rgba(0,0,0,.5)}
-.card h2{color:#8ab4ff;margin-top:0}
+.card h2{color:#8ab4ff;margin:10px 0;font-size:1.3rem}
 .card p{color:#cbd5e1;line-height:1.65;font-size:1rem}
+.icon{
+  font-size:42px;
+  background:linear-gradient(135deg,#8ab4ff,#c3d3ff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  margin-bottom:10px;
+}
+
+/* Botões */
+.btn{
+  display:inline-block;
+  margin-top:12px;
+  background:#0d1b2a;
+  border:1px solid #22324a;
+  border-radius:10px;
+  color:#cfe0ff;
+  padding:8px 14px;
+  font-size:.9rem;
+  transition:background .25s,color .25s,transform .15s;
+}
+.btn:hover{background:#1b283d;color:#fff;transform:translateY(-1px)}
 
 /* Rodapé e WhatsApp */
 footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px;margin-top:auto}
@@ -93,27 +121,36 @@ footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px;margin-to
 
 <main>
   <h1>Terapias Integradas</h1>
-  <p class="intro">A verdadeira transformação nasce quando corpo, mente e alma dialogam. Cada caminho terapêutico é uma linguagem diferente para compreender o mesmo mistério: o ser humano em busca de sentido.</p>
+  <p class="intro">A verdadeira transformação nasce quando corpo, mente e alma dialogam.  
+  Cada caminho terapêutico é uma linguagem diferente para compreender o mesmo mistério: o ser humano em busca de sentido.</p>
 
   <div class="grid">
     <div class="card">
+      <div class="icon">🧠</div>
       <h2>Psicanálise</h2>
       <p>A Psicanálise acolhe o inconsciente e o sofrimento singular de cada sujeito. Pela escuta e pela palavra, convida à elaboração dos conflitos e à construção de novos sentidos para a própria história. Aqui, a fala se torna libertação e o silêncio, espaço de reencontro.</p>
+      <a href="terapia1.html" class="btn">Saiba mais</a>
     </div>
 
     <div class="card">
+      <div class="icon">⚖️</div>
       <h2>Filosofia Clínica</h2>
       <p>A Filosofia Clínica observa o ser humano a partir de sua estrutura de pensar, sentir e agir. Em lugar de diagnósticos, oferece um olhar existencial e ético sobre a vida. O terapeuta acompanha o outro na investigação de seu modo de ser, ajudando-o a reencontrar sentido e direção.</p>
+      <a href="terapia2.html" class="btn">Saiba mais</a>
     </div>
 
     <div class="card">
+      <div class="icon">🕊️</div>
       <h2>Reiki</h2>
       <p>O Reiki trabalha com a energia vital, promovendo equilíbrio e serenidade. Cada sessão é um convite ao relaxamento profundo e à harmonização dos centros energéticos, favorecendo o autoconhecimento e o despertar espiritual.</p>
+      <a href="terapia3.html" class="btn">Saiba mais</a>
     </div>
 
     <div class="card">
+      <div class="icon">🥋</div>
       <h2>Wing Chun</h2>
       <p>O Wing Chun, arte marcial chinesa, transcende o combate físico. Ele educa a percepção, a calma e o domínio do centro — símbolos do equilíbrio interior. No Núcleo, o Wing Chun é compreendido como um caminho de consciência corporal e espiritual, onde o movimento se torna meditação em ação.</p>
+      <a href="wingchun.html" class="btn">Saiba mais</a>
     </div>
   </div>
 </main>
@@ -122,4 +159,3 @@ footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px;margin-to
 <a class="whats" href="https://wa.me/5548999132828" target="_blank" rel="noopener">💬</a>
 </body>
 </html>
-
