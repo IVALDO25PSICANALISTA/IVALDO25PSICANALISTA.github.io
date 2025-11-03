@@ -63,5 +63,30 @@ window.addEventListener('DOMContentLoaded',()=>{document.documentElement.classLi
 document.addEventListener('click',(e)=>{const a=e.target.closest('a');if(!a)return;const u=new URL(a.href,location.href);const ex=u.origin!==location.origin||a.target==='_blank'||a.hasAttribute('download')||(u.protocol!=='http:'&&u.protocol!=='https:')||(u.pathname===location.pathname&&u.hash);if(ex)return;e.preventDefault();document.documentElement.classList.add('saindo');setTimeout(()=>location.href=a.href,180);});
 window.addEventListener('pageshow',(e)=>{if(e.persisted){document.documentElement.classList.remove('saindo');document.documentElement.classList.add('pronto')}})
 </script>
+  <!-- BOTÃO FIXO: AGENDAR SESSÃO -->
+<a href="../agendar.html" class="agendar-btn" title="Agendar sessão">📅</a>
+
+<style>
+.agendar-btn{
+  position:fixed;
+  bottom:90px;
+  right:18px;
+  background:#8ab4ff;
+  color:#0a0f1a;
+  border-radius:50%;
+  width:58px;height:58px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:28px;text-decoration:none;
+  box-shadow:0 3px 10px rgba(0,0,0,.4);
+  transition:transform .2s,box-shadow .2s;
+  z-index:99;
+}
+.agendar-btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 4px 14px rgba(0,0,0,.6);
+}
+</style>
+<!-- FIM DO BOTÃO FIXO -->
+
 </body>
 </html>
