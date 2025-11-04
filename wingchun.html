@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Wing Chun — Núcleo da Mente, Corpo e Alma</title>
-<meta name="description" content="Wing Chun integrado ao cuidado terapêutico.">
+<meta name="description" content="Wing Chun integrado ao cuidado terapêutico e filosófico.">
 <style>
 *,*::before,*::after{box-sizing:border-box}
 html,body{margin:0;padding:0}
@@ -33,39 +33,23 @@ nav{margin-top:10px;text-align:center}
 }
 .nav a:hover{background:#1b283d;color:#fff;transform:translateY(-1px)}
 
-/* HERO com fundo + aura */
+/* Hero */
 .hero{
   position:relative;overflow:hidden;border-radius:16px;
-  background:url('foto/wdem.jpg?v=3') center/contain no-repeat #000;
+  background:url('foto/wdem.jpg') center/cover no-repeat;
   min-height:380px;display:flex;align-items:center;justify-content:center;
   margin:16px auto;width:100%;
 }
 .hero::after{
-  /* vinheta */
   content:"";position:absolute;inset:0;
   background:radial-gradient(circle at center,rgba(0,0,0,0) 60%,rgba(0,0,0,.55) 100%);
   z-index:1;
-}
-.hero::before{
-  /* AURA dourado-azulada suave (sutil e leve) */
-  content:"";position:absolute;inset:-10%;
-  background:
-    radial-gradient(60% 60% at 30% 30%, rgba(255,215,130,.12), transparent 60%),
-    radial-gradient(50% 50% at 70% 65%, rgba(90,140,220,.14), transparent 60%),
-    radial-gradient(40% 40% at 50% 90%, rgba(200,170,90,.10), transparent 60%);
-  filter: blur(22px);
-  opacity:.8; z-index:0; pointer-events:none;
-  animation: auraFloat 14s ease-in-out infinite alternate;
-}
-@keyframes auraFloat{
-  0%{transform:translateY(0)}
-  100%{transform:translateY(-10px)}
 }
 .hero h1,.hero p{position:relative;z-index:2;text-align:center}
 .hero h1{margin:0;color:#e6f0ff;font-size:1.9rem;text-shadow:0 2px 6px rgba(0,0,0,.8)}
 .hero p{margin-top:10px;color:#cbd5e1;font-size:1.05rem}
 
-/* Cards */
+/* Conteúdo */
 main{flex:1}
 .grid{display:grid;gap:20px;grid-template-columns:1fr;padding:24px 16px}
 @media(min-width:980px){.grid{grid-template-columns:1fr 1fr}}
@@ -77,7 +61,8 @@ h2{color:#c3d3ff;margin:0 0 10px}
 .list{margin:0;padding-left:18px}
 .list li{margin:6px 0}
 
-/* Botões fixos (WhatsApp já existe no site; agendar é opcional aqui) */
+/* Rodapé e botões */
+footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px;margin-top:auto}
 .whats{
   position:fixed;bottom:18px;right:18px;background:#25D366;color:#fff;border-radius:50%;
   width:58px;height:58px;display:flex;align-items:center;justify-content:center;
@@ -89,9 +74,6 @@ h2{color:#c3d3ff;margin:0 0 10px}
   text-decoration:none;box-shadow:0 3px 10px rgba(0,0,0,.4);transition:transform .2s,box-shadow .2s;z-index:99;
 }
 .agendar-btn:hover{transform:scale(1.08);box-shadow:0 4px 14px rgba(0,0,0,.6)}
-
-/* Rodapé */
-footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px;margin-top:auto}
 </style>
 </head>
 
@@ -130,7 +112,7 @@ footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px;margin-to
   <div class="container grid">
     <section class="card">
       <h2>O que é o Wing Chun</h2>
-      <p>Wing Chun trabalha economia de movimento, atenção plena e alinhamento da estrutura corporal. Favorece autoconsciência, calma ativa e respostas funcionais ao estresse.</p>
+      <p>O Wing Chun trabalha economia de movimento, atenção plena e alinhamento da estrutura corporal. Favorece autoconsciência, calma ativa e respostas funcionais ao estresse.</p>
       <ul class="list">
         <li>Postura e eixo corporal estável</li>
         <li>Respiração e foco atencional</li>
@@ -149,6 +131,20 @@ footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px;margin-to
       </ul>
     </section>
   </div>
+
+  <!-- Seção da Organização -->
+  <section class="card" style="text-align:center;margin:30px auto;max-width:900px;">
+    <h2>🌐 Conheça nossa Organização</h2>
+    <p>O <strong>Núcleo da Mente, Corpo e Alma</strong> integra práticas terapêuticas e marciais em parceria com a <strong>PROWES</strong> — um espaço dedicado ao desenvolvimento humano e à consciência corporal.</p>
+    <p>
+      <a href="https://www.prowes.net" target="_blank" 
+         style="display:inline-block;background:#8ab4ff;color:#0a0f1a;
+         padding:10px 20px;border-radius:10px;text-decoration:none;
+         font-weight:bold;margin-top:10px;">
+         Acessar o site da PROWES →
+      </a>
+    </p>
+  </section>
 </main>
 
 <footer>© 2025 Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva</footer>
