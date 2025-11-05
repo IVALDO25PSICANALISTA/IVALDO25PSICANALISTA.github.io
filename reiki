@@ -1,46 +1,176 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Reiki</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: url('Imagem do WhatsApp de 2025-09-19 à(s) 23.43.35_197e245a.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #fff;
-            padding: 40px;
-            text-align: center;
-        }
-        header img {
-            max-width: 180px;
-        }
-        a {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background: rgba(0,0,0,0.6);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 8px;
-        }
-        a:hover {
-            background: rgba(255,255,255,0.3);
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <img src="LOGO PSICANALISE - Copia.jpg" alt="Logo">
-        <h1>Reiki</h1>
-    </header>
-    <p>
-        O Reiki é uma prática terapêutica energética que promove equilíbrio físico, emocional e espiritual.
-        Através da imposição das mãos, a energia vital universal é canalizada para harmonizar os centros energéticos
-        e estimular a autocura natural do organismo.
-    </p>
-    <a href="index.html">⬅ Voltar à Página Inicial</a>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reiki — Núcleo da Mente, Corpo e Alma</title>
+<meta name="description" content="Reiki — harmonização energética para equilíbrio físico, emocional e espiritual.">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;
+  color:#e6f0ff;background:linear-gradient(180deg,#0a0f1a,#1a2133);
+  min-height:100vh;display:flex;flex-direction:column;
+}
+a{color:#8ab4ff;text-decoration:none}
+a:hover{text-decoration:underline}
 
+/* Header */
+.header{position:sticky;top:0;z-index:10;background:#0d1b2a;box-shadow:0 6px 16px rgba(0,0,0,.45)}
+.container{max-width:1100px;margin:0 auto;padding:12px 16px}
+.brand{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.brand img{max-height:60px;height:auto}
+.title{margin:0;font-size:1.25rem;color:#8ab4ff}
+.subtitle{margin:4px 0 0;color:#b0c4de}
+
+/* Nav */
+nav{margin-top:10px;text-align:center}
+.nav{display:inline-flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.nav a{
+  background:#111827;border:1px solid #22324a;border-radius:10px;
+  padding:8px 12px;font-size:.95rem;color:#cfe0ff;
+  transition:background .25s,color .25s,transform .15s;
+}
+.nav a:hover{background:#1b283d;color:#fff;transform:translateY(-1px)}
+
+/* HERO com imagem + vinheta */
+.hero{
+  position:relative;overflow:hidden;border-radius:16px;
+  background:
+    linear-gradient(180deg,rgba(10,15,26,.80),rgba(17,24,39,.88)),
+    url('../foto/foto1.jpg') center/cover no-repeat;
+  min-height:300px;display:flex;align-items:center;justify-content:center;
+  margin:16px auto;width:100%;text-align:center
+}
+.hero h1{margin:0;color:#e6f0ff;font-size:1.9rem;text-shadow:0 2px 6px rgba(0,0,0,.8)}
+.hero p{margin-top:10px;color:#cbd5e1;font-size:1.05rem}
+
+/* Conteúdo */
+main{flex:1;padding:0 16px 24px}
+.grid{display:grid;gap:20px;grid-template-columns:1fr;max-width:1100px;margin:0 auto}
+@media(min-width:980px){.grid{grid-template-columns:1fr 1fr}}
+.card{
+  background:#111827;border:1px solid #22324a;border-radius:16px;padding:22px;
+  box-shadow:0 8px 22px rgba(0,0,0,.35)
+}
+h2{color:#c3d3ff;margin:0 0 10px}
+.list{margin:0;padding-left:18px}
+.list li{margin:6px 0}
+
+/* Reiki: faixa dourada suave (destaque) */
+.reiki-card{
+  position:relative;overflow:hidden;border:1px solid #2b3b57;
+  box-shadow:0 10px 24px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,215,130,.06);
+}
+.reiki-card::before{
+  content:"";position:absolute;inset:-2px;
+  background:
+    radial-gradient(120% 70% at 50% 0%, rgba(255,215,130,.22), rgba(255,215,130,0) 60%),
+    linear-gradient(180deg, rgba(255,215,130,.06), rgba(138,180,255,.04));
+  filter:blur(8px);pointer-events:none;z-index:0;opacity:.9;
+}
+.reiki-card > *{position:relative;z-index:1}
+
+/* Rodapé e botões flutuantes */
+footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px;margin-top:auto}
+.agendar-btn{
+  position:fixed;bottom:90px;right:18px;background:#8ab4ff;color:#0a0f1a;border-radius:50%;
+  width:58px;height:58px;display:flex;align-items:center;justify-content:center;font-size:28px;
+  text-decoration:none;box-shadow:0 3px 10px rgba(0,0,0,.4);transition:transform .2s,box-shadow .2s;z-index:99;
+}
+.agendar-btn:hover{transform:scale(1.08);box-shadow:0 4px 14px rgba(0,0,0,.6)}
+.whats{
+  position:fixed;bottom:18px;right:18px;background:#25D366;color:#fff;border-radius:50%;
+  width:58px;height:58px;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 3px 10px rgba(0,0,0,.4);z-index:99;text-decoration:none;font-size:28px;
+}
+</style>
+</head>
+
+<body>
+<header class="header">
+  <div class="container">
+    <div class="brand">
+      <img src="../logo.jpg" alt="Logo do Núcleo">
+      <div>
+        <h1 class="title">Núcleo da Mente, Corpo e Alma</h1>
+        <p class="subtitle">Terapia de Reiki</p>
+      </div>
+    </div>
+    <nav aria-label="principal">
+      <div class="nav">
+        <a href="../">← Início</a>
+        <a href="../terapia1.html">Psicanálise</a>
+        <a href="../terapia2.html">Filosofia Clínica</a>
+        <a href="../wingchun.html">Wing Chun</a>
+        <a href="../reflexoes.html">Reflexões</a>
+        <a href="../sobre.html">Sobre</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="container hero">
+  <div>
+    <h1>Reiki — Energia, Harmonia e Cura Interior</h1>
+    <p>Equilíbrio energético para serenidade emocional, clareza mental e bem-estar do corpo.</p>
+  </div>
+</div>
+
+<main>
+  <div class="grid" style="max-width:1100px;margin:0 auto">
+    <!-- Bloco de destaque com faixa dourada -->
+    <section class="card reiki-card" style="grid-column:1/-1">
+      <h2>O que é o Reiki</h2>
+      <p>O Reiki é uma prática terapêutica que canaliza a energia vital universal para restaurar o fluxo natural do organismo. Promove equilíbrio, serenidade e regeneração física, mental e espiritual.</p>
+
+      <h2>Como o Reiki atua</h2>
+      <ul class="list">
+        <li>Reduz estresse e ansiedade, favorecendo relaxamento profundo.</li>
+        <li>Harmoniza emoções e equilibra os centros energéticos (chakras).</li>
+        <li>Fortalece a vitalidade e melhora a disposição.</li>
+        <li>Favorece estados meditativos e amplia a percepção de si.</li>
+      </ul>
+
+      <h2>O processo terapêutico</h2>
+      <p>Durante a sessão, o terapeuta atua como um canal de energia, aplicando-a por meio das mãos sobre pontos específicos do corpo. O processo é silencioso, respeitoso e profundamente restaurador — presencial ou à distância.</p>
+
+      <p style="text-align:center;margin-top:20px;">
+        🌿 <strong>Reencontre o fluxo natural da vida.</strong><br>
+        <a href="../agendar.html" style="display:inline-block;background:#8ab4ff;color:#0a0f1a;
+        padding:10px 20px;border-radius:10px;text-decoration:none;font-weight:bold;margin-top:10px;">
+        Agendar Sessão de Reiki →
+        </a>
+      </p>
+    </section>
+
+    <!-- Bloco complementar (opcional) -->
+    <section class="card">
+      <h2>Indicações comuns</h2>
+      <ul class="list">
+        <li>Ansiedade, insônia e estresse crônico</li>
+        <li>Fadiga e desânimo</li>
+        <li>Dor muscular e tensão</li>
+        <li>Suporte em processos de autoconhecimento</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Orientações</h2>
+      <ul class="list">
+        <li>Use roupas confortáveis e silencie o celular.</li>
+        <li>Alimentação leve antes da sessão.</li>
+        <li>Hidratação após a prática para auxiliar a integração energética.</li>
+      </ul>
+    </section>
+  </div>
+</main>
+
+<!-- Botões Fixos -->
+<a href="../agendar.html" class="agendar-btn" title="Agendar sessão">📅</a>
+<a class="whats" href="https://wa.me/5548999132828" target="_blank" rel="noopener">💬</a>
+
+<footer>© 2025 Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva</footer>
 </body>
 </html>
