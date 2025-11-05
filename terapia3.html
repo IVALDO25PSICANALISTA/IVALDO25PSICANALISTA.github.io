@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Reiki — Núcleo da Mente, Corpo e Alma</title>
-<meta name="description" content="Reiki — Terapia de harmonização energética oferecida por Ivaldo José da Silva.">
+<meta name="description" content="Reiki — harmonização energética para equilíbrio físico, emocional e espiritual.">
 <style>
 *,*::before,*::after{box-sizing:border-box}
 html,body{margin:0;padding:0}
@@ -13,7 +13,8 @@ body{
   color:#e6f0ff;background:linear-gradient(180deg,#0a0f1a,#1a2133);
   min-height:100vh;display:flex;flex-direction:column;
 }
-a{color:#8ab4ff;text-decoration:none} a:hover{text-decoration:underline}
+a{color:#8ab4ff;text-decoration:none}
+a:hover{text-decoration:underline}
 
 /* Header */
 .header{position:sticky;top:0;z-index:10;background:#0d1b2a;box-shadow:0 6px 16px rgba(0,0,0,.45)}
@@ -33,39 +34,46 @@ nav{margin-top:10px;text-align:center}
 }
 .nav a:hover{background:#1b283d;color:#fff;transform:translateY(-1px)}
 
-/* HERO com imagem + aura */
+/* HERO com imagem + vinheta */
 .hero{
-  position:relative;overflow:hidden;
+  position:relative;overflow:hidden;border-radius:16px;
   background:
     linear-gradient(180deg,rgba(10,15,26,.80),rgba(17,24,39,.88)),
     url('../foto/foto1.jpg') center/cover no-repeat;
-  height:250px;display:flex;align-items:center;justify-content:center;
-  color:#e6f0ff;text-align:center;text-shadow:0 2px 6px rgba(0,0,0,.5);
+  min-height:300px;display:flex;align-items:center;justify-content:center;
+  margin:16px auto;width:100%;text-align:center
 }
-.hero::before{
-  /* AURA dourado-azulada suave */
-  content:"";position:absolute;inset:-12%;
+.hero h1{margin:0;color:#e6f0ff;font-size:1.9rem;text-shadow:0 2px 6px rgba(0,0,0,.8)}
+.hero p{margin-top:10px;color:#cbd5e1;font-size:1.05rem}
+
+/* Conteúdo */
+main{flex:1;padding:0 16px 24px}
+.grid{display:grid;gap:20px;grid-template-columns:1fr;max-width:1100px;margin:0 auto}
+@media(min-width:980px){.grid{grid-template-columns:1fr 1fr}}
+.card{
+  background:#111827;border:1px solid #22324a;border-radius:16px;padding:22px;
+  box-shadow:0 8px 22px rgba(0,0,0,.35)
+}
+h2{color:#c3d3ff;margin:0 0 10px}
+.list{margin:0;padding-left:18px}
+.list li{margin:6px 0}
+
+/* Reiki: faixa dourada suave (destaque) */
+.reiki-card{
+  position:relative;overflow:hidden;border:1px solid #2b3b57;
+  box-shadow:0 10px 24px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,215,130,.06);
+}
+.reiki-card::before{
+  content:"";position:absolute;inset:-2px;
   background:
-    radial-gradient(55% 55% at 30% 30%, rgba(255,215,130,.12), transparent 60%),
-    radial-gradient(45% 45% at 75% 70%, rgba(90,140,220,.14), transparent 60%),
-    radial-gradient(40% 40% at 50% 95%, rgba(200,170,90,.10), transparent 60%);
-  filter: blur(22px); opacity:.85; pointer-events:none; z-index:0;
-  animation: auraFloat 14s ease-in-out infinite alternate;
+    radial-gradient(120% 70% at 50% 0%, rgba(255,215,130,.22), rgba(255,215,130,0) 60%),
+    linear-gradient(180deg, rgba(255,215,130,.06), rgba(138,180,255,.04));
+  filter:blur(8px);pointer-events:none;z-index:0;opacity:.9;
 }
-@keyframes auraFloat{from{transform:translateY(0)}to{transform:translateY(-10px)}}
+.reiki-card > *{position:relative;z-index:1}
 
-/* Seções */
-main{flex:1;padding:28px 16px}
-.section{
-  max-width:900px;margin:0 auto;background:#111827;border:1px solid #22324a;border-radius:14px;
-  padding:24px;box-shadow:0 6px 18px rgba(0,0,0,.4)
-}
-.section h2{color:#8ab4ff;margin-top:0}
-.section p{color:#cbd5e1;line-height:1.7;margin:14px 0}
-.section ul{margin:0;padding-left:20px;color:#cbd5e1}
-.section li{margin:6px 0}
-
-/* Botões fixos */
+/* Rodapé e botões flutuantes */
+footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px;margin-top:auto}
 .agendar-btn{
   position:fixed;bottom:90px;right:18px;background:#8ab4ff;color:#0a0f1a;border-radius:50%;
   width:58px;height:58px;display:flex;align-items:center;justify-content:center;font-size:28px;
@@ -77,9 +85,6 @@ main{flex:1;padding:28px 16px}
   width:58px;height:58px;display:flex;align-items:center;justify-content:center;
   box-shadow:0 3px 10px rgba(0,0,0,.4);z-index:99;text-decoration:none;font-size:28px;
 }
-
-/* Rodapé */
-footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px;margin-top:auto}
 </style>
 </head>
 
@@ -106,40 +111,60 @@ footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px;margin-to
   </div>
 </header>
 
-<div class="hero">
-  <h1>Reiki — Energia, Harmonia e Cura Interior</h1>
+<div class="container hero">
+  <div>
+    <h1>Reiki — Energia, Harmonia e Cura Interior</h1>
+    <p>Equilíbrio energético para serenidade emocional, clareza mental e bem-estar do corpo.</p>
+  </div>
 </div>
 
 <main>
-  <section class="section">
-    <h2>O que é o Reiki</h2>
-    <p>O Reiki é uma prática terapêutica baseada na canalização consciente da energia vital universal.
-    Sua função é restabelecer o fluxo energético do corpo, promovendo equilíbrio, serenidade e
-    regeneração física, mental e espiritual.</p>
+  <div class="grid" style="max-width:1100px;margin:0 auto">
+    <!-- Bloco de destaque com faixa dourada -->
+    <section class="card reiki-card" style="grid-column:1/-1">
+      <h2>O que é o Reiki</h2>
+      <p>O Reiki é uma prática terapêutica que canaliza a energia vital universal para restaurar o fluxo natural do organismo. Promove equilíbrio, serenidade e regeneração física, mental e espiritual.</p>
 
-    <h2>Como o Reiki atua</h2>
-    <ul>
-      <li>Reduz o estresse e a ansiedade, promovendo relaxamento profundo.</li>
-      <li>Fortalece o sistema imunológico e melhora a disposição.</li>
-      <li>Harmoniza emoções e equilibra os centros energéticos (chakras).</li>
-      <li>Favorece estados meditativos e amplia a percepção de si mesmo.</li>
-    </ul>
+      <h2>Como o Reiki atua</h2>
+      <ul class="list">
+        <li>Reduz estresse e ansiedade, favorecendo relaxamento profundo.</li>
+        <li>Harmoniza emoções e equilibra os centros energéticos (chakras).</li>
+        <li>Fortalece a vitalidade e melhora a disposição.</li>
+        <li>Favorece estados meditativos e amplia a percepção de si.</li>
+      </ul>
 
-    <h2>O processo terapêutico</h2>
-    <p>Durante a sessão, o terapeuta atua como um canal da energia vital, aplicando-a por meio das mãos
-    sobre pontos específicos do corpo. O processo é silencioso, respeitoso e profundamente restaurador.</p>
+      <h2>O processo terapêutico</h2>
+      <p>Durante a sessão, o terapeuta atua como um canal de energia, aplicando-a por meio das mãos sobre pontos específicos do corpo. O processo é silencioso, respeitoso e profundamente restaurador — presencial ou à distância.</p>
 
-    <p>O Reiki pode ser aplicado de forma presencial ou à distância, mantendo sua eficácia energética.
-    É uma prática complementar e integrativa, alinhada à proposta do Núcleo de unir ciência, filosofia e espiritualidade.</p>
+      <p style="text-align:center;margin-top:20px;">
+        🌿 <strong>Reencontre o fluxo natural da vida.</strong><br>
+        <a href="../agendar.html" style="display:inline-block;background:#8ab4ff;color:#0a0f1a;
+        padding:10px 20px;border-radius:10px;text-decoration:none;font-weight:bold;margin-top:10px;">
+        Agendar Sessão de Reiki →
+        </a>
+      </p>
+    </section>
 
-    <p style="text-align:center;margin-top:20px;">
-      🌿 <strong>Reencontre o fluxo natural da vida.</strong><br>
-      <a href="../agendar.html" style="display:inline-block;background:#8ab4ff;color:#0a0f1a;
-      padding:10px 20px;border-radius:10px;text-decoration:none;font-weight:bold;margin-top:10px;">
-      Agendar Sessão de Reiki →
-      </a>
-    </p>
-  </section>
+    <!-- Bloco complementar (opcional) -->
+    <section class="card">
+      <h2>Indicações comuns</h2>
+      <ul class="list">
+        <li>Ansiedade, insônia e estresse crônico</li>
+        <li>Fadiga e desânimo</li>
+        <li>Dor muscular e tensão</li>
+        <li>Suporte em processos de autoconhecimento</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Orientações</h2>
+      <ul class="list">
+        <li>Use roupas confortáveis e silencie o celular.</li>
+        <li>Alimentação leve antes da sessão.</li>
+        <li>Hidratação após a prática para auxiliar a integração energética.</li>
+      </ul>
+    </section>
+  </div>
 </main>
 
 <!-- Botões Fixos -->
@@ -149,3 +174,4 @@ footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px;margin-to
 <footer>© 2025 Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva</footer>
 </body>
 </html>
+
