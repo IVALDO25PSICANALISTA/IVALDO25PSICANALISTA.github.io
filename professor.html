@@ -59,6 +59,32 @@ strong{color:#ffd782}
   box-shadow:0 4px 18px rgba(0,0,0,.45);
 }
 
+/* Linha do Tempo */
+.timeline {
+  position:relative;max-width:900px;margin:30px auto;padding:20px 0;
+}
+.timeline::after {
+  content:'';position:absolute;width:4px;background:linear-gradient(180deg,#ffd782,#8ab4ff);
+  top:0;bottom:0;left:50%;margin-left:-2px;border-radius:2px;
+}
+.tl-item {padding:10px 30px;position:relative;width:50%;}
+.tl-item.left{left:0}
+.tl-item.right{left:50%}
+.tl-item::after {
+  content:'';position:absolute;width:20px;height:20px;right:-10px;background:#ffd782;
+  border:3px solid #22324a;top:15px;border-radius:50%;z-index:1;
+}
+.tl-item.right::after {left:-10px}
+.content {
+  padding:16px;background:#111827;border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,.3);
+}
+@media screen and (max-width:768px){
+  .timeline::after{left:31px}
+  .tl-item{width:100%;padding-left:70px;padding-right:25px}
+  .tl-item.right{left:0}
+  .tl-item::after{left:15px}
+}
+
 /* Rodapé */
 footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px;margin-top:auto}
 
@@ -101,7 +127,7 @@ footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px;margin-to
   <section class="card">
     <img src="foto/foto1.jpg" alt="Foto do Professor Ivaldo José da Silva" class="foto">
     <h1>Professor Ivaldo José da Silva</h1>
-    <p><strong>Professor, psicanalista e filósofo clínico</strong>, Ivaldo José da Silva dedica sua trajetória ao estudo e à prática integrativa entre mente, corpo e alma — unindo filosofia, psicologia profunda e espiritualidade.</p>
+    <p><strong>Professor, psicanalista e filósofo clínico</strong>, Ivaldo José da Silva dedica sua trajetória ao estudo e à prática integrativa entre mente, corpo e alma — unindo filosofia, psicanálise profunda e espiritualidade.</p>
     <p>Atua no <strong>Núcleo da Mente, Corpo e Alma</strong>, espaço dedicado à escuta terapêutica, ao desenvolvimento humano e à harmonia energética. Sua abordagem contempla o autoconhecimento, a ética existencial e o despertar de sentido na vida cotidiana.</p>
     <p>Formado em <strong>Filosofia</strong> pela Universidade Cruzeiro do Sul e em <strong>Psicanálise</strong> pelo Instituto IBRAPSI, o professor Ivaldo integra também práticas complementares como Reiki, cromoterapia, aromaterapia e meditação guiada.</p>
     <p>Com experiência como instrutor de <strong>Wing Chun</strong>, promove o equilíbrio entre razão e emoção, movimento e silêncio, técnica e consciência. A missão que o guia é auxiliar cada ser humano a reencontrar seu eixo interior e expressar sua melhor versão no mundo.</p>
@@ -111,66 +137,40 @@ footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px;margin-to
     <h2>Missão</h2>
     <p>“Guiar o indivíduo ao reencontro com o sentido, integrando o pensar, o sentir e o agir em um só caminho de consciência.”</p>
   </section>
-<section class="card" style="margin-top:40px;">
-  <h2 style="text-align:center">Linha do Tempo Profissional</h2>
-  <div class="timeline">
-    <div class="tl-item left">
-      <div class="content">
-        <h3>🎓 Filosofia — Universidade Cruzeiro do Sul</h3>
-        <p>Licenciatura em Filosofia, com foco em Ética, Existencialismo e pensamento contemporâneo.</p>
+
+  <!-- LINHA DO TEMPO PROFISSIONAL -->
+  <section class="card">
+    <h2 style="text-align:center">Linha do Tempo Profissional</h2>
+    <div class="timeline">
+      <div class="tl-item left">
+        <div class="content">
+          <h3>🎓 Filosofia — Universidade Cruzeiro do Sul</h3>
+          <p>Licenciatura em Filosofia, com foco em Ética, Existencialismo e pensamento contemporâneo.</p>
+        </div>
+      </div>
+
+      <div class="tl-item right">
+        <div class="content">
+          <h3>🧠 Psicanálise — IBRAPSI</h3>
+          <p>Formação clínica voltada à escuta do inconsciente, manejo da transferência e ética do desejo.</p>
+        </div>
+      </div>
+
+      <div class="tl-item left">
+        <div class="content">
+          <h3>🌿 Reiki — Sistema Usui</h3>
+          <p>Praticante e terapeuta em Reiki, voltado à harmonização energética e equilíbrio emocional.</p>
+        </div>
+      </div>
+
+      <div class="tl-item right">
+        <div class="content">
+          <h3>🥋 Wing Chun — PROWES</h3>
+          <p>Instrutor certificado, unindo disciplina marcial e consciência corporal ao desenvolvimento terapêutico.</p>
+        </div>
       </div>
     </div>
-
-    <div class="tl-item right">
-      <div class="content">
-        <h3>🧠 Psicanálise — IBRAPSI</h3>
-        <p>Formação clínica voltada à escuta do inconsciente, manejo da transferência e ética do desejo.</p>
-      </div>
-    </div>
-
-    <div class="tl-item left">
-      <div class="content">
-        <h3>🌿 Reiki — Sistema Usui</h3>
-        <p>Praticante e terapeuta em Reiki, voltado à harmonização energética e equilíbrio emocional.</p>
-      </div>
-    </div>
-
-    <div class="tl-item right">
-      <div class="content">
-        <h3>🥋 Wing Chun — PROWES</h3>
-        <p>Instrutor certificado, unindo disciplina marcial e consciência corporal ao desenvolvimento terapêutico.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<style>
-.timeline {
-  position:relative;max-width:900px;margin:30px auto;padding:20px 0;
-}
-.timeline::after {
-  content:'';position:absolute;width:4px;background:linear-gradient(180deg,#ffd782,#8ab4ff);
-  top:0;bottom:0;left:50%;margin-left:-2px;border-radius:2px;
-}
-.tl-item {padding:10px 30px;position:relative;width:50%;}
-.tl-item.left{left:0}
-.tl-item.right{left:50%}
-.tl-item::after {
-  content:'';position:absolute;width:20px;height:20px;right:-10px;background:#ffd782;
-  border:3px solid #22324a;top:15px;border-radius:50%;z-index:1;
-}
-.tl-item.right::after {left:-10px}
-.content {
-  padding:16px;background:#111827;border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,.3);
-}
-@media screen and (max-width:768px){
-  .timeline::after{left:31px}
-  .tl-item{width:100%;padding-left:70px;padding-right:25px}
-  .tl-item.right{left:0}
-  .tl-item::after{left:15px}
-}
-</style>
-
+  </section>
 </main>
 
 <footer>© 2025 Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva</footer>
