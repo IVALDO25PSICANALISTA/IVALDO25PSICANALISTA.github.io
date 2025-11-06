@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Sobre o Mestre — Núcleo da Mente, Corpo e Alma</title>
-<meta name="description" content="Trajetória, missão e princípios de Ivaldo José da Silva — instrutor PROWES e fundador do Núcleo da Mente, Corpo e Alma.">
+<title>Professor — Núcleo da Mente, Corpo e Alma</title>
+<meta name="description" content="Apresentação profissional de Ivaldo José da Silva — Filosofia, Psicanálise e Espiritualidade.">
 <style>
 *,*::before,*::after{box-sizing:border-box}
 html,body{margin:0;padding:0}
@@ -32,77 +32,45 @@ nav{margin-top:10px;text-align:center}
   transition:background .25s,color .25s,transform .15s;
 }
 .nav a:hover{background:#1b283d;color:#fff;transform:translateY(-1px)}
-.nav .active{outline:2px solid rgba(255,215,130,.25)}
-
-/* Hero com aura dourada suave */
-.hero{
-  position:relative;overflow:hidden;border-radius:16px;
-  background:
-    linear-gradient(180deg,rgba(10,15,26,.80),rgba(17,24,39,.88)),
-    url('foto/wdem.jpg') center/cover no-repeat;
-  min-height:300px;display:flex;align-items:center;justify-content:center;
-  margin:16px auto;width:100%;text-align:center
-}
-.hero::before{
-  content:"";position:absolute;inset:-12%;
-  background:
-    radial-gradient(55% 55% at 30% 30%, rgba(255,215,130,.18), transparent 60%),
-    radial-gradient(45% 45% at 70% 70%, rgba(138,180,255,.12), transparent 60%);
-  filter: blur(18px);opacity:.9;pointer-events:none;
-}
-.hero h1{margin:0;color:#e6f0ff;font-size:2rem;text-shadow:0 2px 6px rgba(0,0,0,.8)}
-.hero p{margin-top:10px;color:#cbd5e1;font-size:1.05rem}
 
 /* Conteúdo */
-main{flex:1}
-.grid{display:grid;gap:20px;grid-template-columns:1fr;max-width:1100px;margin:0 auto;padding:24px 16px}
-@media(min-width:980px){.grid{grid-template-columns:1.1fr .9fr}}
+main{flex:1;padding:24px 16px}
 .card{
-  background:#111827;border:1px solid #22324a;border-radius:16px;padding:22px;
-  box-shadow:0 8px 22px rgba(0,0,0,.35)
+  background:#111827;border:1px solid #22324a;border-radius:16px;padding:24px;
+  box-shadow:0 8px 22px rgba(0,0,0,.35);max-width:900px;margin:0 auto 24px;
+  position:relative;overflow:hidden;
 }
-h2{color:#c3d3ff;margin:0 0 10px}
-h3{color:#9fb8ff;margin:16px 0 8px}
-p,li{color:#cbd5e1;line-height:1.7}
-.list{margin:0;padding-left:18px}
-.list li{margin:6px 0}
-
-/* Destaque dourado suave (mesmo padrão Reiki/Wing Chun) */
-.highlight{
-  position:relative;overflow:hidden;border:1px solid #2b3b57;
-  box-shadow:0 10px 24px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,215,130,.06);
-}
-.highlight::before{
+.card::before{
   content:"";position:absolute;inset:-2px;
   background:
-    radial-gradient(120% 70% at 50% 0%, rgba(255,215,130,.22), rgba(255,215,130,0) 60%),
+    radial-gradient(120% 70% at 50% 0%, rgba(255,215,130,.18), rgba(255,215,130,0) 70%),
     linear-gradient(180deg, rgba(255,215,130,.06), rgba(138,180,255,.04));
   filter:blur(8px);pointer-events:none;z-index:0;opacity:.9;
 }
-.highlight>*{position:relative;z-index:1}
+.card>*{position:relative;z-index:1}
 
-/* Avatar/Logo opcional */
-.profile{
-  display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:10px
-}
-.profile img{
-  width:84px;height:84px;border-radius:12px;object-fit:cover;
-  box-shadow:0 4px 12px rgba(0,0,0,.4);border:1px solid #2b3b57
+h1,h2{color:#c3d3ff;margin-top:0;text-align:center}
+p{line-height:1.6;margin-bottom:14px;text-align:justify}
+strong{color:#ffd782}
+
+/* Foto */
+.foto{
+  display:block;margin:0 auto 16px;border-radius:12px;max-width:220px;
+  box-shadow:0 4px 18px rgba(0,0,0,.45);
 }
 
-/* Rodapé e botões flutuantes */
+/* Rodapé */
 footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px;margin-top:auto}
-.agendar-btn{
-  position:fixed;bottom:90px;right:18px;background:#8ab4ff;color:#0a0f1a;border-radius:50%;
-  width:58px;height:58px;display:flex;align-items:center;justify-content:center;font-size:28px;
-  text-decoration:none;box-shadow:0 3px 10px rgba(0,0,0,.4);transition:transform .2s,box-shadow .2s;z-index:99;
+
+/* Botões flutuantes */
+.whats, .agendar-btn{
+  position:fixed;right:18px;border-radius:50%;width:58px;height:58px;
+  display:flex;align-items:center;justify-content:center;text-decoration:none;
+  font-size:28px;box-shadow:0 3px 10px rgba(0,0,0,.4);z-index:99;
 }
+.whats{bottom:18px;background:#25D366;color:#fff;}
+.agendar-btn{bottom:90px;background:#8ab4ff;color:#0a0f1a;}
 .agendar-btn:hover{transform:scale(1.08);box-shadow:0 4px 14px rgba(0,0,0,.6)}
-.whats{
-  position:fixed;bottom:18px;right:18px;background:#25D366;color:#fff;border-radius:50%;
-  width:58px;height:58px;display:flex;align-items:center;justify-content:center;
-  box-shadow:0 3px 10px rgba(0,0,0,.4);z-index:99;text-decoration:none;font-size:28px;
-}
 </style>
 </head>
 
@@ -113,7 +81,7 @@ footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px;margin-to
       <img src="logo.jpg" alt="Logo do Núcleo">
       <div>
         <h1 class="title">Núcleo da Mente, Corpo e Alma</h1>
-        <p class="subtitle">Presença • Consciência • Cuidado</p>
+        <p class="subtitle">Apresentação do Professor</p>
       </div>
     </div>
     <nav aria-label="principal">
@@ -124,94 +92,31 @@ footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px;margin-to
         <a href="terapia3.html">Reiki</a>
         <a href="wingchun.html">Wing Chun</a>
         <a href="reflexoes.html">Reflexões</a>
-        <a href="sobre.html">Sobre o Núcleo</a>
-        <a class="active" href="mestre.html">Sobre o Mestre</a>
       </div>
     </nav>
   </div>
 </header>
 
-<div class="container hero">
-  <div>
-    <h1>Sobre o Mestre</h1>
-    <p>Ivaldo José da Silva — instrutor PROWES e fundador do Núcleo da Mente, Corpo e Alma.</p>
-  </div>
-</div>
-
 <main>
-  <div class="grid">
-    <!-- Trajetória e missão -->
-    <section class="card highlight">
-      <div class="profile">
-        <img src="logo.jpg" alt="Marca do Núcleo (avatar)">
-        <div>
-          <h2>Trajetória & Missão</h2>
-          <p>Meu trabalho é integrar mente, corpo e espírito em um caminho de presença e responsabilidade consigo mesmo.
-             Como terapeuta e instrutor, ofereço um espaço de escuta, prática e autoconhecimento para que cada pessoa
-             possa reorganizar a vida com sentido, serenidade e coragem.</p>
-        </div>
-      </div>
+  <section class="card">
+    <img src="foto/foto1.jpg" alt="Foto do Professor Ivaldo José da Silva" class="foto">
+    <h1>Professor Ivaldo José da Silva</h1>
+    <p><strong>Professor, psicanalista e filósofo clínico</strong>, Ivaldo José da Silva dedica sua trajetória ao estudo e à prática integrativa entre mente, corpo e alma — unindo filosofia, psicologia profunda e espiritualidade.</p>
+    <p>Atua no <strong>Núcleo da Mente, Corpo e Alma</strong>, espaço dedicado à escuta terapêutica, ao desenvolvimento humano e à harmonia energética. Sua abordagem contempla o autoconhecimento, a ética existencial e o despertar de sentido na vida cotidiana.</p>
+    <p>Formado em <strong>Filosofia</strong> pela Universidade Cruzeiro do Sul e em <strong>Psicanálise</strong> pelo Instituto IBRAPSI, o professor Ivaldo integra também práticas complementares como Reiki, cromoterapia, aromaterapia e meditação guiada.</p>
+    <p>Com experiência como instrutor de <strong>Wing Chun</strong>, promove o equilíbrio entre razão e emoção, movimento e silêncio, técnica e consciência. A missão que o guia é auxiliar cada ser humano a reencontrar seu eixo interior e expressar sua melhor versão no mundo.</p>
+  </section>
 
-      <h3>Princípios que me guiam</h3>
-      <ul class="list">
-        <li><strong>Escuta e singularidade:</strong> cada história merece um cuidado próprio.</li>
-        <li><strong>Consciência corporal:</strong> postura, respiração e eixo para sustentar escolhas.</li>
-        <li><strong>Ética do cotidiano:</strong> clareza para agir com respeito, limites e compaixão.</li>
-        <li><strong>Integração de saberes:</strong> Psicanálise, Filosofia Clínica, Reiki e Wing Chun.</li>
-      </ul>
-
-      <h3>Hoje</h3>
-      <p>Atuo presencialmente em <em>Balneário Rincão (SC)</em> e também no formato on-line, acolhendo pessoas em processos
-         de sofrimento, transição e crescimento pessoal.</p>
-
-      <p style="text-align:center;margin-top:18px">
-        <a href="agendar.html" style="display:inline-block;background:#8ab4ff;color:#0a0f1a;
-          padding:10px 20px;border-radius:10px;text-decoration:none;font-weight:bold">Agendar uma conversa →</a>
-      </p>
-    </section>
-
-    <!-- Bloco lateral com info prática -->
-    <aside class="card">
-      <h2>Informações</h2>
-      <p>
-        📍 Rua Saturno, 21 — Lagoa dos Freitas, Baln. Rincão-SC<br>
-        ✉️ <a href="mailto:ivaldo25psicanalista@gmail.com">ivaldo25psicanalista@gmail.com</a><br>
-        📱 <a href="https://wa.me/5548999132828" target="_blank" rel="noopener">(48) 99913-2828</a>
-      </p>
-      <h3>Atendimentos</h3>
-      <ul class="list">
-        <li>Psicanálise</li>
-        <li>Filosofia Clínica</li>
-        <li>Reiki</li>
-        <li>Wing Chun (instrutor PROWES)</li>
-      </ul>
-      <p style="margin-top:12px">
-        🌐 Organização marcial: <a href="https://www.prowes.net" target="_blank" rel="noopener">PROWES</a>
-      </p>
-    </aside>
-  </div>
-
-  <!-- Valores em 3 cartões -->
-  <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));">
-    <section class="card">
-      <h3>Presença</h3>
-      <p>Estar inteiro em cada passo — ouvir, sentir, perceber e responder com clareza.</p>
-    </section>
-    <section class="card">
-      <h3>Estrutura</h3>
-      <p>Organizar corpo e pensamento para sustentar decisões e limites com serenidade.</p>
-    </section>
-    <section class="card">
-      <h3>Sentido</h3>
-      <p>Alinhar projeto de vida, valores e afetos — um caminho de autenticidade.</p>
-    </section>
-  </div>
+  <section class="card" style="text-align:center">
+    <h2>Missão</h2>
+    <p>“Guiar o indivíduo ao reencontro com o sentido, integrando o pensar, o sentir e o agir em um só caminho de consciência.”</p>
+  </section>
 </main>
 
-<!-- Botões Fixos -->
-<a href="agendar.html" class="agendar-btn" title="Agendar sessão">📅</a>
-<a class="whats" href="https://wa.me/5548999132828" target="_blank" rel="noopener">💬</a>
-
 <footer>© 2025 Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva</footer>
+
+<!-- Botões Fixos -->
+<a class="agendar-btn" href="agendar.html" title="Agendar sessão">📅</a>
+<a class="whats" href="https://wa.me/5548999132828" target="_blank" rel="noopener">💬</a>
 </body>
 </html>
