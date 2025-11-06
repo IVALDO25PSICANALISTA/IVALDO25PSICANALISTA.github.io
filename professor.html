@@ -111,6 +111,66 @@ footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px;margin-to
     <h2>Missão</h2>
     <p>“Guiar o indivíduo ao reencontro com o sentido, integrando o pensar, o sentir e o agir em um só caminho de consciência.”</p>
   </section>
+<section class="card" style="margin-top:40px;">
+  <h2 style="text-align:center">Linha do Tempo Profissional</h2>
+  <div class="timeline">
+    <div class="tl-item left">
+      <div class="content">
+        <h3>🎓 Filosofia — Universidade Cruzeiro do Sul</h3>
+        <p>Licenciatura em Filosofia, com foco em Ética, Existencialismo e pensamento contemporâneo.</p>
+      </div>
+    </div>
+
+    <div class="tl-item right">
+      <div class="content">
+        <h3>🧠 Psicanálise — IBRAPSI</h3>
+        <p>Formação clínica voltada à escuta do inconsciente, manejo da transferência e ética do desejo.</p>
+      </div>
+    </div>
+
+    <div class="tl-item left">
+      <div class="content">
+        <h3>🌿 Reiki — Sistema Usui</h3>
+        <p>Praticante e terapeuta em Reiki, voltado à harmonização energética e equilíbrio emocional.</p>
+      </div>
+    </div>
+
+    <div class="tl-item right">
+      <div class="content">
+        <h3>🥋 Wing Chun — PROWES</h3>
+        <p>Instrutor certificado, unindo disciplina marcial e consciência corporal ao desenvolvimento terapêutico.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.timeline {
+  position:relative;max-width:900px;margin:30px auto;padding:20px 0;
+}
+.timeline::after {
+  content:'';position:absolute;width:4px;background:linear-gradient(180deg,#ffd782,#8ab4ff);
+  top:0;bottom:0;left:50%;margin-left:-2px;border-radius:2px;
+}
+.tl-item {padding:10px 30px;position:relative;width:50%;}
+.tl-item.left{left:0}
+.tl-item.right{left:50%}
+.tl-item::after {
+  content:'';position:absolute;width:20px;height:20px;right:-10px;background:#ffd782;
+  border:3px solid #22324a;top:15px;border-radius:50%;z-index:1;
+}
+.tl-item.right::after {left:-10px}
+.content {
+  padding:16px;background:#111827;border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,.3);
+}
+@media screen and (max-width:768px){
+  .timeline::after{left:31px}
+  .tl-item{width:100%;padding-left:70px;padding-right:25px}
+  .tl-item.right{left:0}
+  .tl-item::after{left:15px}
+}
+</style>
+
 </main>
 
 <footer>© 2025 Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva</footer>
