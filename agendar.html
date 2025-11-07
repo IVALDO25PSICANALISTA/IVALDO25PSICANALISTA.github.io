@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Agendar Atendimento — Núcleo da Mente, Corpo e Alma</title>
-<meta name="description" content="Agende sua sessão de Psicanálise, Filosofia Clínica, Reiki ou Wing Chun com Ivaldo José da Silva.">
+<title>Agendar Sessão — Núcleo da Mente, Corpo e Alma</title>
+<meta name="description" content="Agende sua sessão de Psicanálise, Filosofia Clínica ou Terapias Integrativas com Ivaldo José da Silva.">
 <style>
 *,*::before,*::after{box-sizing:border-box}
 html,body{margin:0;padding:0}
@@ -14,122 +14,60 @@ body{
   background:linear-gradient(180deg,#0a0f1a,#1a2133);
   min-height:100vh;display:flex;flex-direction:column;
 }
-a{color:#8ab4ff;text-decoration:none}
-a:hover{text-decoration:underline}
-
-/* Header */
-.header{position:sticky;top:0;z-index:10;background:#0d1b2a;box-shadow:0 6px 16px rgba(0,0,0,.45)}
-.container{max-width:1100px;margin:0 auto;padding:12px 16px}
-.brand{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.brand img{max-height:60px;height:auto}
-.title{margin:0;font-size:1.25rem;color:#8ab4ff}
-.subtitle{margin:4px 0 0;color:#b0c4de}
-
-/* Nav */
-nav{margin-top:10px;text-align:center}
-.nav{display:inline-flex;flex-wrap:wrap;gap:10px;justify-content:center}
-.nav a{
-  background:#111827;border:1px solid #22324a;border-radius:10px;
-  padding:8px 12px;font-size:.95rem;color:#cfe0ff;
-  transition:background .25s,color .25s,transform .15s;
-}
-.nav a:hover{background:#1b283d;color:#fff;transform:translateY(-1px)}
-
-/* Conteúdo */
-main{flex:1;padding:28px 16px}
-h1{text-align:center;color:#c3d3ff;margin-bottom:20px;text-shadow:0 2px 6px rgba(0,0,0,.5)}
-.intro{max-width:800px;margin:0 auto 30px;color:#cbd5e1;text-align:center;line-height:1.6}
-
-/* Cartão */
+a{color:#8ab4ff;text-decoration:none}a:hover{text-decoration:underline}
+.container{max-width:900px;margin:0 auto;padding:24px 16px}
+header{background:#0d1b2a;box-shadow:0 6px 16px rgba(0,0,0,.45)}
+header .brand{display:flex;align-items:center;gap:12px}
+header img{max-height:60px}
+h1{color:#c3d3ff;margin:0}
+p{color:#cbd5e1;line-height:1.6}
 .card{
-  max-width:800px;margin:0 auto;background:#111827;border:1px solid #22324a;border-radius:14px;
-  padding:24px;box-shadow:0 6px 18px rgba(0,0,0,.4)
+  background:#111827;border-radius:16px;padding:24px;
+  box-shadow:0 8px 22px rgba(0,0,0,.35);margin-top:24px;
 }
-.card h2{color:#8ab4ff;margin-top:0;text-align:center}
-.card p{color:#cbd5e1;text-align:center}
-
-/* Formulário */
-form{margin-top:18px;display:flex;flex-direction:column;gap:14px}
-input,textarea{
-  background:#0d1b2a;border:1px solid #22324a;border-radius:8px;
-  color:#e6f0ff;padding:10px;font-size:1rem;
+.btn{
+  display:inline-block;
+  margin:10px 8px 0 0;
+  padding:12px 18px;
+  border-radius:10px;
+  font-weight:700;
+  text-decoration:none;
 }
-input:focus,textarea:focus{outline:none;border-color:#8ab4ff}
-button{
-  background:#0d1b2a;border:1px solid #22324a;border-radius:10px;
-  color:#cfe0ff;padding:10px;font-size:1rem;cursor:pointer;
-  transition:background .25s,color .25s,transform .15s;
-}
-button:hover{background:#1b283d;color:#fff;transform:translateY(-1px)}
-
-/* Rodapé */
+.btn-email{background:#8ab4ff;color:#0a0f1a;}
+.btn-whatsapp{background:#25D366;color:#0a0f1a;}
 footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px;margin-top:auto}
-.whats{
-  position:fixed;bottom:18px;right:18px;background:#25D366;color:#fff;
-  border-radius:50%;width:58px;height:58px;display:flex;
-  align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(0,0,0,.4);
-  z-index:99;text-decoration:none;font-size:28px;
-}
 </style>
 </head>
 
 <body>
-<header class="header">
-  <div class="container">
-    <div class="brand">
-      <img src="logo.jpg" alt="Logo do Núcleo">
-      <div>
-        <h1 class="title">Núcleo da Mente, Corpo e Alma</h1>
-        <p class="subtitle">Agendamento de Sessões</p>
-      </div>
-    </div>
-    <nav aria-label="principal">
-      <div class="nav">
-        <a href="./">← Início</a>
-        <a href="terapia1.html">Psicanálise</a>
-        <a href="terapia2.html">Filosofia Clínica</a>
-        <a href="terapia3.html">Reiki</a>
-        <a href="wingchun.html">Wing Chun</a>
-        <a href="reflexoes.html">Reflexões</a>
-        <a href="sobre.html">Sobre</a>
-      </div>
-    </nav>
+<header>
+  <div class="container brand">
+    <img src="logo.jpg" alt="Logo do Núcleo">
+    <h1>Agendar Sessão</h1>
   </div>
 </header>
 
-<main>
-  <h1>Agende sua Sessão</h1>
-  <p class="intro">
-    Escolha o caminho terapêutico que mais ressoa com o seu momento.  
-    Você pode entrar em contato diretamente pelo WhatsApp ou enviar uma mensagem pelo formulário abaixo.
-  </p>
+<main class="container">
+  <section class="card">
+    <h2>Como agendar</h2>
+    <p>Escolha o canal de sua preferência para entrar em contato e agendar sua sessão de
+      <strong>Psicanálise</strong>, <strong>Filosofia Clínica</strong> ou <strong>Terapias Integrativas</strong>.</p>
 
-  <div class="card">
-    <h2>📱 Agendamento via WhatsApp</h2>
-    <p>
-      Clique no botão abaixo para conversar diretamente comigo:  
-      <br><br>
-      <a href="https://wa.me/5548999132828" target="_blank" rel="noopener"
-         style="display:inline-block;background:#25D366;color:#fff;padding:10px 20px;border-radius:10px;text-decoration:none;font-weight:bold;">
-         Falar no WhatsApp →
-      </a>
+    <a href="mailto:actionwt@yahoo.com.br?subject=Agendamento%20de%20sessão"
+       class="btn btn-email">📧 Agendar por E-mail</a>
+
+    <a href="https://wa.me/5548999132828" target="_blank" rel="noopener"
+       class="btn btn-whatsapp">💬 Agendar no WhatsApp</a>
+
+    <p style="margin-top:18px;color:#94a3b8;font-size:.9rem;">
+      Atendimento presencial em Balneário Rincão (SC) e on-line para todo o Brasil.
     </p>
-  </div>
-
-  <div class="card" style="margin-top:28px;">
-    <h2>📧 Agendamento por E-mail</h2>
-    <p>Preencha os campos abaixo e clique em enviar. Você receberá retorno o quanto antes.</p>
-
-    <form action="mailto:ivaldo25psicanalista@gmail.com" method="post" enctype="text/plain">
-      <input type="text" name="Nome" placeholder="Seu nome completo" required>
-      <input type="email" name="Email" placeholder="Seu e-mail" required>
-      <textarea name="Mensagem" rows="5" placeholder="Descreva brevemente seu motivo para o atendimento" required></textarea>
-      <button type="submit">Enviar mensagem ✉️</button>
-    </form>
-  </div>
+  </section>
 </main>
 
-<footer>© 2025 Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva</footer>
-<a class="whats" href="https://wa.me/5548999132828" target="_blank" rel="noopener">💬</a>
+<footer>
+  © 2025 Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva
+</footer>
 </body>
 </html>
+
