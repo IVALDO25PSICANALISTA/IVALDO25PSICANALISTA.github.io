@@ -3,21 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Sobre o Núcleo — Ivaldo J. Silva</title>
-<meta name="description" content="Sobre o Núcleo da Mente, Corpo e Alma: missão, visão, valores e a trajetória de Ivaldo José da Silva.">
+<title>Sobre — Núcleo da Mente, Corpo e Alma</title>
+<meta name="description" content="Conheça a trajetória e a filosofia de Ivaldo José da Silva — psicanalista, filósofo clínico e terapeuta integrativo.">
 <style>
 *,*::before,*::after{box-sizing:border-box}
 html,body{margin:0;padding:0}
 body{
   font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;
-  color:#e6f0ff;
-  background:linear-gradient(180deg,#0a0f1a,#1a2133);
+  color:#e6f0ff;background:linear-gradient(180deg,#0a0f1a,#1a2133);
   min-height:100vh;display:flex;flex-direction:column;
 }
-a{color:#8ab4ff;text-decoration:none}
-a:hover{text-decoration:underline}
+a{color:#8ab4ff;text-decoration:none}a:hover{text-decoration:underline}
 
-/* Header */
+/* Cabeçalho */
 .header{position:sticky;top:0;z-index:10;background:#0d1b2a;box-shadow:0 6px 16px rgba(0,0,0,.45)}
 .container{max-width:1100px;margin:0 auto;padding:12px 16px}
 .brand{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
@@ -25,7 +23,7 @@ a:hover{text-decoration:underline}
 .title{margin:0;font-size:1.25rem;color:#8ab4ff}
 .subtitle{margin:4px 0 0;color:#b0c4de}
 
-/* Nav */
+/* Navegação */
 nav{margin-top:10px;text-align:center}
 .nav{display:inline-flex;flex-wrap:wrap;gap:10px;justify-content:center}
 .nav a{
@@ -35,58 +33,20 @@ nav{margin-top:10px;text-align:center}
 }
 .nav a:hover{background:#1b283d;color:#fff;transform:translateY(-1px)}
 
-/* Hero (fundo suave com a sua foto ou logo) */
-.hero{
-  position:relative;overflow:hidden;border-radius:16px;
-  background:
-    linear-gradient(180deg,rgba(13,27,42,.85),rgba(17,24,39,.9)),
-    url('foto/wdem.jpg') center/cover no-repeat; /* usa wdem.jpg como textura leve */
-  min-height:260px;display:flex;align-items:center;justify-content:center;
-  margin:16px auto;width:100%;
+main{flex:1;padding:24px 16px}
+.card{
+  background:#111827;border:1px solid #22324a;border-radius:16px;padding:22px;
+  box-shadow:0 8px 22px rgba(0,0,0,.35);margin-bottom:24px;
 }
-.hero .wrap{text-align:center;padding:22px}
-.hero h1{margin:0;color:#e6f0ff;font-size:1.9rem;text-shadow:0 2px 6px rgba(0,0,0,.6)}
-.hero p{margin-top:8px;color:#cbd5e1}
-
-/* Conteúdo */
-main{flex:1}
-.section{padding:22px;background:#111827;border:1px solid #22324a;border-radius:16px;box-shadow:0 8px 22px rgba(0,0,0,.35)}
-.grid{display:grid;gap:20px;grid-template-columns:1fr;padding:24px 16px}
-@media(min-width:980px){.grid{grid-template-columns:1.1fr .9fr}}
-
 h2{color:#c3d3ff;margin:0 0 10px}
-p{color:#cbd5e1;line-height:1.7}
-ul{margin:0;padding-left:18px}
-li{margin:6px 0}
+p{color:#cbd5e1;line-height:1.6}
 
-/* Perfil (mostra se foto existir) */
-.perfil{
-  background:#0f1626;border:1px solid #22324a;border-radius:16px;padding:18px;text-align:center
+/* Linha do tempo */
+.tl-item{position:relative;padding-left:16px;margin:16px 0}
+.tl-item::before{
+  content:"";position:absolute;left:0;top:8px;width:6px;height:6px;
+  background:#ffd782;border-radius:50%;box-shadow:0 0 0 3px rgba(255,215,130,.18)
 }
-.perfil img{
-  width:180px;height:180px;object-fit:cover;border-radius:50%;
-  box-shadow:0 6px 16px rgba(0,0,0,.45);display:block;margin:0 auto 10px
-}
-.perfil .nome{font-weight:600;color:#e6f0ff}
-.perfil .cargo{color:#9fb4d9;font-size:.95rem;margin-top:4px}
-.badges{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:10px}
-.badges span{
-  background:#0d1b2a;border:1px solid #22324a;border-radius:999px;
-  padding:4px 10px;color:#cfe0ff;font-size:.85rem
-}
-
-/* CTA */
-.cta{
-  margin-top:12px;text-align:center
-}
-.btn{
-  display:inline-block;background:#0d1b2a;border:1px solid #22324a;border-radius:10px;
-  color:#cfe0ff;padding:10px 18px;text-decoration:none;
-  transition:background .25s,color .25s,transform .15s
-}
-.btn:hover{background:#1b283d;color:#fff;transform:translateY(-1px)}
-
-/* Rodapé */
 footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px;margin-top:auto}
 </style>
 </head>
@@ -98,7 +58,7 @@ footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px;margin-to
       <img src="logo.jpg" alt="Logo do Núcleo">
       <div>
         <h1 class="title">Núcleo da Mente, Corpo e Alma</h1>
-        <p class="subtitle">Sobre o Núcleo</p>
+        <p class="subtitle">Sobre Ivaldo José da Silva</p>
       </div>
     </div>
     <nav aria-label="principal">
@@ -109,80 +69,59 @@ footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px;margin-to
         <a href="terapia3.html">Reiki</a>
         <a href="wingchun.html">Wing Chun</a>
         <a href="reflexoes.html">Reflexões</a>
-        <a href="terapias.html">Terapias Integradas</a>
       </div>
     </nav>
   </div>
 </header>
 
-<div class="container hero">
-  <div class="wrap">
-    <h1>Sobre o Núcleo</h1>
-    <p>Um espaço de escuta, presença e cuidado, onde corpo, mente e alma caminham na mesma direção.</p>
-  </div>
-</div>
+<main class="container">
+  <section class="card">
+    <h2>Trajetória</h2>
+    <p>Sou <strong>Ivaldo José da Silva</strong>, psicanalista, filósofo clínico e terapeuta integrativo.  
+       Minha atuação busca unir razão e espiritualidade, escuta e prática, autoconhecimento e transformação concreta.</p>
+    <p>O <strong>Núcleo da Mente, Corpo e Alma</strong> nasceu desse propósito: criar um espaço terapêutico onde mente, emoção e energia se reencontrem num mesmo caminho de cura e consciência.</p>
+  </section>
 
-<main>
-  <div class="container grid">
-    <!-- Texto principal -->
-    <section class="section">
-      <h2>Missão e Visão</h2>
-      <p>O <strong>Núcleo da Mente, Corpo e Alma</strong> nasce do compromisso com a inteireza do ser humano. 
-      Acolhemos a singularidade de cada pessoa e integramos ciência, filosofia e espiritualidade para promover 
-      cura, sentido e presença. Nossa visão é simples e profunda: fortalecer o eixo interior para que a vida 
-      possa florescer no gesto cotidiano — com consciência, serenidade e coragem.</p>
+  <section class="card">
+    <h2>Formação principal</h2>
+    <ul style="color:#cbd5e1;line-height:1.6">
+      <li>Licenciatura em Filosofia — Universidade Cruzeiro do Sul</li>
+      <li>Pós-graduação em Psicanálise — IBRAPSI</li>
+      <li>Terapeuta integrativo com abordagem filosófica e espiritual</li>
+    </ul>
+  </section>
 
-      <h2>Valores</h2>
-      <ul>
-        <li><strong>Presença:</strong> estar inteiro no encontro terapêutico.</li>
-        <li><strong>Ética:</strong> respeito ao ritmo, à história e às escolhas de cada pessoa.</li>
-        <li><strong>Integração:</strong> diálogo entre palavra, pensamento, energia e corpo.</li>
-        <li><strong>Espiritualidade:</strong> abertura ao sagrado da vida, sem dogmas.</li>
-      </ul>
+  <!-- Linha do tempo das formações complementares -->
+  <section class="card">
+    <h2>Formações Complementares</h2>
 
-      <h2>Abordagem Integrativa</h2>
-      <p>Trabalhamos com quatro caminhos que se complementam: 
-      <em>Psicanálise</em> (a palavra que elabora), <em>Filosofia Clínica</em> (o pensamento que compreende),
-      <em>Reiki</em> (a energia que harmoniza) e <em>Wing Chun</em> (o corpo que desperta). 
-      Quando essas linguagens se encontram, surgem novas possibilidades de cura e de sentido.</p>
+    <div class="tl-item">
+      <span style="color:#8ab4ff;font-weight:600;">2023–2024</span>  
+      <strong style="color:#e6f0ff;">Cromoterapia</strong>
+      <p>Aplicação terapêutica das cores para equilíbrio emocional, clareza mental e apoio em processos de autoconhecimento.</p>
+    </div>
 
-      <div class="cta">
-        <a class="btn" href="terapias.html">Conheça as terapias integradas →</a>
-      </div>
-    </section>
+    <div class="tl-item">
+      <span style="color:#8ab4ff;font-weight:600;">2022</span>  
+      <strong style="color:#e6f0ff;">Aromaterapia</strong>
+      <p>Uso de óleos essenciais para harmonização energética, regulação emocional e fortalecimento do bem-estar cotidiano.</p>
+    </div>
 
-    <!-- Perfil / Formação -->
-    <aside class="perfil">
-      <!-- Se você subir foto/perfil.jpg, ela aparece aqui -->
-      <img src="foto/perfil.jpg" alt="Foto de perfil de Ivaldo J. Silva"
-           onerror="this.style.display='none'">
-      <div class="nome">Ivaldo José da Silva</div>
-      <div class="cargo">Psicanalista • Filósofo Clínico • Terapeuta • Wing Chun</div>
-      <div class="badges">
-        <span>Atendimento Presencial e On-line</span>
-        <span>Confidencialidade</span>
-        <span>Ética e Cuidado</span>
-      </div>
+    <div class="tl-item">
+      <span style="color:#8ab4ff;font-weight:600;">2021</span>  
+      <strong style="color:#e6f0ff;">Reflexologia</strong>
+      <p>Estimulação dos pontos reflexos dos pés e mãos para relaxamento profundo, equilíbrio vital e alívio de tensões.</p>
+    </div>
 
-      <div style="margin-top:14px;text-align:left;color:#cbd5e1">
-        <h2 style="color:#c3d3ff;margin:8px 0 6px;font-size:1.1rem">Formação (resumo)</h2>
-        <ul>
-          <li>Psicanálise clínica e supervisão contínua.</li>
-          <li>Filosofia Clínica — investigação do modo de ser.</li>
-          <li>Reiki — harmonização energética.</li>
-          <li>Prática marcial — Wing Chun (meditação em movimento).</li>
-        </ul>
-      </div>
-
-      <div class="cta" style="margin-top:14px">
-        <a class="btn" href="mailto:ivaldo25psicanalista@gmail.com">Fale por e-mail</a>
-        <a class="btn" href="https://wa.me/5548999132828" target="_blank" rel="noopener">Fale no WhatsApp</a>
-      </div>
-    </aside>
-  </div>
+    <p style="text-align:center;margin-top:18px;">
+      <a href="agendar.html" style="display:inline-block;background:#8ab4ff;color:#0a0f1a;
+      padding:10px 18px;border-radius:10px;text-decoration:none;font-weight:700;">
+      Agendar uma sessão →
+      </a>
+    </p>
+  </section>
 </main>
 
 <footer>© 2025 Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva</footer>
 </body>
 </html>
-
