@@ -29,7 +29,7 @@
     position:absolute;left:50%;top:50%;
     transform:translate(-50%,-50%);
     text-align:center;text-shadow:0 0 12px rgba(0,0,0,.6);
-    animation:fadeIn 1.2s ease both;
+    animation:fadeIn 1.5s ease both;
     max-width:90vw;
   }
   @keyframes fadeIn{from{opacity:0;transform:translate(-50%,-46%)}to{opacity:1;transform:translate(-50%,-50%)}}
@@ -38,81 +38,34 @@
     width:130px;height:auto;margin-bottom:16px;
     filter:drop-shadow(0 6px 10px rgba(0,0,0,.6));
   }
-  h1{font-size:2.1rem;color:#fff;margin-bottom:6px;letter-spacing:1px}
-  p{font-size:1.05rem;color:#dbe8ff;margin-bottom:12px}
-  .msg{font-style:italic;color:#e6f0ff;font-size:1.02rem;margin-bottom:18px}
+  h1{font-size:2.2rem;color:#fff;margin-bottom:6px;letter-spacing:1px}
+  p{font-size:1.1rem;color:#dbe8ff;margin-bottom:12px}
+  .msg{font-style:italic;color:#e6f0ff;font-size:1.05rem;margin-top:10px}
 
-  .actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
-  .btn{
-    appearance:none;border:1px solid rgba(255,255,255,.25);
-    background:rgba(13,27,42,.55);color:#e6f0ff;
-    padding:12px 18px;border-radius:12px;font-weight:700;
-    text-decoration:none;cursor:pointer;
-    backdrop-filter:blur(6px);
-    transition:transform .2s, box-shadow .2s, background .2s, border-color .2s;
-  }
-  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(0,0,0,.45)}
-  .primary{background:#8ab4ff;color:#0a0f1a;border-color:rgba(138,180,255,.45)}
-
-  /* Fade preto para transição */
+  /* Fade preto de transição */
   #fade{position:fixed;inset:0;background:#000;opacity:0;pointer-events:none;transition:opacity 1s ease;z-index:5}
   .fade-in{opacity:1}
 </style>
 </head>
 
 <body>
-  <div class="bg" aria-hidden="true"></div>
+  <div class="bg"></div>
 
   <main class="center" id="content">
     <img src="logo.jpg" alt="Logo do Núcleo da Mente, Corpo e Alma" onerror="this.style.display='none'">
     <h1>Núcleo da Mente, Corpo e Alma</h1>
     <p>Ivaldo José da Silva</p>
     <p class="msg">“Cuidar da presença, para que a vida retome seu curso.”</p>
-
-    <div class="actions">
-      <button id="enterSound" class="btn primary">Entrar com som</button>
-      <a id="enterNoSound" class="btn" href="index.html">Entrar sem som</a>
-    </div>
   </main>
 
   <div id="fade"></div>
 
-  <!-- Áudio (taças tibetanas) -->
-  <audio id="bells" preload="auto" loop playsinline>
-    <source src="https://cdn.pixabay.com/audio/2021/09/29/audio_76c6c6b219.mp3" type="audio/mpeg">
-  </audio>
-
 <script>
-(function(){
-  const audio = document.getElementById('bells');
-  const btnSound = document.getElementById('enterSound');
-  const btnNoSound = document.getElementById('enterNoSound');
-  const fade = document.getElementById('fade');
-
-  // Em iOS/Android/Chrome, só toca com gesto do usuário
-  audio.volume = 0.22;
-
-  function goHome() {
-    fade.classList.add('fade-in');
-    setTimeout(()=>{ window.location.href = 'index.html'; }, 900);
-  }
-
-  btnSound.addEventListener('click', async () => {
-    try {
-      await audio.play();   // gesto do usuário -> deve tocar
-    } catch(e) {
-      // Se por algum motivo ainda falhar, só segue sem som
-      console.warn('Autoplay bloqueado, seguindo sem som.', e);
-    }
-    goHome();
-  });
-
-  // “Entrar sem som” já tem href direto. Vamos só aplicar o fade.
-  btnNoSound.addEventListener('click', (e)=>{
-    e.preventDefault();
-    goHome();
-  });
-})();
+  // Após 6 segundos, faz a transição para o site principal
+  setTimeout(()=>{
+    document.getElementById('fade').classList.add('fade-in');
+    setTimeout(()=>{ window.location.href='index.html'; }, 1000);
+  },6000);
 </script>
 </body>
 </html>
