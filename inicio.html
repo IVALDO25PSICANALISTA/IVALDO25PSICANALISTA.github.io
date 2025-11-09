@@ -19,7 +19,6 @@
     background:#000;
   }
 
-  /* Fundo em tela cheia ajustado */
   .bg{
     position:fixed;
     top:0; left:0;
@@ -35,7 +34,6 @@
     to{transform:scale(1.06);}
   }
 
-  /* Conteúdo central */
   .center{
     position:absolute;top:50%;left:50%;
     transform:translate(-50%,-50%);
@@ -57,7 +55,6 @@
     font-size:1.05rem;
   }
 
-  /* Fade preto da transição */
   #fade {
     position:fixed;
     inset:0;
@@ -83,7 +80,16 @@
 
   <div id="fade"></div>
 
+  <!-- Som de taças tibetanas -->
+  <audio id="bells" autoplay loop>
+    <source src="https://cdn.pixabay.com/audio/2021/09/29/audio_76c6c6b219.mp3" type="audio/mpeg">
+  </audio>
+
 <script>
+  // Reduz volume inicial
+  const audio = document.getElementById('bells');
+  audio.volume = 0.25;
+
   // após 6 segundos, ativa fade e redireciona
   setTimeout(()=>{
     document.getElementById('fade').classList.add('fade-in');
