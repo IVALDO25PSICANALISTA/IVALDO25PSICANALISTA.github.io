@@ -13,11 +13,10 @@
     color:#f0f4ff;background:#000;overflow:hidden;
   }
 
-  /* Fundo tela-cheia — com fallbacks para mobile (dvh/svh/vh) */
+  /* Fundo tela-cheia */
   .bg{
     position:fixed;inset:0;
-    width:100vw;height:100svh; /* viewport “seguro” em mobile */
-    height:100dvh;height:100vh;
+    width:100vw;height:100svh;height:100dvh;height:100vh;
     background:url('foto/entrada.html.jpg') center center / cover no-repeat;
     filter:brightness(0.9) saturate(1.08);
     animation:zoom 8s ease-out forwards;
@@ -27,9 +26,11 @@
 
   /* Conteúdo central */
   .center{
-    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    position:absolute;left:50%;top:50%;
+    transform:translate(-50%,-50%);
     text-align:center;text-shadow:0 0 12px rgba(0,0,0,.6);
-    animation:fadeIn 1.8s ease both;
+    animation:fadeIn 1.2s ease both;
+    max-width:90vw;
   }
   @keyframes fadeIn{from{opacity:0;transform:translate(-50%,-46%)}to{opacity:1;transform:translate(-50%,-50%)}}
 
@@ -37,78 +38,80 @@
     width:130px;height:auto;margin-bottom:16px;
     filter:drop-shadow(0 6px 10px rgba(0,0,0,.6));
   }
-  h1{font-size:2.2rem;color:#fff;margin-bottom:6px;letter-spacing:1px}
-  p{font-size:1.1rem;color:#dbe8ff;margin-bottom:12px}
-  .msg{font-style:italic;color:#e6f0ff;font-size:1.02rem}
+  h1{font-size:2.1rem;color:#fff;margin-bottom:6px;letter-spacing:1px}
+  p{font-size:1.05rem;color:#dbe8ff;margin-bottom:12px}
+  .msg{font-style:italic;color:#e6f0ff;font-size:1.02rem;margin-bottom:18px}
 
-  /* Fade preto de transição para a home */
+  .actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+  .btn{
+    appearance:none;border:1px solid rgba(255,255,255,.25);
+    background:rgba(13,27,42,.55);color:#e6f0ff;
+    padding:12px 18px;border-radius:12px;font-weight:700;
+    text-decoration:none;cursor:pointer;
+    backdrop-filter:blur(6px);
+    transition:transform .2s, box-shadow .2s, background .2s, border-color .2s;
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(0,0,0,.45)}
+  .primary{background:#8ab4ff;color:#0a0f1a;border-color:rgba(138,180,255,.45)}
+
+  /* Fade preto para transição */
   #fade{position:fixed;inset:0;background:#000;opacity:0;pointer-events:none;transition:opacity 1s ease;z-index:5}
   .fade-in{opacity:1}
-
-  /* Botão discreto para liberar áudio (se o autoplay for bloqueado) */
-  #unmute{
-    position:fixed;right:14px;bottom:14px;z-index:6;
-    background:rgba(17,24,39,.6);border:1px solid rgba(255,255,255,.2);
-    color:#e6f0ff;padding:10px 12px;border-radius:10px;font-weight:700;
-    cursor:pointer;backdrop-filter:blur(6px);
-    display:none;
-  }
-  #unmute:hover{background:rgba(17,24,39,.75)}
 </style>
 </head>
 
 <body>
   <div class="bg" aria-hidden="true"></div>
 
-  <div class="center" id="content">
+  <main class="center" id="content">
     <img src="logo.jpg" alt="Logo do Núcleo da Mente, Corpo e Alma" onerror="this.style.display='none'">
     <h1>Núcleo da Mente, Corpo e Alma</h1>
     <p>Ivaldo José da Silva</p>
     <p class="msg">“Cuidar da presença, para que a vida retome seu curso.”</p>
-  </div>
+
+    <div class="actions">
+      <button id="enterSound" class="btn primary">Entrar com som</button>
+      <a id="enterNoSound" class="btn" href="index.html">Entrar sem som</a>
+    </div>
+  </main>
 
   <div id="fade"></div>
 
-  <!-- Áudio: taças tibetanas (loop, volume baixo). Tenta autoplay. -->
-  <audio id="bells" preload="auto" loop>
+  <!-- Áudio (taças tibetanas) -->
+  <audio id="bells" preload="auto" loop playsinline>
     <source src="https://cdn.pixabay.com/audio/2021/09/29/audio_76c6c6b219.mp3" type="audio/mpeg">
   </audio>
-  <button id="unmute" type="button">🔈 Ativar som</button>
 
 <script>
 (function(){
   const audio = document.getElementById('bells');
-  const btn = document.getElementById('unmute');
+  const btnSound = document.getElementById('enterSound');
+  const btnNoSound = document.getElementById('enterNoSound');
+  const fade = document.getElementById('fade');
 
-  // Volume inicial baixo
+  // Em iOS/Android/Chrome, só toca com gesto do usuário
   audio.volume = 0.22;
 
-  // Tentar tocar automaticamente (alguns navegadores permitem se não estiver muito alto)
-  const tryPlay = () => audio.play().catch(() => {
-    // Se falhar, mostra botão “Ativar som”
-    btn.style.display = 'inline-block';
+  function goHome() {
+    fade.classList.add('fade-in');
+    setTimeout(()=>{ window.location.href = 'index.html'; }, 900);
+  }
+
+  btnSound.addEventListener('click', async () => {
+    try {
+      await audio.play();   // gesto do usuário -> deve tocar
+    } catch(e) {
+      // Se por algum motivo ainda falhar, só segue sem som
+      console.warn('Autoplay bloqueado, seguindo sem som.', e);
+    }
+    goHome();
   });
 
-  // Tenta autoplay após carregar metadados (melhora taxa de sucesso)
-  audio.addEventListener('loadedmetadata', tryPlay, { once:true });
-
-  // Fallback: tenta tocar logo também
-  tryPlay();
-
-  // Se o usuário tocar/clique em qualquer lugar, tentar tocar
-  const unlock = () => { audio.play().finally(()=>{ document.removeEventListener('pointerdown', unlock,{passive:true}); }); };
-  document.addEventListener('pointerdown', unlock, { passive:true });
-
-  // Botão manual de ativação do som, se necessário
-  btn.addEventListener('click', () => {
-    audio.play().then(()=> btn.style.display = 'none');
+  // “Entrar sem som” já tem href direto. Vamos só aplicar o fade.
+  btnNoSound.addEventListener('click', (e)=>{
+    e.preventDefault();
+    goHome();
   });
-
-  // Após 6s, faz fade e redireciona
-  setTimeout(()=>{
-    document.getElementById('fade').classList.add('fade-in');
-    setTimeout(()=>{ window.location.href='index.html'; }, 1000);
-  },6000);
 })();
 </script>
 </body>
