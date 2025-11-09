@@ -7,27 +7,35 @@
 <meta name="description" content="Bem-vindo ao Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva">
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  html,body{height:100%;width:100%;overflow:hidden}
+  html,body{
+    height:100%;
+    width:100%;
+    overflow:hidden;
+    margin:0;
+  }
   body{
     font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;
     color:#f0f4ff;
     background:#000;
   }
 
-  /* Fundo em tela cheia */
+  /* Fundo em tela cheia ajustado */
   .bg{
     position:fixed;
-    inset:0;
+    top:0; left:0;
+    width:100vw; height:100vh;
     background:url('foto/entrada.jpg') center center / cover no-repeat;
+    background-attachment:fixed;
     filter:brightness(0.9) saturate(1.1);
     animation:zoom 8s ease-out forwards;
+    z-index:-1;
   }
   @keyframes zoom{
     from{transform:scale(1);}
-    to{transform:scale(1.05);}
+    to{transform:scale(1.06);}
   }
 
-  /* Texto central */
+  /* Conteúdo central */
   .center{
     position:absolute;top:50%;left:50%;
     transform:translate(-50%,-50%);
@@ -38,23 +46,28 @@
   @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 
   .center img{
-    width:120px;height:auto;margin-bottom:16px;
+    width:130px;height:auto;margin-bottom:16px;
     filter:drop-shadow(0 6px 10px rgba(0,0,0,0.6));
   }
-  h1{font-size:2rem;color:#fff;margin-bottom:6px;letter-spacing:1px}
-  p{font-size:1.1rem;color:#dbe8ff;margin-bottom:14px}
-
+  h1{font-size:2.2rem;color:#fff;margin-bottom:6px;letter-spacing:1px}
+  p{font-size:1.15rem;color:#dbe8ff;margin-bottom:14px}
   .msg{
     font-style:italic;
     color:#e6f0ff;
-    font-size:1rem;
+    font-size:1.05rem;
   }
 
-  /* Fade de transição */
-  .fade-out{
+  /* Fade preto da transição */
+  #fade {
+    position:fixed;
+    inset:0;
+    background:#000;
     opacity:0;
+    pointer-events:none;
     transition:opacity 1s ease;
+    z-index:5;
   }
+  .fade-in{opacity:1;}
 </style>
 </head>
 
@@ -68,10 +81,12 @@
     <p class="msg">“Cuidar da presença, para que a vida retome seu curso.”</p>
   </div>
 
+  <div id="fade"></div>
+
 <script>
-  // Após 6 segundos, inicia fade e redireciona
+  // após 6 segundos, ativa fade e redireciona
   setTimeout(()=>{
-    document.getElementById('content').classList.add('fade-out');
+    document.getElementById('fade').classList.add('fade-in');
     setTimeout(()=>{ window.location.href='index.html'; }, 1000);
   },6000);
 </script>
