@@ -7,72 +7,61 @@
 <meta name="description" content="Bem-vindo ao Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva">
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  html,body{
-    height:100%;
-    width:100%;
-    overflow:hidden;
-    margin:0;
-  }
+  html,body{height:100%;width:100%;margin:0}
   body{
     font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;
-    color:#f0f4ff;
-    background:#000;
+    color:#f0f4ff;background:#000;overflow:hidden;
   }
 
+  /* Fundo tela-cheia — com fallbacks para mobile (dvh/svh/vh) */
   .bg{
-    position:fixed;
-    top:0; left:0;
-    width:100vw; height:100vh;
-    background:url('foto/entrada.jpg') center center / cover no-repeat;
-    background-attachment:fixed;
-    filter:brightness(0.9) saturate(1.1);
+    position:fixed;inset:0;
+    width:100vw;height:100svh; /* viewport “seguro” em mobile */
+    height:100dvh;height:100vh;
+    background:url('foto/entrada.html.jpg') center center / cover no-repeat;
+    filter:brightness(0.9) saturate(1.08);
     animation:zoom 8s ease-out forwards;
     z-index:-1;
   }
-  @keyframes zoom{
-    from{transform:scale(1);}
-    to{transform:scale(1.06);}
-  }
+  @keyframes zoom{from{transform:scale(1)}to{transform:scale(1.06)}}
 
+  /* Conteúdo central */
   .center{
-    position:absolute;top:50%;left:50%;
-    transform:translate(-50%,-50%);
-    text-align:center;
-    text-shadow:0 0 12px rgba(0,0,0,0.6);
-    animation:fadeIn 2s ease-in-out forwards;
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    text-align:center;text-shadow:0 0 12px rgba(0,0,0,.6);
+    animation:fadeIn 1.8s ease both;
   }
-  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  @keyframes fadeIn{from{opacity:0;transform:translate(-50%,-46%)}to{opacity:1;transform:translate(-50%,-50%)}}
 
   .center img{
     width:130px;height:auto;margin-bottom:16px;
-    filter:drop-shadow(0 6px 10px rgba(0,0,0,0.6));
+    filter:drop-shadow(0 6px 10px rgba(0,0,0,.6));
   }
   h1{font-size:2.2rem;color:#fff;margin-bottom:6px;letter-spacing:1px}
-  p{font-size:1.15rem;color:#dbe8ff;margin-bottom:14px}
-  .msg{
-    font-style:italic;
-    color:#e6f0ff;
-    font-size:1.05rem;
-  }
+  p{font-size:1.1rem;color:#dbe8ff;margin-bottom:12px}
+  .msg{font-style:italic;color:#e6f0ff;font-size:1.02rem}
 
-  #fade {
-    position:fixed;
-    inset:0;
-    background:#000;
-    opacity:0;
-    pointer-events:none;
-    transition:opacity 1s ease;
-    z-index:5;
+  /* Fade preto de transição para a home */
+  #fade{position:fixed;inset:0;background:#000;opacity:0;pointer-events:none;transition:opacity 1s ease;z-index:5}
+  .fade-in{opacity:1}
+
+  /* Botão discreto para liberar áudio (se o autoplay for bloqueado) */
+  #unmute{
+    position:fixed;right:14px;bottom:14px;z-index:6;
+    background:rgba(17,24,39,.6);border:1px solid rgba(255,255,255,.2);
+    color:#e6f0ff;padding:10px 12px;border-radius:10px;font-weight:700;
+    cursor:pointer;backdrop-filter:blur(6px);
+    display:none;
   }
-  .fade-in{opacity:1;}
+  #unmute:hover{background:rgba(17,24,39,.75)}
 </style>
 </head>
 
 <body>
-  <div class="bg"></div>
+  <div class="bg" aria-hidden="true"></div>
 
   <div class="center" id="content">
-    <img src="logo.jpg" alt="Logo do Núcleo da Mente, Corpo e Alma">
+    <img src="logo.jpg" alt="Logo do Núcleo da Mente, Corpo e Alma" onerror="this.style.display='none'">
     <h1>Núcleo da Mente, Corpo e Alma</h1>
     <p>Ivaldo José da Silva</p>
     <p class="msg">“Cuidar da presença, para que a vida retome seu curso.”</p>
@@ -80,21 +69,47 @@
 
   <div id="fade"></div>
 
-  <!-- Som de taças tibetanas -->
-  <audio id="bells" autoplay loop>
+  <!-- Áudio: taças tibetanas (loop, volume baixo). Tenta autoplay. -->
+  <audio id="bells" preload="auto" loop>
     <source src="https://cdn.pixabay.com/audio/2021/09/29/audio_76c6c6b219.mp3" type="audio/mpeg">
   </audio>
+  <button id="unmute" type="button">🔈 Ativar som</button>
 
 <script>
-  // Reduz volume inicial
+(function(){
   const audio = document.getElementById('bells');
-  audio.volume = 0.25;
+  const btn = document.getElementById('unmute');
 
-  // após 6 segundos, ativa fade e redireciona
+  // Volume inicial baixo
+  audio.volume = 0.22;
+
+  // Tentar tocar automaticamente (alguns navegadores permitem se não estiver muito alto)
+  const tryPlay = () => audio.play().catch(() => {
+    // Se falhar, mostra botão “Ativar som”
+    btn.style.display = 'inline-block';
+  });
+
+  // Tenta autoplay após carregar metadados (melhora taxa de sucesso)
+  audio.addEventListener('loadedmetadata', tryPlay, { once:true });
+
+  // Fallback: tenta tocar logo também
+  tryPlay();
+
+  // Se o usuário tocar/clique em qualquer lugar, tentar tocar
+  const unlock = () => { audio.play().finally(()=>{ document.removeEventListener('pointerdown', unlock,{passive:true}); }); };
+  document.addEventListener('pointerdown', unlock, { passive:true });
+
+  // Botão manual de ativação do som, se necessário
+  btn.addEventListener('click', () => {
+    audio.play().then(()=> btn.style.display = 'none');
+  });
+
+  // Após 6s, faz fade e redireciona
   setTimeout(()=>{
     document.getElementById('fade').classList.add('fade-in');
     setTimeout(()=>{ window.location.href='index.html'; }, 1000);
   },6000);
+})();
 </script>
 </body>
 </html>
