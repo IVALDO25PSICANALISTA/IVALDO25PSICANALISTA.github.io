@@ -4,118 +4,76 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Núcleo da Mente, Corpo e Alma — Entrada</title>
-<meta name="description" content="Bem-vindo ao Núcleo da Mente, Corpo e Alma.">
+<meta name="description" content="Bem-vindo ao Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva">
 <style>
-  *,*::before,*::after{box-sizing:border-box}
-  html,body{height:100%;margin:0}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%;width:100%;overflow:hidden}
   body{
     font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;
-    color:#e6f0ff;background:#0a0f1a;overflow:hidden;
+    color:#f0f4ff;
+    background:#000;
   }
 
   /* Fundo em tela cheia */
   .bg{
-    position:fixed;inset:0;
-    background:
-      linear-gradient(180deg,rgba(10,15,26,.35),rgba(10,15,26,.75)),
-      url('foto/entrada.jpg') center/cover no-repeat;
-    filter:saturate(1.05) contrast(1.03);
-    transform:scale(1.02);
-    will-change:transform;
+    position:fixed;
+    inset:0;
+    background:url('foto/entrada.jpg') center center / cover no-repeat;
+    filter:brightness(0.9) saturate(1.1);
+    animation:zoom 8s ease-out forwards;
+  }
+  @keyframes zoom{
+    from{transform:scale(1);}
+    to{transform:scale(1.05);}
   }
 
-  /* Conteúdo central */
-  .wrap{
-    position:relative;z-index:2;
-    min-height:100dvh;display:flex;align-items:center;justify-content:center;
-    padding:24px;text-align:center;
-    animation:fadeIn .8s ease both;
+  /* Texto central */
+  .center{
+    position:absolute;top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    text-shadow:0 0 12px rgba(0,0,0,0.6);
+    animation:fadeIn 2s ease-in-out forwards;
   }
-  @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 
-  .card{
-    max-width:820px;margin:auto;
-    background:linear-gradient(180deg,rgba(13,27,42,.65),rgba(13,27,42,.45));
-    border:1px solid rgba(138,180,255,.18);
-    backdrop-filter:blur(6px);
-    border-radius:18px;padding:28px 22px;
-    box-shadow:0 18px 40px rgba(0,0,0,.45);
+  .center img{
+    width:120px;height:auto;margin-bottom:16px;
+    filter:drop-shadow(0 6px 10px rgba(0,0,0,0.6));
   }
+  h1{font-size:2rem;color:#fff;margin-bottom:6px;letter-spacing:1px}
+  p{font-size:1.1rem;color:#dbe8ff;margin-bottom:14px}
 
-  .logo{
-    width:110px;height:auto;object-fit:contain;display:block;margin:0 auto 10px;
-    filter:drop-shadow(0 6px 16px rgba(0,0,0,.5));
-  }
-
-  h1{margin:8px 0 6px;font-size:clamp(1.6rem,4vw,2.4rem);color:#cfe0ff}
-  p.subtitle{
-    margin:0 0 14px;color:#b7c6e6;font-size:clamp(.95rem,2.4vw,1.05rem);
+  .msg{
+    font-style:italic;
+    color:#e6f0ff;
+    font-size:1rem;
   }
 
-  .quote{
-    color:#e7e9f5;font-size:clamp(1.05rem,2.8vw,1.2rem);
-    line-height:1.5;margin:12px auto 18px;max-width:62ch;
-    text-wrap:balance;
+  /* Fade de transição */
+  .fade-out{
+    opacity:0;
+    transition:opacity 1s ease;
   }
-
-  .actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:6px}
-  .btn{
-    display:inline-block;text-decoration:none;font-weight:700;border-radius:12px;
-    padding:12px 18px;transition:transform .2s, box-shadow .2s, opacity .2s;
-    box-shadow:0 10px 22px rgba(0,0,0,.35);
-  }
-  .btn:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(0,0,0,.45)}
-  .btn-primary{background:#8ab4ff;color:#0a0f1a;border:1px solid rgba(138,180,255,.35)}
-  .btn-ghost{background:rgba(17,24,39,.55);color:#e6f0ff;border:1px solid rgba(255,255,255,.18)}
-
-  /* Rodapé sutil */
-  footer{
-    position:fixed;left:0;right:0;bottom:0;z-index:2;
-    text-align:center;color:#9fb0cc;font-size:.9rem;
-    padding:10px 12px;background:linear-gradient(180deg,rgba(10,15,26,0),rgba(10,15,26,.55));
-  }
-
-  /* Acessibilidade para quem prefere menos animação */
-  @media (prefers-reduced-motion: reduce){
-    .wrap{animation:none}
-    .btn{transition:none}
-  }
-
-  /* Fallback se a imagem não carregar */
-  .noimg .bg{background:
-    radial-gradient(120% 80% at 50% 10%, #122033, #0b1220 60%, #0a0f1a 100%) !important}
 </style>
-<script>
-  // Se a imagem não carregar, aplica classe de fallback
-  addEventListener('error', e=>{
-    if(e.target.tagName==='IMG' && e.target.classList.contains('bgcheck')){
-      document.documentElement.classList.add('noimg');
-    }
-  }, true);
-</script>
 </head>
 
 <body>
-  <!-- pré-checagem silenciosa da imagem -->
-  <img class="bgcheck" src="foto/entrada.jpg" alt="" hidden>
+  <div class="bg"></div>
 
-  <div class="bg" aria-hidden="true"></div>
+  <div class="center" id="content">
+    <img src="logo.jpg" alt="Logo do Núcleo da Mente, Corpo e Alma">
+    <h1>Núcleo da Mente, Corpo e Alma</h1>
+    <p>Ivaldo José da Silva</p>
+    <p class="msg">“Cuidar da presença, para que a vida retome seu curso.”</p>
+  </div>
 
-  <main class="wrap" role="main">
-    <section class="card" aria-labelledby="t1">
-      <img src="logo.jpg" alt="Logo do Núcleo da Mente, Corpo e Alma" class="logo" onerror="this.style.display='none'">
-      <h1 id="t1">Núcleo da Mente, Corpo e Alma</h1>
-      <p class="subtitle">Filosofia Clínica • Psicanálise • Reiki • Wing Chun</p>
-
-      <p class="quote"><em>“Cuidar da presença para que o movimento da vida retome seu curso: mente clara, coração sereno, corpo em eixo.”</em></p>
-
-      <div class="actions">
-        <a href="index.html" class="btn btn-primary">Entrar no site →</a>
-        <a href="https://wa.me/5548999132828" target="_blank" rel="noopener" class="btn btn-ghost">WhatsApp</a>
-      </div>
-    </section>
-  </main>
-
-  <footer>© 2025 Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva</footer>
+<script>
+  // Após 6 segundos, inicia fade e redireciona
+  setTimeout(()=>{
+    document.getElementById('content').classList.add('fade-out');
+    setTimeout(()=>{ window.location.href='index.html'; }, 1000);
+  },6000);
+</script>
 </body>
 </html>
