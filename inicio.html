@@ -3,65 +3,48 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Entrada — Núcleo da Mente, Corpo e Alma</title>
+<title>Núcleo da Mente, Corpo e Alma — Entrada</title>
 <style>
-  /* Tela cheia, sem rolagem */
-  html,body{height:100%;margin:0}
-  body{
-    background: radial-gradient(1200px 800px at 50% 30%, rgba(255,255,255,.12), transparent 70%),
-                linear-gradient(180deg,#0a1630,#0c1e40 35%,#0a0f1a);
-    display:flex;align-items:center;justify-content:center;flex-direction:column;
-    font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:#e6f0ff;overflow:hidden;
-  }
-
-  /* Logo grande e responsiva */
-  .hero{
-    display:flex;align-items:center;justify-content:center;flex-direction:column;
-    gap:18px;text-align:center;animation:fadeIn .9s ease both;
-  }
-  .hero img{
-    width:90vw;                 /* ocupa quase a tela toda em celular */
-    max-width:1200px;           /* limite em telas grandes */
-    max-height:75vh;            /* mantém dentro da altura visível */
-    height:auto;object-fit:contain;
-    filter: drop-shadow(0 12px 26px rgba(0,0,0,.55));
-  }
-  .sub{
-    font-size:1.05rem;opacity:.9
-  }
-
-  /* Indicador de carregamento/contagem */
-  .progress{
-    margin-top:14px;width:220px;height:6px;border-radius:999px;
-    background:rgba(255,255,255,.18);overflow:hidden
-  }
-  .bar{height:100%;width:0;background:#8ab4ff;animation:load 6s linear forwards}
-
-  @keyframes load{to{width:100%}}
-  @keyframes fadeIn{from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:none}}
-
-  /* Link de fallback (caso o navegador bloqueie o redirecionamento) */
-  .enter{
-    margin-top:16px;display:inline-block;background:#8ab4ff;color:#0a0f1a;
-    padding:10px 16px;border-radius:10px;font-weight:700;text-decoration:none
-  }
+html,body{
+  margin:0;
+  padding:0;
+  height:100%;
+  background:#0a0f1a;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+}
+img{
+  width:90vw;
+  max-width:1000px;
+  height:auto;
+  object-fit:contain;
+  animation:fadein 2s ease-in-out forwards;
+}
+@keyframes fadein{
+  from{opacity:0;transform:scale(0.97);}
+  to{opacity:1;transform:scale(1);}
+}
+footer{
+  position:fixed;
+  bottom:10px;
+  color:#94a3b8;
+  font-family:system-ui,Arial,sans-serif;
+  font-size:.9rem;
+}
 </style>
 </head>
 <body>
-
-  <div class="hero">
-    <!-- usa sua logo antiga que está na raiz -->
-    <img src="logo.jpg" alt="Núcleo da Mente, Corpo e Alma">
-    <div class="sub">Carregando o site…</div>
-    <div class="progress"><div class="bar"></div></div>
-    <a class="enter" href="index.html">Entrar agora</a>
-  </div>
+  <img src="logo.jpg" alt="Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva">
+  <footer>© 2025 Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva</footer>
 
 <script>
-  // Redireciona automaticamente após 6 segundos
-  setTimeout(function(){
-    window.location.href = "index.html";
-  }, 6000);
+// Aguarda 6 segundos e redireciona automaticamente
+setTimeout(function(){
+  window.location.href = "index.html";
+}, 6000);
 </script>
 </body>
 </html>
