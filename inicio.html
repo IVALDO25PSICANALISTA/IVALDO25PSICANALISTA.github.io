@@ -5,56 +5,63 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Entrada — Núcleo da Mente, Corpo e Alma</title>
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;width:100%;overflow:hidden;font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif}
-body{
-  background:url('foto/entrada.jpg') no-repeat center center fixed;
-  background-size:cover;
-  display:flex;align-items:center;justify-content:center;
-  flex-direction:column;color:#fff;
-}
-.overlay{
-  position:fixed;inset:0;
-  background:rgba(0,0,0,0.45);
-  z-index:0;
-  backdrop-filter:blur(1.5px);
-}
-.content{
-  position:relative;z-index:1;text-align:center;padding:20px;
-  text-shadow:0 0 12px rgba(0,0,0,.8);
-}
-.logo{
-  width:180px;
-  height:auto;
-  margin-bottom:24px;
-  filter:drop-shadow(0 0 8px rgba(255,255,255,.5));
-}
-h1{font-size:1.9rem;margin-bottom:16px;color:#f0f4ff}
-p{max-width:600px;margin:0 auto 30px;color:#e0e7ff;font-size:1.1rem;line-height:1.6}
-a.btn{
-  background:#8ab4ff;
-  color:#0a0f1a;
-  text-decoration:none;
-  padding:14px 26px;
-  border-radius:10px;
-  font-weight:700;
-  box-shadow:0 6px 16px rgba(0,0,0,.6);
-  transition:background .3s,transform .3s;
-}
-a.btn:hover{background:#a7c6ff;transform:scale(1.05)}
-footer{position:fixed;bottom:14px;width:100%;text-align:center;color:#d0d8e8;font-size:.9rem;text-shadow:none}
+  /* Tela cheia, sem rolagem */
+  html,body{height:100%;margin:0}
+  body{
+    background: radial-gradient(1200px 800px at 50% 30%, rgba(255,255,255,.12), transparent 70%),
+                linear-gradient(180deg,#0a1630,#0c1e40 35%,#0a0f1a);
+    display:flex;align-items:center;justify-content:center;flex-direction:column;
+    font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:#e6f0ff;overflow:hidden;
+  }
+
+  /* Logo grande e responsiva */
+  .hero{
+    display:flex;align-items:center;justify-content:center;flex-direction:column;
+    gap:18px;text-align:center;animation:fadeIn .9s ease both;
+  }
+  .hero img{
+    width:90vw;                 /* ocupa quase a tela toda em celular */
+    max-width:1200px;           /* limite em telas grandes */
+    max-height:75vh;            /* mantém dentro da altura visível */
+    height:auto;object-fit:contain;
+    filter: drop-shadow(0 12px 26px rgba(0,0,0,.55));
+  }
+  .sub{
+    font-size:1.05rem;opacity:.9
+  }
+
+  /* Indicador de carregamento/contagem */
+  .progress{
+    margin-top:14px;width:220px;height:6px;border-radius:999px;
+    background:rgba(255,255,255,.18);overflow:hidden
+  }
+  .bar{height:100%;width:0;background:#8ab4ff;animation:load 6s linear forwards}
+
+  @keyframes load{to{width:100%}}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:none}}
+
+  /* Link de fallback (caso o navegador bloqueie o redirecionamento) */
+  .enter{
+    margin-top:16px;display:inline-block;background:#8ab4ff;color:#0a0f1a;
+    padding:10px 16px;border-radius:10px;font-weight:700;text-decoration:none
+  }
 </style>
 </head>
 <body>
-<div class="overlay"></div>
-<div class="content">
-  <img src="logo.jpg" alt="Logo Núcleo da Mente, Corpo e Alma" class="logo">
-  <h1>🌌 Núcleo da Mente, Corpo e Alma</h1>
-  <p>Espaço terapêutico e filosófico criado por <strong>Ivaldo J. Silva</strong> —  
-  Psicanálise, Filosofia Clínica, Reiki e Wing Chun integrados em uma jornada de equilíbrio entre razão e espiritualidade.</p>
-  <a class="btn" href="index.html">Entrar no Site</a>
-</div>
-<footer>© 2025 Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva</footer>
+
+  <div class="hero">
+    <!-- usa sua logo antiga que está na raiz -->
+    <img src="logo.jpg" alt="Núcleo da Mente, Corpo e Alma">
+    <div class="sub">Carregando o site…</div>
+    <div class="progress"><div class="bar"></div></div>
+    <a class="enter" href="index.html">Entrar agora</a>
+  </div>
+
+<script>
+  // Redireciona automaticamente após 6 segundos
+  setTimeout(function(){
+    window.location.href = "index.html";
+  }, 6000);
+</script>
 </body>
 </html>
-
