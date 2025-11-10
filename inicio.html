@@ -3,69 +3,50 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Núcleo da Mente, Corpo e Alma — Entrada</title>
-<meta name="description" content="Bem-vindo ao Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva">
+<title>Entrada — Núcleo da Mente, Corpo e Alma</title>
 <style>
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  html,body{height:100%;width:100%;margin:0}
-  body{
-    font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;
-    color:#f0f4ff;background:#000;overflow:hidden;
-  }
-
-  /* Fundo tela-cheia */
-  .bg{
-    position:fixed;inset:0;
-    width:100vw;height:100svh;height:100dvh;height:100vh;
-    background:url('foto/entrada.html.jpg') center center / cover no-repeat;
-    filter:brightness(0.9) saturate(1.08);
-    animation:zoom 8s ease-out forwards;
-    z-index:-1;
-  }
-  @keyframes zoom{from{transform:scale(1)}to{transform:scale(1.06)}}
-
-  /* Conteúdo central */
-  .center{
-    position:absolute;left:50%;top:50%;
-    transform:translate(-50%,-50%);
-    text-align:center;text-shadow:0 0 12px rgba(0,0,0,.6);
-    animation:fadeIn 1.5s ease both;
-    max-width:90vw;
-  }
-  @keyframes fadeIn{from{opacity:0;transform:translate(-50%,-46%)}to{opacity:1;transform:translate(-50%,-50%)}}
-
-  .center img{
-    width:130px;height:auto;margin-bottom:16px;
-    filter:drop-shadow(0 6px 10px rgba(0,0,0,.6));
-  }
-  h1{font-size:2.2rem;color:#fff;margin-bottom:6px;letter-spacing:1px}
-  p{font-size:1.1rem;color:#dbe8ff;margin-bottom:12px}
-  .msg{font-style:italic;color:#e6f0ff;font-size:1.05rem;margin-top:10px}
-
-  /* Fade preto de transição */
-  #fade{position:fixed;inset:0;background:#000;opacity:0;pointer-events:none;transition:opacity 1s ease;z-index:5}
-  .fade-in{opacity:1}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;width:100%;overflow:hidden;font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+body{
+  background:url('foto/entrada.jpg') no-repeat center center fixed;
+  background-size:cover;
+  display:flex;align-items:center;justify-content:center;
+  flex-direction:column;color:#fff;
+  text-shadow:0 0 10px rgba(0,0,0,.7);
+}
+.overlay{
+  position:fixed;inset:0;
+  background:rgba(0,0,0,0.45);
+  z-index:0;
+}
+.content{
+  position:relative;z-index:1;text-align:center;padding:20px;
+}
+h1{font-size:2rem;margin-bottom:16px;color:#e6f0ff}
+p{max-width:600px;margin:0 auto 30px;color:#dbe7ff;font-size:1.1rem}
+a.btn{
+  background:#8ab4ff;
+  color:#0a0f1a;
+  text-decoration:none;
+  padding:14px 26px;
+  border-radius:10px;
+  font-weight:700;
+  box-shadow:0 6px 16px rgba(0,0,0,.5);
+  transition:background .3s,transform .3s;
+}
+a.btn:hover{background:#a7c6ff;transform:scale(1.05)}
+footer{position:fixed;bottom:14px;width:100%;text-align:center;color:#d0d8e8;font-size:.9rem;text-shadow:none}
 </style>
 </head>
-
 <body>
-  <div class="bg"></div>
-
-  <main class="center" id="content">
-    <img src="logo.jpg" alt="Logo do Núcleo da Mente, Corpo e Alma" onerror="this.style.display='none'">
-    <h1>Núcleo da Mente, Corpo e Alma</h1>
-    <p>Ivaldo José da Silva</p>
-    <p class="msg">“Cuidar da presença, para que a vida retome seu curso.”</p>
-  </main>
-
-  <div id="fade"></div>
-
-<script>
-  // Após 6 segundos, faz a transição para o site principal
-  setTimeout(()=>{
-    document.getElementById('fade').classList.add('fade-in');
-    setTimeout(()=>{ window.location.href='index.html'; }, 1000);
-  },6000);
-</script>
+<div class="overlay"></div>
+<div class="content">
+  <h1>🌌 Núcleo da Mente, Corpo e Alma</h1>
+  <p>Bem-vindo(a) ao espaço terapêutico e filosófico de <strong>Ivaldo J. Silva</strong> —  
+  Psicanálise, Filosofia Clínica, Reiki e Artes Marciais Integradas em um caminho de autoconhecimento.</p>
+  <a class="btn" href="index.html">Entrar no Site</a>
+</div>
+<footer>© 2025 Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva</footer>
 </body>
 </html>
+
