@@ -15,15 +15,21 @@ body{
 }
 .overlay{
   position:fixed;inset:0;
-  background:rgba(0,0,0,0.55);
+  background:rgba(0,0,0,0.45);
   z-index:0;
-  backdrop-filter:blur(2px);
+  backdrop-filter:blur(1.5px);
 }
 .content{
   position:relative;z-index:1;text-align:center;padding:20px;
   text-shadow:0 0 12px rgba(0,0,0,.8);
 }
-h1{font-size:2rem;margin-bottom:16px;color:#f0f4ff}
+.logo{
+  width:180px;
+  height:auto;
+  margin-bottom:24px;
+  filter:drop-shadow(0 0 8px rgba(255,255,255,.5));
+}
+h1{font-size:1.9rem;margin-bottom:16px;color:#f0f4ff}
 p{max-width:600px;margin:0 auto 30px;color:#e0e7ff;font-size:1.1rem;line-height:1.6}
 a.btn{
   background:#8ab4ff;
@@ -42,11 +48,13 @@ footer{position:fixed;bottom:14px;width:100%;text-align:center;color:#d0d8e8;fon
 <body>
 <div class="overlay"></div>
 <div class="content">
+  <img src="logo.jpg" alt="Logo Núcleo da Mente, Corpo e Alma" class="logo">
   <h1>🌌 Núcleo da Mente, Corpo e Alma</h1>
-  <p>Um espaço de autoconhecimento e integração —  
-  Psicanálise, Filosofia Clínica, Reiki e Wing Chun em harmonia entre razão e espiritualidade.</p>
+  <p>Espaço terapêutico e filosófico criado por <strong>Ivaldo J. Silva</strong> —  
+  Psicanálise, Filosofia Clínica, Reiki e Wing Chun integrados em uma jornada de equilíbrio entre razão e espiritualidade.</p>
   <a class="btn" href="index.html">Entrar no Site</a>
 </div>
 <footer>© 2025 Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva</footer>
 </body>
 </html>
+
