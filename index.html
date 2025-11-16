@@ -1,147 +1,144 @@
-<!doctype html>
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Núcleo da Mente, Corpo e Alma — Início</title>
-<meta name="description" content="Núcleo da Mente, Corpo e Alma — Psicanálise, Filosofia Clínica, Reiki e Wing Chun com Ivaldo J. Silva.">
-<link rel="preload" as="image" href="logo.jpg">
-<style>
-  /* Base */
-  *,*::before,*::after{box-sizing:border-box}
-  html,body{margin:0;padding:0}
-  body{
-    font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;
-    color:#e6f0ff;
-    background:linear-gradient(180deg,#0a0f1a,#1a2133);
-    min-height:100vh; display:flex; flex-direction:column;
-  }
-  a{color:#8ab4ff;text-decoration:none}
-  a:hover{text-decoration:underline}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Núcleo da Mente, Corpo e Alma – Ivaldo J. Silva</title>
 
-  /* Header fixo e limpo */
-  .header{
-    position:sticky; top:0; z-index:10;
-    background:#0d1b2a; box-shadow:0 6px 16px rgba(0,0,0,.45);
-  }
-  .container{max-width:1100px;margin:0 auto;padding:12px 16px}
-  .brand{display:flex;align-items:center;gap:14px}
-  .brand img{max-height:56px;width:auto;display:block}
-  .title{margin:0;font-size:1.25rem;color:#8ab4ff}
-  .subtitle{margin:2px 0 0 0;color:#b0c4de;font-size:.95rem}
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            color: #222;
+        }
 
-  /* Navegação */
-  nav{margin-top:10px}
-  .nav{display:flex;flex-wrap:wrap;gap:10px}
-  .nav a{
-    background:#111827;border:1px solid #22324a;border-radius:10px;
-    padding:8px 12px;font-size:.95rem;line-height:1; white-space:nowrap;
-  }
+        /* MENU */
+        nav {
+            background: #003b6f;
+            padding: 12px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            font-size: 18px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #b9d2ff;
+        }
 
-  /* Hero/Boas-vindas na home */
-  .hero{
-    background: radial-gradient(900px 500px at 50% 0%, rgba(255,255,255,.06), transparent 60%);
-    padding:40px 16px 10px;
-  }
-  .hero .wrap{max-width:1100px;margin:0 auto;display:grid;gap:22px;grid-template-columns:1fr}
-  .hero h2{color:#c3d3ff;margin:0 0 8px;font-size:1.8rem}
-  .hero p{margin:0;color:#cbd5e1;font-size:1.05rem}
-  .cta-row{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px}
-  .btn{
-    display:inline-block;background:#8ab4ff;color:#0a0f1a;border-radius:10px;
-    padding:10px 14px;font-weight:700;text-decoration:none;border:1px solid #8ab4ff;
-  }
-  .btn.sec{background:#111827;color:#e6f0ff;border:1px solid #22324a}
+        /* CAPA */
+        .hero {
+            background: url('capa.jpg') center/cover no-repeat;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 0 0 10px black;
+            text-align: center;
+            font-size: 28px;
+        }
 
-  /* Cards de serviços */
-  main{flex:1}
-  .grid{display:grid;gap:20px;grid-template-columns:1fr; padding:24px 16px}
-  @media(min-width:900px){.grid{grid-template-columns:1.2fr .8fr}}
-  .card{
-    background:#111827;border-radius:16px;padding:24px;
-    box-shadow:0 8px 22px rgba(0,0,0,.35)
-  }
-  .card h3{margin:0 0 10px;color:#c3d3ff}
-  .list{margin:0;padding-left:18px}
-  .list li{margin:6px 0;color:#d6e1ff}
+        /* GALERIA */
+        #galeria {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 16px;
+        }
 
-  /* Rodapé */
-  footer{background:#0d1b2a;color:#94a3b8;text-align:center;padding:16px}
-</style>
+        #galeria h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #003b6f;
+        }
+
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        .galeria-item img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+        }
+
+        .galeria-item figcaption {
+            margin-top: 8px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #444;
+        }
+
+        /* RODAPÉ */
+        footer {
+            background: #003b6f;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
 </head>
+
 <body>
-  <!-- TOPO -->
-  <header class="header" role="banner">
-    <div class="container">
-      <div class="brand">
-        <a href="inicio.html" title="Tela de entrada (logo)">
-          <img src="logo.jpg" alt="Logo do Núcleo da Mente, Corpo e Alma" width="160" height="56" loading="eager">
-        </a>
+
+    <!-- MENU -->
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <!-- CAPA -->
+    <section class="hero" id="inicio">
         <div>
-          <h1 class="title">Núcleo da Mente, Corpo e Alma</h1>
-          <p class="subtitle">Filosofia Clínica • Psicanálise • Reiki • Wing Chun</p>
+            <h1>Núcleo da Mente, Corpo e Alma</h1>
+            <p>Ivaldo J. Silva – Psicanalista & Filósofo Clínico</p>
         </div>
-      </div>
+    </section>
 
-      <nav aria-label="principal">
-        <div class="nav">
-          <a href="terapia1.html">Psicanálise</a>
-          <a href="terapia2.html">Filosofia Clínica</a>
-          <a href="terapia3.html">Reiki</a>
-          <a href="wingchun.html">Wing Chun</a>
-          <a href="foto/">Fotos</a>
-          <a href="reflexoes.html">Reflexões</a>
-          <a href="agendar.html">Agendar</a>
-          <a href="mailto:actionwt@yahoo.com.br">E-mail</a>
-          <a href="https://wa.me/5548999132828" target="_blank" rel="noopener">WhatsApp</a>
+    <!-- GALERIA COMPLETA -->
+    <section id="galeria">
+        <h2>Galeria de Fotos</h2>
+
+        <div class="galeria-grid">
+
+            <!-- FOTO 1 – Já configurada -->
+            <figure class="galeria-item">
+                <img src="galeria/filosofia_cloves_de_barros.jpg"
+                     alt="Foto com Clóvis de Barros Filho">
+                <figcaption>Palestra – Clóvis de Barros</figcaption>
+            </figure>
+
+            <!-- MODELO PARA NOVAS FOTOS -->
+            <!--
+            <figure class="galeria-item">
+                <img src="galeria/NOME-DA-FOTO.jpg" alt="Descrição da foto">
+                <figcaption>Descrição da foto</figcaption>
+            </figure>
+            -->
+
         </div>
-      </nav>
-    </div>
-  </header>
+    </section>
 
-  <!-- HERO (boas-vindas) -->
-  <section class="hero" role="region" aria-label="Boas-vindas">
-    <div class="wrap">
-      <div>
-        <h2>Bem-vindo</h2>
-        <p>Atendimento integrativo que une pensamento, afeto e espírito, com a singularidade de cada pessoa no centro do cuidado.</p>
-        <div class="cta-row">
-          <a class="btn" href="agendar.html">✨ Agende sua Sessão</a>
-          <a class="btn sec" href="reflexoes.html">📖 Ler Reflexões</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTEÚDO -->
-  <main>
-    <div class="container grid">
-      <section class="card">
-        <h3>O que oferecemos</h3>
-        <ul class="list">
-          <li><strong>Psicanálise:</strong> escuta clínica, elaboração de conflitos e reconstrução de sentido.</li>
-          <li><strong>Filosofia Clínica:</strong> investigação do modo de ser, projeto de vida e ética no cotidiano.</li>
-          <li><strong>Reiki:</strong> harmonização energética para ansiedade, estresse e equilíbrio vital.</li>
-          <li><strong>Wing Chun (PROWES):</strong> disciplina, atenção e presença em movimento.</li>
-        </ul>
-      </section>
-
-      <aside class="card">
-        <h3>Contato</h3>
-        <p>
-          📍 Rua Saturno, 21 — Lagoa dos Freitas, Baln. Rincão-SC<br>
-          ✉️ <a href="mailto:actionwt@yahoo.com.br">actionwt@yahoo.com.br</a><br>
-          📱 <a href="https://wa.me/5548999132828" target="_blank" rel="noopener">(48) 99913-2828</a>
+    <!-- CONTATO -->
+    <section id="contato" style="max-width: 800px; margin: 40px auto; padding: 0 16px;">
+        <h2 style="text-align:center; color:#003b6f;">Contato</h2>
+        <p style="text-align:center;">
+            WhatsApp: <strong>(48) 99913-2828</strong><br>
+            Endereço: Rua Saturno, 21 – Lagoa dos Freitas – Balneário Rincão – SC
         </p>
-        <p>Atendimentos presenciais e on-line.</p>
-      </aside>
-    </div>
-  </main>
+    </section>
 
-  <!-- RODAPÉ -->
-  <footer>
-    © 2025 Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva
-  </footer>
+    <!-- RODAPÉ -->
+    <footer>
+        Núcleo da Mente, Corpo e Alma • © 2025 • Desenvolvido com apoio do ChatGPT
+    </footer>
+
 </body>
 </html>
-
