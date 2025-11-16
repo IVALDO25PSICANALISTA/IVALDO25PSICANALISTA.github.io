@@ -1,1 +1,23 @@
+<section id="galeria">
+    <h2>Galeria de Fotos</h2>
+
+    <div class="galeria-grid">
+
+        <!-- Foto 1 – já com a que você enviou -->
+        <figure class="galeria-item">
+            <img src="galeria/filosofia_cloves_de_barros.jpg"
+                 alt="Foto Clóvis de Barros e amigos">
+            <figcaption>Palestra – Clóvis de Barros</figcaption>
+        </figure>
+
+        <!-- MODELO PARA ADICIONAR MAIS FOTOS -->
+        <!--
+        <figure class="galeria-item">
+            <img src="galeria/nome-da-foto.jpg" alt="Descrição">
+            <figcaption>Descrição</figcaption>
+        </figure>
+        -->
+
+    </div>
+</section>
 
