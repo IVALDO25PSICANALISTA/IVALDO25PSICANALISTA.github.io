@@ -1,1 +1,77 @@
 
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Galeria de Fotos — Núcleo da Mente, Corpo e Alma</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+  body{
+    margin:0;
+    padding:20px;
+    background:#0a0f1a;
+    color:#e6f0ff;
+    font-family:system-ui,Arial,sans-serif;
+  }
+
+  h1{
+    text-align:center;
+    color:#8ab4ff;
+    margin-bottom:30px;
+  }
+
+  .galeria{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    max-width:1100px;
+    margin:0 auto;
+  }
+
+  .foto{
+    background:#111827;
+    border-radius:12px;
+    padding:10px;
+    box-shadow:0 4px 14px rgba(0,0,0,0.35);
+    text-align:center;
+  }
+
+  .foto img{
+    width:100%;
+    border-radius:10px;
+  }
+
+  .foto p{
+    margin-top:8px;
+    color:#c3d3ff;
+    font-size:0.9rem;
+  }
+</style>
+
+</head>
+
+<body>
+
+<h1>Galeria de Fotos</h1>
+
+<div class="galeria">
+
+  <!-- FOTO 1 — já adicionada -->
+  <div class="foto">
+    <img src="filosofia_cloves_de_barros.jpg" alt="Clóvis de Barros">
+    <p>Palestra com Clóvis de Barros</p>
+  </div>
+
+  <!-- MODELO PARA PRÓXIMAS FOTOS -->
+  <!--
+  <div class="foto">
+    <img src="NOME-DA-FOTO.jpg" alt="Descrição da foto">
+    <p>Descrição da foto</p>
+  </div>
+  -->
+
+</div>
+
+</body>
+</html>
