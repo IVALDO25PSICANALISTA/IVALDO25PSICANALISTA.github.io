@@ -1,3 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Galeria de Fotos</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+  body{
+    margin:0;
+    padding:20px;
+    background:#0a0f1a;
+    color:#e6f0ff;
+    font-family:Arial,sans-serif;
+  }
+  h1{
+    text-align:center;
+    color:#8ab4ff;
+    margin-bottom:30px;
+  }
+  .galeria{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    max-width:1100px;
+    margin:0 auto;
+  }
+  .foto{
+    background:#111827;
+    padding:10px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 4px 12px rgba(0,0,0,.4);
+  }
+  .foto img{
+    width:100%;
+    max-height:260px;       /* limita a altura */
+    object-fit:cover;       /* recorta a imagem como miniatura */
+    border-radius:10px;
+  }
+  .foto p{
+    color:#c3d3ff;
+    margin-top:8px;
+  }
+</style>
+</head>
+
+<body>
+<h1>Galeria de Fotos</h1>
+
 <div class="galeria">
 
   <div class="foto">
@@ -6,38 +56,41 @@
   </div>
 
   <div class="foto">
-    <img src="academia2.jpg" alt="Sala com iluminação vermelha">
-    <p>Sala com iluminação vermelha</p>
+    <img src="academia2.jpg" alt="Sala com iluminação especial">
+    <p>Sala com iluminação especial</p>
   </div>
 
   <div class="foto">
-    <img src="chi_sau1.jpg" alt="Wing Chun Chi Sau">
-    <p>Wing Chun Chi Sau</p>
+    <img src="chi-sau1.jpg" alt="Wing Chun – Chi Sau">
+    <p>Wing Chun – Chi Sau</p>
   </div>
 
   <div class="foto">
-    <img src="reiki1.jpg" alt="Confiança e entrega a Deus">
-    <p>Confiança e entrega a Deus</p>
+    <img src="wingchun1.jpg" alt="Prática – Wing Chun">
+    <p>Prática – Wing Chun</p>
   </div>
 
   <div class="foto">
-    <img src="wingchun1.jpg" alt="Queridos alunos">
-    <p>Queridos alunos</p>
+    <img src="wingchun2.jpg" alt="Wing Chun – Kwan Sau">
+    <p>Wing Chun – Kwan Sau</p>
   </div>
 
   <div class="foto">
-    <img src="wingchun2.jpg" alt="Wing Chun Kwan Sau">
-    <p>Wing Chun Kwan Sau</p>
+    <img src="reiki 1.jpg" alt="Reiki – confiança e entrega espiritual">
+    <p>Reiki – confiança e entrega espiritual</p>
   </div>
 
   <div class="foto">
-    <img src="curso de coach.jpg" alt="Alimento saudável é necessário">
-    <p>Alimento saudável é necessário</p>
+    <img src="filosofia 1.jpg" alt="Filosofia e reflexão">
+    <p>Filosofia e reflexão</p>
   </div>
 
   <div class="foto">
-    <img src="filosofia Cloves de Barros.jpg" alt="Clóves de Barros e amigos">
-    <p>Clóves de Barros e amigos</p>
+    <img src="wdem.jpg" alt="Grupo de estudos e desenvolvimento humano">
+    <p>Grupo de estudos e desenvolvimento humano</p>
   </div>
 
 </div>
+
+</body>
+</html>
