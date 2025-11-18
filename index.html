@@ -4,15 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva</title>
-  <meta name="description" content="Filosofia Clínica, Psicanálise, Reiki e Wing Chun integrados por Ivaldo José da Silva.">
-  <link rel="preload" as="image" href="logo.jpg">
+  <meta name="description" content="Psicanálise, Filosofia Clínica, Reiki e Wing Chun integrados por Ivaldo José da Silva.">
 
   <style>
-    /* RESET */
     *,*::before,*::after{box-sizing:border-box}
     html,body{margin:0;padding:0}
 
-    /* TEMA GERAL (SEU TEMA ORIGINAL — azul escuro + prata) */
     body{
       font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;
       color:#e6f0ff;
@@ -25,55 +22,34 @@
     a{color:#8ab4ff;text-decoration:none}
     a:hover{text-decoration:underline}
 
+    .container{max-width:1100px;margin:0 auto;padding:12px 16px}
+
     /* HEADER */
     .header{
-      position:sticky;
-      top:0;
-      z-index:10;
+      position:sticky;top:0;z-index:10;
       background:#0d1b2a;
       box-shadow:0 6px 16px rgba(0,0,0,.45);
-      backdrop-filter:saturate(120%) blur(4px);
     }
-
-    .container{
-      max-width:1100px;
-      margin:0 auto;
-      padding:12px 16px;
-    }
-
     .brand{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      flex-wrap:wrap;
+      display:flex;align-items:center;gap:14px;flex-wrap:wrap;
     }
-    .brand img{
-      max-height:64px;
-      width:auto;
-      display:block;
-    }
-
+    .brand img{max-height:64px;width:auto;display:block}
     .title{margin:0;font-size:1.25rem;color:#8ab4ff}
     .subtitle{margin:2px 0 0 0;color:#b0c4de;font-size:.95rem}
 
-    /* MENU */
+    nav{margin-top:10px}
     .nav{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      justify-content:center;
-      margin-top:10px;
+      display:flex;flex-wrap:wrap;
+      gap:10px;justify-content:center;
     }
-
     .nav a{
       background:#111827;
       border:1px solid #22324a;
       border-radius:10px;
       padding:8px 12px;
-      font-size:.95rem;
+      font-size:.9rem;
       white-space:nowrap;
     }
-
     .nav a:hover{
       background:#1b283d;
       color:#fff;
@@ -82,55 +58,46 @@
 
     /* HERO */
     .hero{
-      background: radial-gradient(900px 500px at 50% 0%, rgba(255,255,255,.06), transparent 60%);
-      padding:40px 16px 10px;
+      background:radial-gradient(900px 500px at 50% 0%,rgba(255,255,255,.06),transparent 60%);
+      padding:32px 16px 8px;
     }
-    .hero .wrap{
-      max-width:1100px;
-      margin:0 auto;
-      display:grid;
-      gap:22px;
-      grid-template-columns:1fr;
+    .hero-wrap{
+      max-width:1100px;margin:0 auto;
     }
     .hero h2{
-      color:#c3d3ff;
-      margin:0 0 8px;
+      margin:0 0 10px;
       font-size:1.8rem;
+      color:#c3d3ff;
     }
     .hero p{
       margin:0;
       color:#cbd5e1;
-      font-size:1.05rem;
+      font-size:1.02rem;
     }
-
     .cta-row{
       margin-top:16px;
       display:flex;
       flex-wrap:wrap;
       gap:10px;
     }
-
-    /* BOTÕES */
     .btn{
       display:inline-block;
-      background:#0d1b2a;
-      border:1px solid #22324a;
+      background:#8ab4ff;
+      color:#0a0f1a;
       border-radius:10px;
-      color:#cfe0ff;
-      padding:10px 18px;
+      padding:10px 14px;
       font-weight:700;
+      border:1px solid #8ab4ff;
       text-decoration:none;
-      transition:.25s;
     }
-    .btn:hover{
-      background:#1b283d;
-      color:#fff;
-      transform:translateY(-1px);
+    .btn.sec{
+      background:#111827;
+      color:#e6f0ff;
+      border:1px solid #22324a;
     }
 
-    /* LAYOUT PRINCIPAL */
+    /* CONTEÚDO PRINCIPAL */
     main{flex:1}
-
     .grid{
       display:grid;
       gap:20px;
@@ -140,25 +107,22 @@
     @media(min-width:900px){
       .grid{grid-template-columns:1.2fr .8fr}
     }
-
     .card{
       background:#111827;
       border-radius:16px;
       padding:24px;
       box-shadow:0 8px 22px rgba(0,0,0,.35);
     }
-
-    h2{color:#c3d3ff;margin:0 0 10px}
-    h3{color:#c3d3ff;margin:0 0 10px}
-
-    .list{
-      margin:0;
-      padding-left:18px;
+    .card h2,.card h3{
+      margin:0 0 10px;
+      color:#c3d3ff;
     }
-    .list li{
-      margin:6px 0;
-      color:#d6e1ff;
-    }
+    .list{margin:0;padding-left:18px}
+    .list li{margin:6px 0;color:#d6e1ff}
+
+    /* BLOCO TERAPIAS INTEGRADAS */
+    .full-section{padding:0 16px 28px}
+    .full-section .card{max-width:1100px;margin:0 auto}
 
     /* RODAPÉ */
     footer{
@@ -167,22 +131,17 @@
       text-align:center;
       padding:16px;
       margin-top:auto;
+      font-size:.85rem;
     }
-
   </style>
 </head>
 
 <body>
-
   <!-- TOPO -->
   <header class="header" role="banner">
     <div class="container">
-
       <div class="brand">
-        <a href="inicio.html">
-          <img src="logo.jpg" alt="Logo do Núcleo da Mente, Corpo e Alma">
-        </a>
-
+        <img src="logo.jpg" alt="Logo do Núcleo da Mente, Corpo e Alma">
         <div>
           <h1 class="title">Núcleo da Mente, Corpo e Alma</h1>
           <p class="subtitle">Filosofia Clínica • Psicanálise • Reiki • Wing Chun</p>
@@ -204,62 +163,69 @@
           <a href="https://wa.me/5548999132828" target="_blank" rel="noopener">WhatsApp</a>
         </div>
       </nav>
-
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero" role="region">
-    <div class="wrap">
-      <div>
-        <h2>Bem-vindo</h2>
-        <p>Atendimento integrativo que une pensamento, afeto e espírito.</p>
-        <div class="cta-row">
-          <a class="btn" href="agendar.html">✨ Agende sua Sessão</a>
-          <a class="btn" href="reflexoes.html">📖 Ler Reflexões</a>
-        </div>
+  <!-- HERO (boas-vindas) -->
+  <section class="hero" role="region" aria-label="Boas-vindas">
+    <div class="hero-wrap">
+      <h2>Bem-vindo ao Núcleo da Mente, Corpo e Alma</h2>
+      <p>Atendimento integrativo que une pensamento, afeto, corpo e espiritualidade — com a singularidade de cada pessoa no centro do cuidado.</p>
+      <div class="cta-row">
+        <a class="btn" href="agendar.html">✨ Agende sua Sessão</a>
+        <a class="btn sec" href="reflexoes.html">📖 Ler Reflexões</a>
       </div>
     </div>
   </section>
 
-  <!-- CONTEÚDO PRINCIPAL -->
+  <!-- CONTEÚDO -->
   <main>
-
     <div class="container grid">
-
-      <!-- CARD PRINCIPAL -->
       <section class="card">
-        <h2>Bem-vindo</h2>
-        <p>Atendimento integrativo que une pensamento, afeto e espírito — um cuidado profundo com a singularidade de cada pessoa.</p>
-
+        <h2>Atendimento Integrativo</h2>
+        <p>Um espaço para elaborar dores, reorganizar a história e fortalecer o sentido de existir — na clínica, na espiritualidade e no corpo em movimento.</p>
         <h3>O que oferecemos</h3>
         <ul class="list">
           <li><strong>Psicanálise:</strong> escuta clínica, elaboração de conflitos e reconstrução de sentido.</li>
-          <li><strong>Filosofia Clínica:</strong> investigação existencial e projeto de vida.</li>
-          <li><strong>Reiki:</strong> harmonização energética e equilíbrio vital.</li>
-          <li><strong>Wing Chun (PROWES):</strong> disciplina, atenção e presença em movimento.</li>
+          <li><strong>Filosofia Clínica:</strong> investigação do modo de ser e projeto de vida.</li>
+          <li><strong>Reiki:</strong> harmonização energética para ansiedade, estresse e equilíbrio vital.</li>
+          <li><strong>Wing Chun (PROWES):</strong> meditação em movimento, disciplina e presença.</li>
         </ul>
       </section>
 
-      <!-- CONTATO -->
       <aside class="card">
         <h2>Contato</h2>
         <p>
           📍 Rua Saturno, 21 — Lagoa dos Freitas, Baln. Rincão-SC<br>
           ✉️ <a href="mailto:actionwt@yahoo.com.br">actionwt@yahoo.com.br</a><br>
-          📱 <a href="https://wa.me/5548999132828" target="_blank">(48) 99913-2828</a>
+          📱 <a href="https://wa.me/5548999132828" target="_blank" rel="noopener">(48) 99913-2828</a>
         </p>
         <p>Atendimentos presenciais e on-line.</p>
       </aside>
-
     </div>
 
+    <!-- BLOCO DE TERAPIAS INTEGRADAS -->
+    <div class="full-section">
+      <section class="card">
+        <h2>🌿 Terapias Integradas</h2>
+        <p>
+          O <strong>Núcleo da Mente, Corpo e Alma</strong> integra abordagens que unem ciência, filosofia e espiritualidade —
+          <em>Psicanálise, Filosofia Clínica, Reiki e Wing Chun</em>.  
+          Cada uma atua em uma dimensão do ser — a palavra, o pensamento, a energia e o corpo — convergindo para um mesmo propósito: o reencontro com a essência.
+        </p>
+        <ul class="list">
+          <li><strong>Psicanálise:</strong> escuta profunda e elaboração simbólica.</li>
+          <li><strong>Filosofia Clínica:</strong> compreensão existencial e ética no cotidiano.</li>
+          <li><strong>Reiki:</strong> harmonização energética e despertar espiritual.</li>
+          <li><strong>Wing Chun:</strong> equilíbrio entre firmeza, suavidade e presença.</li>
+        </ul>
+      </section>
+    </div>
   </main>
 
   <!-- RODAPÉ -->
   <footer>
-    Núcleo da Mente, Corpo e Alma • © 2025
+    Núcleo da Mente, Corpo e Alma — Ivaldo J. Silva • Balneário Rincão/SC
   </footer>
-
 </body>
 </html>
