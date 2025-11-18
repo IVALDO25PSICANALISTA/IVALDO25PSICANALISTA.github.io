@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<title>Galeria de Fotos</title>
+<title>Galerias de Fotos</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
 <style>
@@ -16,80 +16,75 @@
   h1{
     text-align:center;
     color:#8ab4ff;
+    margin-bottom:20px;
+  }
+  p.intro{
+    text-align:center;
+    color:#cbd5e1;
     margin-bottom:30px;
   }
-  .galeria{
+  .grid{
+    max-width:900px;
+    margin:0 auto;
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:20px;
-    max-width:1100px;
-    margin:0 auto;
   }
-  .foto{
+  .card{
     background:#111827;
-    padding:10px;
-    border-radius:10px;
+    border-radius:14px;
+    padding:18px;
     text-align:center;
-    box-shadow:0 4px 12px rgba(0,0,0,.4);
+    box-shadow:0 6px 18px rgba(0,0,0,.45);
   }
-  .foto img{
-    width:100%;
-    max-height:260px;
-    object-fit:cover;   /* evita ficar em tela cheia */
-    border-radius:10px;
-  }
-  .foto p{
+  .card h2{
+    margin:0 0 8px;
     color:#c3d3ff;
-    margin-top:8px;
+  }
+  .card p{
+    margin:0 0 14px;
+    color:#d1d5db;
+    font-size:.95rem;
+  }
+  .btn{
+    display:inline-block;
+    padding:8px 14px;
+    border-radius:10px;
+    background:#8ab4ff;
+    color:#0a0f1a;
+    font-weight:600;
+    text-decoration:none;
+    border:1px solid #8ab4ff;
+  }
+  .btn:hover{
+    text-decoration:none;
+    background:#a5c4ff;
   }
 </style>
 </head>
 
 <body>
-<h1>Galeria de Fotos</h1>
+<h1>Galerias de Fotos</h1>
+<p class="intro">Escolha uma galeria para visualizar as imagens do Núcleo da Mente, Corpo e Alma.</p>
 
-<div class="galeria">
-
-  <div class="foto">
-    <img src="academia1.jpg" alt="Espaço para treino">
-    <p>Espaço para treino</p>
+<div class="grid">
+  <div class="card">
+    <h2>Wing Chun & Academia</h2>
+    <p>Fotos da sala de treino, do Mook Yan Jong e das práticas de Wing Chun (PROWES).</p>
+    <a class="btn" href="wingchun.html">Ver galeria Wing Chun</a>
   </div>
 
-  <div class="foto">
-    <img src="academia2.jpg" alt="Sala com iluminação especial">
-    <p>Sala com iluminação especial</p>
+  <div class="card">
+    <h2>Terapias & Reiki</h2>
+    <p>Imagens ligadas ao cuidado energético, espiritual e ao trabalho terapêutico.</p>
+    <a class="btn" href="terapias.html">Ver galeria Terapias</a>
   </div>
 
-  <div class="foto">
-    <img src="chi-sau1.jpg" alt="Wing Chun – Chi Sau">
-    <p>Wing Chun – Chi Sau</p>
+  <div class="card">
+    <h2>Filosofia & Estudos</h2>
+    <p>Registros de filosofia, estudos, cursos e desenvolvimento humano.</p>
+    <a class="btn" href="filosofia.html">Ver galeria Filosofia</a>
   </div>
-
-  <div class="foto">
-    <img src="wingchun1.jpg" alt="Prática – Wing Chun">
-    <p>Prática – Wing Chun</p>
-  </div>
-
-  <div class="foto">
-    <img src="wingchun2.jpg" alt="Wing Chun – Kwan Sau">
-    <p>Wing Chun – Kwan Sau</p>
-  </div>
-
-  <div class="foto">
-    <img src="reiki 1.jpg" alt="Reiki – confiança e entrega espiritual">
-    <p>Reiki – confiança e entrega espiritual</p>
-  </div>
-
-  <div class="foto">
-    <img src="filosofia 1.jpg" alt="Filosofia e reflexão">
-    <p>Filosofia e reflexão</p>
-  </div>
-
-  <div class="foto">
-    <img src="wdem.jpg" alt="Grupo de estudos e desenvolvimento humano">
-    <p>Grupo de estudos e desenvolvimento humano</p>
-  </div>
-
 </div>
 
 </body>
